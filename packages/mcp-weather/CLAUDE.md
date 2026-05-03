@@ -4,7 +4,7 @@
 
 The Weather MCP server. Wraps the Open-Meteo API (completely free, no key needed).
 Exposes two paid tools behind x402 payment gating.
-Runs on port 3002. Registered as `weather.tollgate.eth`.
+Runs on a dynamic port provided by `process.env.PORT` (defaults to 3002 locally). Registered as `weather.tollgate.eth`.
 
 ## Your Scope
 
@@ -165,7 +165,7 @@ it('tools/call without payment returns 402')
 ## Environment Variables (.env)
 
 ```
-PORT=3002
+PORT=3002 # Optional: deployment environment (e.g. Railway) will provide this dynamically
 MCP_NAME=weather
 ENS_NAME=weather.tollgate.eth
 PAYEE_WALLET=0x...
