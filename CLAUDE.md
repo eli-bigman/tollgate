@@ -1,6 +1,3 @@
-# CLAUDE.md
-For a any Scaffold-ETH 2 framework reference @AGENTS.md
-
 # TOLLGATE — Root CLAUDE.md (v2 — Durin Edition)
 
 ## What This Project Is
@@ -63,7 +60,7 @@ packages/hardhat/ is ACTIVE. It deploys the Durin L2Registrar contract.
 | L2 Registrar | Base Sepolia | process.env.DURIN_L2_REGISTRAR |
 | L1 Resolver | Sepolia (L1) | 0x8A968aB9eb8C084FBC44c531058Fc9ef945c3D61 |
 | Registry Factory | Base Sepolia | 0xDddddDdDDD8Aa1f237b4fa0669cb46892346d22d |
-| USDC | Base Sepolia | 0x5dEaC602762362FE5f135FA5904351916053cF70 |
+| USDC | Base Sepolia | 0x036CbD53842c5426634e7929541eC2318f3dCF7e |
 
 ## Chain Reference
 
@@ -95,7 +92,7 @@ tollgate:version     → "1.0"
 - Read subnames from the L2 Registry contract. Write through the L2 Registrar.
 - The manifest is the source of truth for prices. Never hardcode prices.
 - tools/list is always free. Only tools/call requires x402 payment.
-- All payments use Base Sepolia USDC: 0x5dEaC602762362FE5f135FA5904351916053cF70
+- All payments use Base Sepolia USDC: 0x036CbD53842c5426634e7929541eC2318f3dCF7e
 
 ## 3-Layer Binding
 
@@ -113,3 +110,18 @@ are present and correctly typed. Invalid data is reported, never used.
 
 ## When in Doubt
 Read SPRINT_PLAN.md, DURIN_SETUP.md, PRD.md
+
+## 0G Compute Network (Agent LLM)
+
+The demo agent uses 0G Compute Router for inference — NOT Anthropic SDK directly.
+This is a hackathon sponsor and qualifies Tollgate for the 0G prize track.
+
+0G Router is OpenAI-compatible. The agent uses the `openai` npm package with:
+  baseURL: "https://router-api.0g.ai/v1"
+  apiKey:  process.env.ZEROG_API_KEY  (sk-... from pc.0g.ai)
+  model:   process.env.ZEROG_MODEL    (e.g. zai-org/GLM-5-FP8)
+
+Reference: https://docs.0g.ai/developer-hub/building-on-0g/compute-network/router/quickstart
+Model catalog: https://docs.0g.ai/developer-hub/building-on-0g/compute-network/router/models
+
+DO NOT use @anthropic-ai/sdk in packages/agent/. Use openai package pointed at 0G.

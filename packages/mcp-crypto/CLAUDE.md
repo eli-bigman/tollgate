@@ -4,7 +4,7 @@
 
 The CryptoData MCP server. Wraps the CoinGecko public API (no key required)
 and exposes three paid tools behind x402 payment gating.
-Runs on port 3001. Registered as `crypto.tollgate.eth`.
+Runs on a dynamic port provided by `process.env.PORT` (defaults to 3001 locally). Registered as `crypto.tollgate.eth`.
 
 ## Your Scope
 
@@ -172,7 +172,7 @@ it('tools/call with payment header returns tool result')
 ## Environment Variables (.env)
 
 ```
-PORT=3001
+PORT=3001 # Optional: deployment environment (e.g. Railway) will provide this dynamically
 MCP_NAME=crypto
 ENS_NAME=crypto.tollgate.eth
 PAYEE_WALLET=0x...

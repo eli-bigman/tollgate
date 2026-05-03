@@ -1,83 +1,85 @@
-# 🏗 Scaffold-ETH 2
+# Tollgate
 
-<h4 align="center">
-  <a href="https://docs.scaffoldeth.io">Documentation</a> |
-  <a href="https://scaffoldeth.io">Website</a>
-</h4>
-
-🧪 An open-source, up-to-date toolkit for building decentralized applications (dapps) on the Ethereum blockchain. It's designed to make it easier for developers to create and deploy smart contracts and build user interfaces that interact with those contracts.
-
-> [!NOTE]
-> 🤖 Scaffold-ETH 2 is AI-ready! It has everything agents need to build on Ethereum. Check `.agents/`, `.claude/`, `.opencode` or `.cursor/` for more info.
-
-⚙️ Built using NextJS, RainbowKit, Hardhat, Wagmi, Viem, and Typescript.
-
-- ✅ **Contract Hot Reload**: Your frontend auto-adapts to your smart contract as you edit it.
-- 🪝 **[Custom hooks](https://docs.scaffoldeth.io/hooks/)**: Collection of React hooks wrapper around [wagmi](https://wagmi.sh/) to simplify interactions with smart contracts with typescript autocompletion.
-- 🧱 [**Components**](https://docs.scaffoldeth.io/components/): Collection of common web3 components to quickly build your frontend.
-- 🔥 **Burner Wallet & Local Faucet**: Quickly test your application with a burner wallet and local faucet.
-- 🔐 **Integration with Wallet Providers**: Connect to different wallet providers and interact with the Ethereum network.
-
-![Debug Contracts tab](https://github.com/scaffold-eth/scaffold-eth-2/assets/55535804/b237af0c-5027-4849-a5c1-2e31495cccb1)
-
-## Requirements
-
-Before you begin, you need to install the following tools:
-
-- [Node (>= v20.18.3)](https://nodejs.org/en/download/)
-- Yarn ([v1](https://classic.yarnpkg.com/en/docs/install/) or [v2+](https://yarnpkg.com/getting-started/install))
-- [Git](https://git-scm.com/downloads)
-
-## Quickstart
-
-To get started with Scaffold-ETH 2, follow the steps below:
-
-1. Install dependencies if it was skipped in CLI:
-
-```
-cd my-dapp-example
-yarn install
-```
-
-2. Run a local network in the first terminal:
-
-```
-yarn chain
-```
-
-This command starts a local Ethereum network using Hardhat. The network runs on your local machine and can be used for testing and development. You can customize the network configuration in `packages/hardhat/hardhat.config.ts`.
-
-3. On a second terminal, deploy the test contract:
-
-```
-yarn deploy
-```
-
-This command deploys a test smart contract to the local network. The contract is located in `packages/hardhat/contracts` and can be modified to suit your needs. The `yarn deploy` command uses the deploy script located in `packages/hardhat/deploy` to deploy the contract to the network. You can also customize the deploy script.
-
-4. On a third terminal, start your NextJS app:
-
-```
-yarn start
-```
-
-Visit your app on: `http://localhost:3000`. You can interact with your smart contract using the `Debug Contracts` page. You can tweak the app config in `packages/nextjs/scaffold.config.ts`.
-
-Run smart contract test with `yarn hardhat:test`
-
-- Edit your smart contracts in `packages/hardhat/contracts`
-- Edit your frontend homepage at `packages/nextjs/app/page.tsx`. For guidance on [routing](https://nextjs.org/docs/app/building-your-application/routing/defining-routes) and configuring [pages/layouts](https://nextjs.org/docs/app/building-your-application/routing/pages-and-layouts) checkout the Next.js documentation.
-- Edit your deployment scripts in `packages/hardhat/deploy`
+**Tollgate is an ENS-native, pay-per-call marketplace for MCP servers.** It acts as the infrastructure layer connecting AI agents to the data and capabilities they need — without API keys, subscriptions, or human intervention.
 
 
-## Documentation
 
-Visit our [docs](https://docs.scaffoldeth.io) to learn how to start building with Scaffold-ETH 2.
 
-To know more about its features, check out our [website](https://scaffoldeth.io).
+## Screenshots
 
-## Contributing to Scaffold-ETH 2
 
-We welcome contributions to Scaffold-ETH 2!
+**Directory / Home**
+[Screenshot: Directory]
 
-Please see [CONTRIBUTING.MD](https://github.com/scaffold-eth/scaffold-eth-2/blob/main/CONTRIBUTING.md) for more information and guidelines for contributing to Scaffold-ETH 2.
+**Service Registration**
+[Screenshot: Register]
+
+**Agent Demo & Live Activity**
+[Screenshot: Agent Demo]
+
+---
+
+## The Problem
+
+Current AI agents require pre-loaded API keys. This creates three problems:
+1. **No Discovery**: Developers must manually find, sign up for, and provide credentials to the agent.
+2. **No Trust**: If an API's return format changes, the agent breaks silently because it cannot verify response schemas.
+3. **No Autonomous Payment**: Humans must pre-fund API accounts and manage subscriptions.
+
+## The Tollgate Solution
+
+Tollgate solves this with three primitives:
+1. **ENS for Discovery**: Agents resolve an ENS subname (e.g., `weather.tollgate.eth`) to find the server URL.
+2. **Tollgate Manifest for Trust**: A machine-readable JSON contract (`/.well-known/tollgate.json`) declares tool schemas and prices.
+3. **KeeperHub for Payment**: Agents autonomously pay per-tool call using the x402 protocol and KeeperHub's agentic wallet.
+
+---
+
+## Core Architecture
+
+Tollgate is built on three layers. Every interaction flows through all three:
+
+### 1. ENS Registry Layer (Discovery)
+Instead of a centralized database, Tollgate uses **ENS on Base Sepolia**. Every registered MCP is an ENS subname under `tollgate.eth`.
+The registry uses the `tollgate:` text record namespace:
+- `tollgate:url` - The base URL of the MCP server.
+- `tollgate:manifest` - A verifiable pointer to the server's manifest (the trust anchor).
+- `tollgate:payee` - The wallet address receiving USDC payments.
+
+### 2. Tollgate Manifest (Trust)
+Every registered MCP server hosts a `tollgate.json` file. Before calling any tool, an agent fetches this manifest to:
+- Discover available tools and parameter requirements (`inputSchema`).
+- Confirm prices per tool (preventing surprise overcharges).
+- Validate the response structure (`outputSchema`). 
+
+### 3. Payment Layer — KeeperHub x402 (Execution)
+Built around KeeperHub's agentic wallet and the x402 protocol:
+- The agent calls a tool. The MCP returns an HTTP 402 Payment Required challenge.
+- The KeeperHub agentic wallet intercepts the challenge, signs a USDC transfer on Base Sepolia, and retries the request with a payment header.
+- The MCP verifies the payment and returns the requested data.
+
+---
+
+## The Demo Agent
+
+The Tollgate repository includes an autonomous demo agent (powered by Claude 3.5 Sonnet) that demonstrates the flow end-to-end:
+1. Lists available services from ENS.
+2. Fetches the Tollgate manifest for the selected services.
+3. Verifies the tool price.
+4. Calls the tool and autonomously pays via KeeperHub.
+5. Validates the returned data against the manifest schema.
+6. Synthesizes the final answer.
+
+### Included Demo MCPs:
+- **CryptoData** (`crypto.tollgate.eth`): Real-time token prices and market data.
+- **Weather** (`weather.tollgate.eth`): Global weather forecasting.
+- **OnChain** (`chain.tollgate.eth`): Wallet balances and recent transactions on Base Sepolia.
+
+---
+
+## Tech Stack
+
+- **Frontend**: Next.js 14 App Router, Tailwind CSS, Viem, ENSjs v4
+- **Smart Contracts / Chain**: Base Sepolia, USDC
+- **Agent Infrastructure**: KeeperHub (Agentic Wallet, x402 protocol), Anthropic SDK (`claude-sonnet-4`)
+- **Backend / MCP**: Node.js, Express, `@modelcontextprotocol/sdk`
