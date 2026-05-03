@@ -62,7 +62,7 @@ Built around KeeperHub's agentic wallet and the x402 protocol:
 
 ## The Demo Agent
 
-The Tollgate repository includes an autonomous demo agent (powered by Claude 3.5 Sonnet) that demonstrates the flow end-to-end:
+The Tollgate repository includes an autonomous demo agent (powered by 0G Compute Network) that demonstrates the flow end-to-end:
 1. Lists available services from ENS.
 2. Fetches the Tollgate manifest for the selected services.
 3. Verifies the tool price.
@@ -81,5 +81,5 @@ The Tollgate repository includes an autonomous demo agent (powered by Claude 3.5
 
 - **Frontend**: Next.js 14 App Router, Tailwind CSS, Viem, ENSjs v4
 - **Smart Contracts / Chain**: Base Sepolia, USDC
-- **Agent Infrastructure**: KeeperHub (Agentic Wallet, x402 protocol), Anthropic SDK (`claude-sonnet-4`)
+- **Agent Infrastructure**: KeeperHub (Agentic Wallet, x402 protocol), 0G Compute Network (`zai-org/GLM-5-FP8`)
 - **Backend / MCP**: Node.js, Express, `@modelcontextprotocol/sdk`
