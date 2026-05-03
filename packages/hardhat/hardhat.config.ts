@@ -21,6 +21,7 @@ const deployerPrivateKey =
   process.env.__RUNTIME_DEPLOYER_PRIVATE_KEY ?? "0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80";
 // If not set, it uses our block explorers default API keys.
 const etherscanApiKey = process.env.ETHERSCAN_V2_API_KEY || "DNXJA8RX2Q3VZ4URQIWP7Z68CJXQZSC6AW";
+const baseScanApiKey = process.env.BASESCAN_API_KEY || etherscanApiKey;
 
 const config: HardhatUserConfig = {
   solidity: {
@@ -106,7 +107,7 @@ const config: HardhatUserConfig = {
       accounts: [deployerPrivateKey],
     },
     baseSepolia: {
-      url: "https://sepolia.base.org",
+      url: process.env.ALCHEMY_BASE_SEPOLIA_RPC || "https://sepolia.base.org",
       accounts: [deployerPrivateKey],
     },
     scrollSepolia: {
@@ -126,18 +127,56 @@ const config: HardhatUserConfig = {
       accounts: [deployerPrivateKey],
     },
   },
-  // Configuration for harhdat-verify plugin
+  // Configuration for hardhat-verify plugin
   etherscan: {
-    apiKey: etherscanApiKey,
+    apiKey: {
+      mainnet: etherscanApiKey,
+      sepolia: etherscanApiKey,
+      arbitrum: etherscanApiKey,
+      arbitrumSepolia: etherscanApiKey,
+      optimism: etherscanApiKey,
+      optimismSepolia: etherscanApiKey,
+      polygon: etherscanApiKey,
+      polygonAmoy: etherscanApiKey,
+      polygonZkEvm: etherscanApiKey,
+      polygonZkEvmCardona: etherscanApiKey,
+      gnosis: etherscanApiKey,
+      chiado: etherscanApiKey,
+      scrollSepolia: etherscanApiKey,
+      scroll: etherscanApiKey,
+      celo: etherscanApiKey,
+      celoSepolia: etherscanApiKey,
+      // BaseScan uses a separate API key
+      base: baseScanApiKey,
+      baseSepolia: baseScanApiKey,
+    },
+    customChains: [
+      {
+        network: "baseSepolia",
+        chainId: 84532,
+        urls: {
+          apiURL: "https://api.etherscan.io/v2/api?chainid=84532",
+          browserURL: "https://sepolia.basescan.org",
+        },
+      },
+      {
+        network: "base",
+        chainId: 8453,
+        urls: {
+          apiURL: "https://api.etherscan.io/v2/api?chainid=8453",
+          browserURL: "https://basescan.org",
+        },
+      },
+    ],
   },
   // Configuration for etherscan-verify from hardhat-deploy plugin
   verify: {
     etherscan: {
-      apiKey: etherscanApiKey,
+      apiKey: baseScanApiKey,
     },
   },
   sourcify: {
-    enabled: false,
+    enabled: true,
   },
 };
 
