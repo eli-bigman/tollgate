@@ -21,3 +21,20 @@ node_modules
 
 # cli
 dist
+
+
+# md files
+EXECUTION_ORDER.md
+DURIN_SETUP.md
+PARALLEL_GUIDE.md
+PROJECT_SETUP.md
+SPRINT_PLAN.md
+packages/nextjs/.next
+packages/stitch_design_system_implementation
+
+#env file
+.env
+.env.local
+.env.*
+
+packages/nextjs/.env.local

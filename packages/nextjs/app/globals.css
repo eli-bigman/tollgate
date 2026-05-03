@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --header-height: 60px;
+    --ticker-height: 36px;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Make sure JetBrains Mono applies everywhere font-mono is used */
+  .font-mono,
+  code,
+  pre,
+  kbd {
+    font-family: var(--font-jetbrains), "Fira Code", monospace;
+  }
+}
+
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Live pulsing dot */
+  .pulse-dot {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  /* Bouncing loading dots */
+  .bounce-1 { animation: bounce-dot 1.4s ease-in-out 0s infinite; }
+  .bounce-2 { animation: bounce-dot 1.4s ease-in-out 0.2s infinite; }
+  .bounce-3 { animation: bounce-dot 1.4s ease-in-out 0.4s infinite; }
+}

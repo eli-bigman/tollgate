@@ -1,0 +1,11 @@
+{
+  "enableAllProjectMcpServers": true,
+  "enabledMcpjsonServers": [
+    "context7"
+  ],
+  "permissions": {
+    "allow": [
+      "Bash(dir \"d:\\\\xcode\\\\Blockchain\\\\tollgate\\\\packages\\\\stitch_design_system_implementation\" /b)"
+    ]
+  }
+}

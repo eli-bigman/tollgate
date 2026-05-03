@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(yarn install *)",
+      "Bash(icacls \"d:/xcode/Blockchain/tollgate/packages/scarfold-nextjs/node_modules/@nodelib/fs.walk/out/providers/async.d.ts\")",
+      "Bash(yarn workspace *)",
+      "Bash(yarn next:build)"
+    ],
+    "additionalDirectories": [
+      "d:\\xcode\\Blockchain\\tollgate\\docs\\superpowers"
+    ]
+  }
+}
