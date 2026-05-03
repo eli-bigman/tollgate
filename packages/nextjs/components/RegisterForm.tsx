@@ -307,7 +307,7 @@ export default function RegisterForm() {
           <div className="grid grid-cols-2 gap-4">
             <div className="space-y-2">
               <label className="block text-xs font-semibold text-text-secondary uppercase tracking-wider">
-                Default Price (USDC)
+                Default Price (ETH)
               </label>
               <div className="relative">
                 <span className="absolute left-3 top-2.5 text-text-secondary font-mono text-sm">$</span>
@@ -320,7 +320,7 @@ export default function RegisterForm() {
                   placeholder="0.01"
                   className="w-full border border-border-strong rounded-lg pl-7 pr-14 py-2.5 font-mono text-sm text-text-primary focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
                 />
-                <span className="absolute right-3 top-2.5 text-text-muted font-mono text-xs">USDC</span>
+                <span className="absolute right-3 top-2.5 text-text-muted font-mono text-xs">ETH</span>
               </div>
               <p className="text-xs text-text-muted">Tools can override in manifest.</p>
             </div>

@@ -50,7 +50,7 @@ function mapAgentEvent(raw: Record<string, unknown>): AgentEventType | null {
       type: "payment_required",
       paymentId:  String(data.paymentId ?? ""),
       payee:      String(data.payee ?? ""),
-      amountUsdc: String(data.amountUsdc ?? ""),
+      amountEth: String(data.amountEth ?? ""),
       amountMicro: String(data.amountMicro ?? ""),
       token:      String(data.token ?? ""),
       toolName:   String(data.toolName ?? ""),
@@ -192,11 +192,11 @@ export default function AgentDemo() {
         }
       }
 
-      // FORCE native ETH to simplify the demo and bypass old USDC requirements
+      // FORCE native ETH to simplify the demo and bypass old token requirements
       const isNative = true;
       const toAddr = payment.payee;
       
-      const amountEthFloat = parseFloat(payment.amountUsdc || "0.01");
+      const amountEthFloat = parseFloat(payment.amountEth || "0.01");
       const amountWei = BigInt(Math.floor(amountEthFloat * 1e18));
       const amountHex = "0x" + amountWei.toString(16);
 
@@ -215,7 +215,7 @@ export default function AgentDemo() {
         body: JSON.stringify({ paymentId: payment.paymentId, txHash }),
       });
 
-      setSpent(prev => prev + parseFloat(payment.amountUsdc));
+      setSpent(prev => prev + parseFloat(payment.amountEth));
     } catch (err: unknown) {
       const msg = err instanceof Error ? err.message : String(err);
       if (!msg.includes("User rejected") && !msg.includes("user rejected")) {
@@ -288,7 +288,7 @@ export default function AgentDemo() {
           }
 
           if (uiEvent.type === "payment") {
-            const amount = parseFloat(uiEvent.amount.replace(" USDC", ""));
+            const amount = parseFloat(uiEvent.amount.replace(" ETH", ""));
             setSpent(prev => prev + amount);
           }
 

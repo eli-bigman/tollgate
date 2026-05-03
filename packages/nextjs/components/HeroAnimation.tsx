@@ -5,7 +5,7 @@ export default function HeroAnimation() {
         viewBox="0 0 660 155"
         xmlns="http://www.w3.org/2000/svg"
         className="w-full h-auto"
-        aria-label="Tollgate flow: Agent resolves ENS, fetches manifest, pays USDC, MCP returns validated data"
+        aria-label="Tollgate flow: Agent resolves ENS, fetches manifest, pays ETH, MCP returns validated data"
       >
         <defs>
           <style>{`
@@ -53,7 +53,7 @@ export default function HeroAnimation() {
         {/* Manifest → MCP (solid indigo) */}
         <line x1="412" y1="73" x2="492" y2="73" stroke="#6366F1" strokeWidth="2" markerEnd="url(#ag-indigo)" />
         <text x="452" y="61" textAnchor="middle" fill="#9CA3AF" fontSize="10" fontFamily="Inter, sans-serif">
-          pay 0.01 USDC
+          pay 0.01 ETH
         </text>
 
         {/* Return arrow (below) */}
@@ -108,7 +108,7 @@ export default function HeroAnimation() {
           MCP Server
         </text>
 
-        {/* ── Animated USDC coin ── */}
+        {/* ── Animated ETH coin ── */}
         <g className="coin-group" transform="translate(414, 65)">
           <circle r="9" cx="0" cy="0" fill="#10B981" />
           <text y="4" textAnchor="middle" fill="white" fontSize="10" fontWeight="bold" fontFamily="Inter, sans-serif">

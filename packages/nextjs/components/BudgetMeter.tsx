@@ -45,7 +45,7 @@ export default function BudgetMeter({ total, spent, callCount, compact = false }
       <div className="mb-1 text-sm text-text-secondary">Available Balance</div>
       <div className="flex items-baseline gap-1.5">
         <span className="text-[2rem] font-bold text-text-primary leading-none">{remaining.toFixed(3)}</span>
-        <span className="font-mono text-xs text-text-muted">USDC</span>
+        <span className="font-mono text-xs text-text-muted">ETH</span>
       </div>
 
       <div className="mt-3 w-full h-2 bg-border-light rounded-full overflow-hidden">
@@ -58,7 +58,7 @@ export default function BudgetMeter({ total, spent, callCount, compact = false }
       <div className="mt-4 pt-3 border-t border-border-light flex items-center justify-between">
         <span className="text-sm text-text-secondary">Total Spent</span>
         <span className="font-mono text-xs font-medium text-text-primary">
-          {spent.toFixed(3)} USDC
+          {spent.toFixed(3)} ETH
           {callCount !== undefined && (
             <span className="text-text-muted font-normal ml-2">· {callCount} call{callCount !== 1 ? "s" : ""}</span>
           )}

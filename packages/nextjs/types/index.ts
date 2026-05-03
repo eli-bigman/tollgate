@@ -31,7 +31,7 @@ export type AgentEventType =
   | { type: "thinking"; content: string }
   | { type: "manifest_fetch"; service: string; tools: { name: string; price: string }[] }
   | { type: "price_check"; price: string; manifestPrice: string; match: boolean }
-  | { type: "payment_required"; paymentId: string; payee: string; amountUsdc: string; amountMicro: string; token: string; toolName: string; mcpName: string }
+  | { type: "payment_required"; paymentId: string; payee: string; amountEth: string; amountMicro: string; token: string; toolName: string; mcpName: string }
   | { type: "payment"; amount: string; service: string; tool: string; txHash: string }
   | { type: "validation"; passed: boolean; fieldCount?: number; missingFields?: string[] }
   | { type: "result"; content: string; summary: string };

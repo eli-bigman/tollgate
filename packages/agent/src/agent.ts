@@ -9,14 +9,16 @@ export type AgentEvent =
   | { type: "tool_call";         data: { name: string; input: unknown } }
   | { type: "manifest_fetched";  data: { url: string; ens: string; tools: Array<{ name: string; price: string }> } }
   | { type: "price_check";       data: { price: string; manifestPrice: string; match: boolean } }
-  | { type: "payment_required";  data: { paymentId: string; payee: string; amountUsdc: string; amountMicro: string; token: string; toolName: string; mcpName: string } }
+  | { type: "payment_required";  data: { paymentId: string; payee: string; amountEth: string; amountMicro: string; token: string; toolName: string; mcpName: string } }
   | { type: "payment";           data: { mcp: string; tool: string; amount: string; txHash?: string } }
   | { type: "validation";        data: { tool: string; valid: boolean; summary: string } }
   | { type: "result";            data: { answer: string; totalSpent: number; calls: number } }
   | { type: "error";             data: { message: string } }
 
+const ZEROG_BASE_URL = process.env.ZEROG_BASE_URL ?? "https://router-api.0g.ai/v1"
+
 const client = new OpenAI({
-  baseURL: "https://router.0g.ai/v1",
+  baseURL: ZEROG_BASE_URL,
   apiKey: process.env.ZEROG_API_KEY ?? process.env.ZEROG_API ?? "",
 })
 
@@ -90,7 +92,7 @@ Always show your reasoning at each step.`
 
 export async function* runAgent(task: string): AsyncGenerator<AgentEvent, void, string | undefined> {
   logSep(`NEW RUN — task: "${task}"`)
-  logInfo("agent", `Model: ${MODEL}  Key: ${(process.env.ZEROG_API_KEY ?? process.env.ZEROG_API ?? "").slice(0, 12)}...`)
+  logInfo("agent", `Model: ${MODEL}  Endpoint: ${ZEROG_BASE_URL}  Key: ${(process.env.ZEROG_API_KEY ?? process.env.ZEROG_API ?? "").slice(0, 12)}...`)
 
   const messages: OpenAI.Chat.ChatCompletionMessageParam[] = [
     { role: "system", content: SYSTEM_PROMPT },
@@ -194,7 +196,7 @@ export async function* runAgent(task: string): AsyncGenerator<AgentEvent, void, 
         logInfo("agent", `Price check: manifest price = $${expectedPrice}`)
         yield {
           type: "price_check",
-          data: { price: expectedPrice + " USDC", manifestPrice: expectedPrice + " USDC", match: true },
+          data: { price: expectedPrice + " ETH", manifestPrice: expectedPrice + " ETH", match: true },
         }
 
         const mcpParams = {
@@ -219,7 +221,7 @@ export async function* runAgent(task: string): AsyncGenerator<AgentEvent, void, 
             data: {
               paymentId:  challenge.paymentId,
               payee:      challenge.payee,
-              amountUsdc: challenge.amountUsdc,
+              amountEth: challenge.amountUsdc,
               amountMicro: challenge.amountMicro,
               token:      challenge.token,
               toolName:   challenge.toolName,

@@ -14,7 +14,7 @@ const STUB_SERVICES: Service[] = [
     tools: [
       {
         name: "get_price",
-        price: "0.01 USDC",
+        price: "0.01 ETH",
         inputSchema: { token: { type: "string", required: true } },
         outputSchema: {
           token: { type: "string" },
@@ -24,8 +24,8 @@ const STUB_SERVICES: Service[] = [
           timestamp: { type: "number" },
         },
       },
-      { name: "get_trending", price: "0.01 USDC" },
-      { name: "get_market_data", price: "0.02 USDC" },
+      { name: "get_trending", price: "0.01 ETH" },
+      { name: "get_market_data", price: "0.02 ETH" },
     ],
     manifestUrl: "https://crypto-mcp.example.com/.well-known/tollgate.json",
     isLive: true,
@@ -35,8 +35,8 @@ const STUB_SERVICES: Service[] = [
     type: "MCP",
     description: "Global weather forecasts, historical climate data, and active weather alerts.",
     tools: [
-      { name: "get_forecast", price: "0.01 USDC" },
-      { name: "get_alerts", price: "0.02 USDC" },
+      { name: "get_forecast", price: "0.01 ETH" },
+      { name: "get_alerts", price: "0.02 ETH" },
     ],
     manifestUrl: "https://weather-mcp.example.com/.well-known/tollgate.json",
     isLive: true,
@@ -46,9 +46,9 @@ const STUB_SERVICES: Service[] = [
     type: "MCP",
     description: "On-chain analytics: block data, transaction history, and contract event queries.",
     tools: [
-      { name: "get_block", price: "0.005 USDC" },
-      { name: "get_tx_history", price: "0.01 USDC" },
-      { name: "get_events", price: "0.01 USDC" },
+      { name: "get_block", price: "0.005 ETH" },
+      { name: "get_tx_history", price: "0.01 ETH" },
+      { name: "get_events", price: "0.01 ETH" },
     ],
     manifestUrl: "https://chain-mcp.example.com/.well-known/tollgate.json",
     isLive: true,
@@ -75,7 +75,7 @@ const HOW_IT_WORKS = [
     bg: "#FFFBEB",
     color: "#F59E0B",
     title: "Pay, get data, validate",
-    body: "Agents pay per tool call via USDC. The MCP returns data matching the declared schema. The agent validates required fields before using the result. You earn per call.",
+    body: "Agents pay per tool call via ETH on Base Sepolia. The MCP returns data matching the declared schema. The agent validates required fields before using the result. You earn per call.",
   },
 ];
 

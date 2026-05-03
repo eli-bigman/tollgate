@@ -21,6 +21,9 @@ export const metadata: Metadata = {
   title: "Tollgate — The toll road for AI agents",
   description:
     "Publish MCP servers under ENS names. Agents discover the manifest, pay per tool call, and validate the response — without API keys.",
+  icons: {
+    icon: "/logo.png",
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
