@@ -7,15 +7,17 @@
 
 ## Screenshots
 
-
 **Directory / Home**
-[Screenshot: Directory]
+
+![Landing page](images/home.png)
 
 **Service Registration**
-[Screenshot: Register]
+
+![Register a service page](images/register.png)
 
 **Agent Demo & Live Activity**
-[Screenshot: Agent Demo]
+
+![Agent interaction page](images/agents.png)
 
 ---
 
@@ -37,7 +39,7 @@ Tollgate solves this with three primitives:
 
 ## Core Architecture
 
-Tollgate is built on three layers. Every interaction flows through all three:
+Tollgate is built on four layers. Every interaction flows through all four:
 
 ### 1. ENS Registry Layer (Discovery)
 Instead of a centralized database, Tollgate uses **ENS on Base Sepolia**. Every registered MCP is an ENS subname under `tollgate.eth`.
@@ -57,6 +59,11 @@ Built around KeeperHub's agentic wallet and the x402 protocol:
 - The agent calls a tool. The MCP returns an HTTP 402 Payment Required challenge.
 - The KeeperHub agentic wallet intercepts the challenge, signs a USDC transfer on Base Sepolia, and retries the request with a payment header.
 - The MCP verifies the payment and returns the requested data.
+
+### 4. Compute Layer — 0G Compute Network (Inference)
+Tollgate leverages the 0G Compute Network to handle the agent's core reasoning and inference capabilities:
+- Provides high-performance, decentralized access to LLMs (like `zai-org/GLM-5-FP8`) via an OpenAI-compatible router.
+- Processes user prompts, plans tool executions, and parses the structured JSON returned by MCPs to synthesize the final answer.
 
 ---
 
