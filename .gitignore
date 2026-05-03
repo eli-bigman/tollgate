@@ -40,3 +40,5 @@ packages/stitch_design_system_implementation
 packages/nextjs/.env.local
 # .vercel/project.json is intentionally committed for team deploys
 .vercel/output
+
+packages/nextjs/agent-pipeline.log
