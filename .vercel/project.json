@@ -1,0 +1,16 @@
+{
+  "projectId": "prj_yXSlb1fR2QCQwvrQ5JPkMAdvb1qy",
+  "orgId": "team_FKC6fUJabMQSBn9LJlnHCeHs",
+  "projectName": "tollgate",
+  "settings": {
+    "createdAt": 1777797672416,
+    "framework": "nextjs",
+    "devCommand": null,
+    "installCommand": "cd ../.. && yarn install",
+    "buildCommand": "next build",
+    "outputDirectory": null,
+    "rootDirectory": "packages/nextjs",
+    "directoryListing": false,
+    "nodeVersion": "22.x"
+  }
+}

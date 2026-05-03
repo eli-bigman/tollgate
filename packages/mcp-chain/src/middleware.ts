@@ -33,7 +33,7 @@ export function createPaymentMiddleware(opts: PaymentMiddlewareOptions): Request
     const paymentHeader = req.headers['x-payment'] as string | undefined
 
     if (!paymentHeader) {
-      const amountMicro = Math.round(parseFloat(declaredPrice) * 1e6).toString()
+      const amountMicro = BigInt(Math.floor(parseFloat(declaredPrice) * 1e6)).toString()
       res.status(402).json({
         error:       "Payment Required",
         x402Version: "1",
@@ -50,7 +50,7 @@ export function createPaymentMiddleware(opts: PaymentMiddlewareOptions): Request
       return
     }
 
-    let payload: { paymentAmount?: number; payerAddress?: string; txSignature?: string; toolName?: string }
+    let payload: { paymentAmount?: string | number; payerAddress?: string; txSignature?: string; toolName?: string }
     try {
       payload = JSON.parse(Buffer.from(paymentHeader, 'base64').toString('utf8'))
     } catch {
@@ -58,7 +58,8 @@ export function createPaymentMiddleware(opts: PaymentMiddlewareOptions): Request
       return
     }
 
-    const paidAmount = (payload.paymentAmount ?? 0) / 1e6
+    const rawAmount = typeof payload.paymentAmount === 'string' ? payload.paymentAmount : (payload.paymentAmount ?? 0).toString()
+    const paidAmount = Number(rawAmount) / 1e6
     if (paidAmount < parseFloat(declaredPrice)) {
       res.status(402).json({ error: "Underpayment", required: declaredPrice, received: paidAmount.toString() })
       return

@@ -1,5 +1,7 @@
 # Tollgate
 
+![Tollgate Cover](images/cover.png)
+
 **Tollgate is an ENS-native, pay-per-call marketplace for MCP servers.** It acts as the infrastructure layer connecting AI agents to the data and capabilities they need — without API keys, subscriptions, or human intervention.
 
 

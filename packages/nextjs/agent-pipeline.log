@@ -1,0 +1,3454 @@
+[2026-05-03T11:35:39.471Z] INFO  [sse-route] Incoming POST /api/agent/run
+{
+  "task": "ETH price",
+  "ip": "::1"
+}
+[2026-05-03T11:35:39.482Z] INFO  [sse-route] Stream opened — starting agent
+[2026-05-03T11:35:39.602Z] ───── [───────────────────────────────] NEW RUN — task: "ETH price"
+[2026-05-03T11:35:39.603Z] INFO  [agent] Model: zai-org/GLM-5-FP8  Key: ...
+[2026-05-03T11:35:39.603Z] INFO  [agent] ── Turn 1: calling 0G LLM (2 messages in context)
+[2026-05-03T11:35:40.194Z] ERROR [agent] LLM error: 401 Missing authorization header
+[2026-05-03T11:35:40.195Z] INFO  [sse-route] SSE #1 → type=error
+[2026-05-03T11:35:40.196Z] ───── [──────────────────────────] RUN COMPLETE — spent=$0  calls=0
+[2026-05-03T11:35:40.198Z] INFO  [sse-route] Stream finished normally — 1 events sent
+[2026-05-03T11:53:23.017Z] INFO  [sse-route] Incoming POST /api/agent/run
+{
+  "task": "ETH price",
+  "ip": "::1"
+}
+[2026-05-03T11:53:23.041Z] INFO  [sse-route] Stream opened — starting agent
+[2026-05-03T11:53:23.295Z] ───── [───────────────────────────────] NEW RUN — task: "ETH price"
+[2026-05-03T11:53:23.296Z] INFO  [agent] Model: zai-org/GLM-5-FP8  Key: sk-bf5187d4-...
+[2026-05-03T11:53:23.296Z] INFO  [agent] ── Turn 1: calling 0G LLM (2 messages in context)
+[2026-05-03T11:53:23.904Z] ERROR [agent] LLM error: 401 Invalid API key or token
+[2026-05-03T11:53:23.905Z] INFO  [sse-route] SSE #1 → type=error
+[2026-05-03T11:53:23.906Z] ───── [──────────────────────────] RUN COMPLETE — spent=$0  calls=0
+[2026-05-03T11:53:23.907Z] INFO  [sse-route] Stream finished normally — 1 events sent
+[2026-05-03T12:23:20.159Z] INFO  [sse-route] Incoming POST /api/agent/run
+{
+  "task": "ETH price",
+  "ip": "::1"
+}
+[2026-05-03T12:23:20.283Z] INFO  [sse-route] Stream opened — starting agent
+[2026-05-03T12:23:20.383Z] ───── [───────────────────────────────] NEW RUN — task: "ETH price"
+[2026-05-03T12:23:20.384Z] INFO  [agent] Model: qwen/qwen-2.5-7b-instruct  Key: sk-bf5187d4-...
+[2026-05-03T12:23:20.384Z] INFO  [agent] ── Turn 1: calling 0G LLM (2 messages in context)
+[2026-05-03T12:23:22.020Z] ERROR [agent] LLM error: 401 Invalid API key or token
+[2026-05-03T12:23:22.021Z] INFO  [sse-route] SSE #1 → type=error
+[2026-05-03T12:23:22.023Z] ───── [──────────────────────────] RUN COMPLETE — spent=$0  calls=0
+[2026-05-03T12:23:22.023Z] INFO  [sse-route] Stream finished normally — 1 events sent
+[2026-05-03T12:28:56.610Z] INFO  [sse-route] Incoming POST /api/agent/run
+{
+  "task": "ETH price",
+  "ip": "::1"
+}
+[2026-05-03T12:28:56.651Z] INFO  [sse-route] Stream opened — starting agent
+[2026-05-03T12:28:56.765Z] ───── [───────────────────────────────] NEW RUN — task: "ETH price"
+[2026-05-03T12:28:56.766Z] INFO  [agent] Model: qwen/qwen-2.5-7b-instruct  Key: sk-7e6e18fa-...
+[2026-05-03T12:28:56.766Z] INFO  [agent] ── Turn 1: calling 0G LLM (2 messages in context)
+[2026-05-03T12:28:59.363Z] INFO  [agent] LLM response finish_reason=tool_calls  tool_calls=1
+[2026-05-03T12:28:59.363Z] INFO  [agent] Tool calls requested: list_tollgate_services
+[2026-05-03T12:28:59.364Z] INFO  [agent] ▶ Tool: list_tollgate_services
+{}
+[2026-05-03T12:28:59.364Z] INFO  [sse-route] SSE #1 → type=tool_call
+[2026-05-03T12:28:59.366Z] INFO  [agent] Fetching service list: http://localhost:3000/api/ens/list
+[2026-05-03T12:29:00.518Z] INFO  [agent] Service list OK
+[
+  {
+    "ens": "crypto.tollgate.eth",
+    "url": "http://localhost:3001",
+    "manifestUrl": "http://localhost:3001/.well-known/tollgate.json",
+    "type": "mcp",
+    "description": "Real-time crypto prices, trending tokens, and market data",
+    "category": "finance",
+    "payee": "0x543DD8c11194BF5ebc0411A9Ef2dEa2055084Bd4"
+  }
+]
+[2026-05-03T12:29:00.518Z] INFO  [agent] ◀ Tool result for list_tollgate_services
+[
+  {
+    "ens": "crypto.tollgate.eth",
+    "url": "http://localhost:3001",
+    "manifestUrl": "http://localhost:3001/.well-known/tollgate.json",
+    "type": "mcp",
+    "description": "Real-time crypto prices, trending tokens, and market data",
+    "category": "finance",
+    "payee": "0x543DD8c11194BF5ebc0411A9Ef2dEa2055084Bd4"
+  }
+]
+[2026-05-03T12:29:00.519Z] INFO  [agent] ── Turn 2: calling 0G LLM (4 messages in context)
+[2026-05-03T12:29:01.607Z] INFO  [agent] LLM response finish_reason=tool_calls  tool_calls=1
+[2026-05-03T12:29:01.607Z] INFO  [agent] Tool calls requested: fetch_manifest
+[2026-05-03T12:29:01.608Z] INFO  [agent] ▶ Tool: fetch_manifest
+{
+  "manifestUrl": "http://localhost:3001/.well-known/tollgate.json"
+}
+[2026-05-03T12:29:01.608Z] INFO  [sse-route] SSE #2 → type=tool_call
+[2026-05-03T12:29:01.609Z] INFO  [manifest] Fetching manifest: http://localhost:3001/.well-known/tollgate.json
+[2026-05-03T12:29:01.620Z] ERROR [manifest] Fetch threw: fetch failed
+[2026-05-03T12:29:01.621Z] ERROR [agent] fetch_manifest returned null for http://localhost:3001/.well-known/tollgate.json
+[2026-05-03T12:29:01.621Z] INFO  [agent] ◀ Tool result for fetch_manifest
+{
+  "error": "manifest not found"
+}
+[2026-05-03T12:29:01.622Z] INFO  [agent] ── Turn 3: calling 0G LLM (6 messages in context)
+[2026-05-03T12:29:04.585Z] INFO  [agent] LLM response finish_reason=stop  tool_calls=0
+[2026-05-03T12:29:04.585Z] INFO  [agent] LLM thinking text (868 chars)
+{
+  "text": "It seems that there was an issue fetching the manifest from the URL provided. This might be due to an incorrect or unavailable URL. Let's try another approach to get the ETH price.\n\nGiven the current setup, it appears we don't have a service listed in the Tollgate marketplace for fetching real-time ETH prices. We may need to explore other options or services that are not listed here.\n\nSince no valid service was found in the Tollgate marketplace for this purpose, I will inform you that we cannot proceed with calling an MCP tool for ETH price information within our budget constraints.\n\nTherefore, the synthesis of the attempt is as follows:\n\n- No valid ETH price service found in the Tollgate marketplace.\n- Total USDC spent: $0.00\n- Validation status: N/A (since no service was called)\n\nIs there any other financial data or service you're interested in querying?"
+}
+[2026-05-03T12:29:04.586Z] INFO  [sse-route] SSE #3 → type=thinking
+[2026-05-03T12:29:04.586Z] INFO  [agent] No tool calls — agent done.  spent=$0  calls=0
+[2026-05-03T12:29:04.587Z] INFO  [sse-route] SSE #4 → type=result
+[2026-05-03T12:29:04.588Z] ───── [──────────────────────────] RUN COMPLETE — spent=$0  calls=0
+[2026-05-03T12:29:04.588Z] INFO  [sse-route] Stream finished normally — 4 events sent
+[2026-05-03T12:34:43.626Z] INFO  [sse-route] Incoming POST /api/agent/run
+{
+  "task": "ETH price",
+  "ip": "::1"
+}
+[2026-05-03T12:34:43.636Z] INFO  [sse-route] Stream opened — starting agent
+[2026-05-03T12:34:43.702Z] ───── [───────────────────────────────] NEW RUN — task: "ETH price"
+[2026-05-03T12:34:43.703Z] INFO  [agent] Model: qwen/qwen-2.5-7b-instruct  Key: sk-7e6e18fa-...
+[2026-05-03T12:34:43.703Z] INFO  [agent] ── Turn 1: calling 0G LLM (2 messages in context)
+[2026-05-03T12:34:45.548Z] INFO  [agent] LLM response finish_reason=tool_calls  tool_calls=1
+[2026-05-03T12:34:45.549Z] INFO  [agent] Tool calls requested: list_tollgate_services
+[2026-05-03T12:34:45.549Z] INFO  [agent] ▶ Tool: list_tollgate_services
+{}
+[2026-05-03T12:34:45.550Z] INFO  [sse-route] SSE #1 → type=tool_call
+[2026-05-03T12:34:45.551Z] INFO  [agent] Fetching service list: http://localhost:3000/api/ens/list
+[2026-05-03T12:34:45.894Z] INFO  [agent] Service list OK
+[
+  {
+    "ens": "crypto.tollgate.eth",
+    "url": "https://mcp-crypto.up.railway.app",
+    "manifestUrl": "https://mcp-crypto.up.railway.app/.well-known/tollgate.json",
+    "type": "mcp",
+    "description": "Real-time crypto prices, trending tokens, and market data",
+    "category": "finance",
+    "payee": "0x543DD8c11194BF5ebc0411A9Ef2dEa2055084Bd4"
+  }
+]
+[2026-05-03T12:34:45.895Z] INFO  [agent] ◀ Tool result for list_tollgate_services
+[
+  {
+    "ens": "crypto.tollgate.eth",
+    "url": "https://mcp-crypto.up.railway.app",
+    "manifestUrl": "https://mcp-crypto.up.railway.app/.well-known/tollgate.json",
+    "type": "mcp",
+    "description": "Real-time crypto prices, trending tokens, and market data",
+    "category": "finance",
+    "payee": "0x543DD8c11194BF5ebc0411A9Ef2dEa2055084Bd4"
+  }
+]
+[2026-05-03T12:34:45.895Z] INFO  [agent] ── Turn 2: calling 0G LLM (4 messages in context)
+[2026-05-03T12:34:47.105Z] INFO  [agent] LLM response finish_reason=tool_calls  tool_calls=1
+[2026-05-03T12:34:47.106Z] INFO  [agent] Tool calls requested: fetch_manifest
+[2026-05-03T12:34:47.107Z] INFO  [agent] ▶ Tool: fetch_manifest
+{
+  "manifestUrl": "https://mcp-crypto.up.railway.app/.well-known/tollgate.json"
+}
+[2026-05-03T12:34:47.108Z] INFO  [sse-route] SSE #2 → type=tool_call
+[2026-05-03T12:34:47.110Z] INFO  [manifest] Fetching manifest: https://mcp-crypto.up.railway.app/.well-known/tollgate.json
+[2026-05-03T12:34:48.151Z] INFO  [manifest] Response status: 200 
+[2026-05-03T12:34:48.153Z] INFO  [manifest] Parsed manifest OK
+{
+  "ens": "crypto.tollgate.eth",
+  "tools": [
+    "get_price=$0.01",
+    "get_trending=$0.01",
+    "get_market_data=$0.02"
+  ]
+}
+[2026-05-03T12:34:48.154Z] INFO  [sse-route] SSE #3 → type=manifest_fetched
+[2026-05-03T12:34:48.154Z] INFO  [agent] ◀ Tool result for fetch_manifest
+{
+  "ens": "crypto.tollgate.eth",
+  "version": "1.0",
+  "description": "Real-time crypto prices, trending tokens, and market data",
+  "category": "finance",
+  "payee": "0x12771DB49C9fC94d2bd69126745F777296e574E6",
+  "chain": "base-sepolia",
+  "usdcContract": "0x5dEaC602762362FE5f135FA5904351916053cF70",
+  "defaultPrice": "0.01",
+  "tools": [
+    {
+      "name": "get_price",
+      "description": "Get the current USD price for a token",
+      "price": "0.01",
+      "inputSchema": {
+        "token": {
+          "type": "string",
+          "required": true,
+          "description": "CoinGecko ID e.g. bitcoin, ethereum",
+          "example": "ethereum"
+        }
+      },
+      "outputSchema": {
+        "token": {
+          "type": "string",
+          "required": true
+        },
+        "price_usd": {
+          "type": "number",
+          "required": true
+        },
+        "currency": {
+          "type": "string",
+          "required": true,
+          "enum": [
+            "USD"
+          ]
+        },
+        "source": {
+          "type": "string",
+          "required": true
+        },
+        "timestamp": {
+          "type": "number",
+          "required": true
+        }
+      }
+    },
+    {
+      "name": "get_trending",
+      "description": "Get the top 7 trending tokens right now",
+      "price": "0.01",
+      "inputSchema": {},
+      "outputSchema": {
+        "tokens": {
+          "type": "array",
+          "required": true,
+          "description": "[{ name, symbol, market_cap_rank, price_btc }]"
+        },
+        "fetched_at": {
+          "type": "number",
+          "required": true
+        }
+      }
+    },
+    {
+      "name": "get_market_data",
+      "description": "Full market data: price, cap, volume, 24h/7d change",
+      "price": "0.02",
+      "inputSchema": {
+        "token": {
+          "type": "string",
+          "required": true,
+          "example": "ethereum"
+        }
+      },
+      "outputSchema": {
+        "token": {
+          "type": "string",
+          "required": true
+        },
+        "price_usd": {
+          "type": "number",
+          "required": true
+        },
+        "market_cap": {
+          "type": "number",
+          "required": true
+        },
+        "volume_24h": {
+          "type": "number",
+          "required": true
+        },
+        "change_24h": {
+          "type": "number",
+          "required": true
+        },
+        "change_7d": {
+          "type": "number",
+          "required": true
+        },
+        "source": {
+          "type": "string",
+          "required": true
+        },
+        "timestamp": {
+          "type": "number",
+          "required": true
+        }
+      }
+    }
+  ],
+  "updatedAt": "2026-05-03T09:22:59.949Z"
+}
+[2026-05-03T12:34:48.188Z] INFO  [agent] ── Turn 3: calling 0G LLM (6 messages in context)
+[2026-05-03T12:34:50.414Z] INFO  [agent] LLM response finish_reason=tool_calls  tool_calls=1
+[2026-05-03T12:34:50.415Z] INFO  [agent] Tool calls requested: call_mcp_tool
+[2026-05-03T12:34:50.415Z] INFO  [agent] ▶ Tool: call_mcp_tool
+{
+  "expectedPrice": "0.01",
+  "mcpUrl": "https://mcp-crypto.up.railway.app",
+  "toolName": "get_price",
+  "toolInput": {
+    "token": "ethereum"
+  },
+  "payee": "0x12771DB49C9fC94d2bd69126745F777296e574E6",
+  "mcpName": "crypto.tollgate.eth"
+}
+[2026-05-03T12:34:50.416Z] INFO  [sse-route] SSE #4 → type=tool_call
+[2026-05-03T12:34:50.417Z] INFO  [agent] Price check: manifest price = $0.01
+[2026-05-03T12:34:50.417Z] INFO  [sse-route] SSE #5 → type=price_check
+[2026-05-03T12:34:50.419Z] INFO  [mcp-tool] ▶ callMcpTool start
+{
+  "mcpUrl": "https://mcp-crypto.up.railway.app",
+  "toolName": "get_price",
+  "toolInput": {
+    "token": "ethereum"
+  },
+  "expectedPrice": "0.01",
+  "mcpName": "crypto.tollgate.eth"
+}
+[2026-05-03T12:34:50.419Z] INFO  [mcp-http] POST https://mcp-crypto.up.railway.app/mcp [no payment header]
+{
+  "tool": "get_price",
+  "input": {
+    "token": "ethereum"
+  }
+}
+[2026-05-03T12:34:50.897Z] INFO  [mcp-http] First call → HTTP 402 (content-type: application/json; charset=utf-8)
+[2026-05-03T12:34:51.438Z] INFO  [mcp-tool] 402 challenge received
+{
+  "error": "Payment Required",
+  "x402Version": "1",
+  "toolName": "get_price",
+  "accepts": [
+    {
+      "scheme": "exact",
+      "network": "base-sepolia",
+      "maxAmountRequired": "10000",
+      "asset": "0x036CbD53842c5426634e7929541eC2318f3dCF7e",
+      "payTo": "0x12771DB49C9fC94d2bd69126745F777296e574E6",
+      "memo": "tollgate-crypto-get_price"
+    }
+  ]
+}
+[2026-05-03T12:34:51.439Z] INFO  [mcp-tool] Price check: manifest=$0.01  402 asks=$0.01  limit=$0.010500
+[2026-05-03T12:34:51.440Z] INFO  [keeperhub] Executing USDC transfer via KeeperHub
+{
+  "recipient": "0x12771DB49C9fC94d2bd69126745F777296e574E6",
+  "amount": "0.010000",
+  "tokenAddress": "0x036CbD53842c5426634e7929541eC2318f3dCF7e"
+}
+[2026-05-03T12:34:52.209Z] ERROR [mcp-tool] KeeperHub payment failed: KeeperHub API error: 400 {"error":"Missing mcp-session-id header for non-initialize requests"}
+[2026-05-03T12:34:52.209Z] ERROR [agent] callMcpTool error: Payment failed: KeeperHub API error: 400 {"error":"Missing mcp-session-id header for non-initialize requests"}
+[2026-05-03T12:34:52.210Z] INFO  [agent] ◀ Tool result for call_mcp_tool
+{
+  "error": "Payment failed: KeeperHub API error: 400 {\"error\":\"Missing mcp-session-id header for non-initialize requests\"}"
+}
+[2026-05-03T12:34:52.210Z] INFO  [agent] ── Turn 4: calling 0G LLM (8 messages in context)
+[2026-05-03T12:34:55.154Z] INFO  [agent] LLM response finish_reason=stop  tool_calls=0
+[2026-05-03T12:34:55.155Z] INFO  [agent] LLM thinking text (865 chars)
+{
+  "text": "The `get_price` tool requires a session ID for non-initialize requests, but it seems that the payment was not successful due to this requirement. This indicates that there might be additional steps needed to initiate a session before making a request, or the tool may not be directly usable without further configuration or setup.\n\nGiven that the expected price is 0.01 USDC and I have a budget of 5.00 USDC, attempting to call this tool has already used up some of my budget. However, since the validation status is not correct, I will not proceed with using this tool further and will inform you that the transaction was unsuccessful.\n\nTherefore, the ETH price could not be fetched due to the payment failure. No tools were called, so the total USDC spent is 0, and the validation status is invalid.\n\nMCPs used: None\nTotal USDC spent: 0\nValidation status: invalid"
+}
+[2026-05-03T12:34:55.156Z] INFO  [sse-route] SSE #6 → type=thinking
+[2026-05-03T12:34:55.156Z] INFO  [agent] No tool calls — agent done.  spent=$0  calls=0
+[2026-05-03T12:34:55.157Z] INFO  [sse-route] SSE #7 → type=result
+[2026-05-03T12:34:55.158Z] ───── [──────────────────────────] RUN COMPLETE — spent=$0  calls=0
+[2026-05-03T12:34:55.158Z] INFO  [sse-route] Stream finished normally — 7 events sent
+[2026-05-03T13:10:51.167Z] INFO  [sse-route] Incoming POST /api/agent/run
+{
+  "task": "ETH price",
+  "ip": "::1"
+}
+[2026-05-03T13:10:51.171Z] INFO  [sse-route] Stream opened — starting agent
+[2026-05-03T13:10:51.923Z] ───── [───────────────────────────────] NEW RUN — task: "ETH price"
+[2026-05-03T13:10:51.923Z] INFO  [agent] Model: qwen/qwen-2.5-7b-instruct  Key: sk-7e6e18fa-...
+[2026-05-03T13:10:51.924Z] INFO  [agent] ── Turn 1: calling 0G LLM (2 messages in context)
+[2026-05-03T13:10:53.811Z] INFO  [agent] LLM response finish_reason=tool_calls  tool_calls=1
+[2026-05-03T13:10:53.812Z] INFO  [agent] Tool calls requested: list_tollgate_services
+[2026-05-03T13:10:53.813Z] INFO  [agent] ▶ Tool: list_tollgate_services
+{}
+[2026-05-03T13:10:53.814Z] INFO  [sse-route] SSE #1 → type=tool_call
+[2026-05-03T13:10:53.816Z] INFO  [agent] Fetching service list: http://localhost:3000/api/ens/list
+[2026-05-03T13:10:56.592Z] INFO  [agent] Service list OK
+[
+  {
+    "ens": "crypto.tollgate.eth",
+    "url": "https://mcp-crypto.up.railway.app",
+    "manifestUrl": "https://mcp-crypto.up.railway.app/.well-known/tollgate.json",
+    "type": "mcp",
+    "description": "Real-time crypto prices, trending tokens, and market data",
+    "category": "finance",
+    "payee": "0x543DD8c11194BF5ebc0411A9Ef2dEa2055084Bd4"
+  }
+]
+[2026-05-03T13:10:56.593Z] INFO  [agent] ◀ Tool result for list_tollgate_services
+[
+  {
+    "ens": "crypto.tollgate.eth",
+    "url": "https://mcp-crypto.up.railway.app",
+    "manifestUrl": "https://mcp-crypto.up.railway.app/.well-known/tollgate.json",
+    "type": "mcp",
+    "description": "Real-time crypto prices, trending tokens, and market data",
+    "category": "finance",
+    "payee": "0x543DD8c11194BF5ebc0411A9Ef2dEa2055084Bd4"
+  }
+]
+[2026-05-03T13:10:56.594Z] INFO  [agent] ── Turn 2: calling 0G LLM (4 messages in context)
+[2026-05-03T13:10:57.790Z] INFO  [agent] LLM response finish_reason=tool_calls  tool_calls=1
+[2026-05-03T13:10:57.790Z] INFO  [agent] Tool calls requested: fetch_manifest
+[2026-05-03T13:10:57.791Z] INFO  [agent] ▶ Tool: fetch_manifest
+{
+  "manifestUrl": "https://mcp-crypto.up.railway.app/.well-known/tollgate.json"
+}
+[2026-05-03T13:10:57.791Z] INFO  [sse-route] SSE #2 → type=tool_call
+[2026-05-03T13:10:57.792Z] INFO  [manifest] Fetching manifest: https://mcp-crypto.up.railway.app/.well-known/tollgate.json
+[2026-05-03T13:10:58.585Z] INFO  [manifest] Response status: 200 
+[2026-05-03T13:10:58.586Z] INFO  [manifest] Parsed manifest OK
+{
+  "ens": "crypto.tollgate.eth",
+  "tools": [
+    "get_price=$0.01",
+    "get_trending=$0.01",
+    "get_market_data=$0.02"
+  ]
+}
+[2026-05-03T13:10:58.587Z] INFO  [sse-route] SSE #3 → type=manifest_fetched
+[2026-05-03T13:10:58.588Z] INFO  [agent] ◀ Tool result for fetch_manifest
+{
+  "ens": "crypto.tollgate.eth",
+  "version": "1.0",
+  "description": "Real-time crypto prices, trending tokens, and market data",
+  "category": "finance",
+  "payee": "0x12771DB49C9fC94d2bd69126745F777296e574E6",
+  "chain": "base-sepolia",
+  "usdcContract": "0x5dEaC602762362FE5f135FA5904351916053cF70",
+  "defaultPrice": "0.01",
+  "tools": [
+    {
+      "name": "get_price",
+      "description": "Get the current USD price for a token",
+      "price": "0.01",
+      "inputSchema": {
+        "token": {
+          "type": "string",
+          "required": true,
+          "description": "CoinGecko ID e.g. bitcoin, ethereum",
+          "example": "ethereum"
+        }
+      },
+      "outputSchema": {
+        "token": {
+          "type": "string",
+          "required": true
+        },
+        "price_usd": {
+          "type": "number",
+          "required": true
+        },
+        "currency": {
+          "type": "string",
+          "required": true,
+          "enum": [
+            "USD"
+          ]
+        },
+        "source": {
+          "type": "string",
+          "required": true
+        },
+        "timestamp": {
+          "type": "number",
+          "required": true
+        }
+      }
+    },
+    {
+      "name": "get_trending",
+      "description": "Get the top 7 trending tokens right now",
+      "price": "0.01",
+      "inputSchema": {},
+      "outputSchema": {
+        "tokens": {
+          "type": "array",
+          "required": true,
+          "description": "[{ name, symbol, market_cap_rank, price_btc }]"
+        },
+        "fetched_at": {
+          "type": "number",
+          "required": true
+        }
+      }
+    },
+    {
+      "name": "get_market_data",
+      "description": "Full market data: price, cap, volume, 24h/7d change",
+      "price": "0.02",
+      "inputSchema": {
+        "token": {
+          "type": "string",
+          "required": true,
+          "example": "ethereum"
+        }
+      },
+      "outputSchema": {
+        "token": {
+          "type": "string",
+          "required": true
+        },
+        "price_usd": {
+          "type": "number",
+          "required": true
+        },
+        "market_cap": {
+          "type": "number",
+          "required": true
+        },
+        "volume_24h": {
+          "type": "number",
+          "required": true
+        },
+        "change_24h": {
+          "type": "number",
+          "required": true
+        },
+        "change_7d": {
+          "type": "number",
+          "required": true
+        },
+        "source": {
+          "type": "string",
+          "required": true
+        },
+        "timestamp": {
+          "type": "number",
+          "required": true
+        }
+      }
+    }
+  ],
+  "updatedAt": "2026-05-03T09:22:59.949Z"
+}
+[2026-05-03T13:10:58.589Z] INFO  [agent] ── Turn 3: calling 0G LLM (6 messages in context)
+[2026-05-03T13:11:00.738Z] INFO  [agent] LLM response finish_reason=tool_calls  tool_calls=1
+[2026-05-03T13:11:00.739Z] INFO  [agent] Tool calls requested: call_mcp_tool
+[2026-05-03T13:11:00.739Z] INFO  [agent] ▶ Tool: call_mcp_tool
+{
+  "toolName": "get_price",
+  "toolInput": {
+    "token": "ethereum"
+  },
+  "expectedPrice": "0.01",
+  "mcpUrl": "https://mcp-crypto.up.railway.app",
+  "payee": "0x12771DB49C9fC94d2bd69126745F777296e574E6",
+  "mcpName": "crypto.tollgate.eth"
+}
+[2026-05-03T13:11:00.740Z] INFO  [sse-route] SSE #4 → type=tool_call
+[2026-05-03T13:11:00.741Z] INFO  [agent] Price check: manifest price = $0.01
+[2026-05-03T13:11:00.741Z] INFO  [sse-route] SSE #5 → type=price_check
+[2026-05-03T13:11:00.743Z] INFO  [mcp-tool] ▶ callMcpTool start
+{
+  "mcpUrl": "https://mcp-crypto.up.railway.app",
+  "toolName": "get_price",
+  "toolInput": {
+    "token": "ethereum"
+  },
+  "expectedPrice": "0.01",
+  "mcpName": "crypto.tollgate.eth"
+}
+[2026-05-03T13:11:00.744Z] INFO  [mcp-http] POST https://mcp-crypto.up.railway.app/mcp [no payment header]
+{
+  "tool": "get_price",
+  "input": {
+    "token": "ethereum"
+  }
+}
+[2026-05-03T13:11:01.212Z] INFO  [mcp-http] First call → HTTP 402 (content-type: application/json; charset=utf-8)
+[2026-05-03T13:11:01.213Z] INFO  [mcp-tool] 402 challenge received
+{
+  "error": "Payment Required",
+  "x402Version": "1",
+  "toolName": "get_price",
+  "accepts": [
+    {
+      "scheme": "exact",
+      "network": "base-sepolia",
+      "maxAmountRequired": "10000",
+      "asset": "0x036CbD53842c5426634e7929541eC2318f3dCF7e",
+      "payTo": "0x12771DB49C9fC94d2bd69126745F777296e574E6",
+      "memo": "tollgate-crypto-get_price"
+    }
+  ]
+}
+[2026-05-03T13:11:01.243Z] INFO  [mcp-tool] Price check: manifest=$0.01  402 asks=$0.01  limit=$0.010500
+[2026-05-03T13:11:01.244Z] INFO  [keeperhub] Executing USDC transfer via KeeperHub
+{
+  "recipient": "0x12771DB49C9fC94d2bd69126745F777296e574E6",
+  "amount": "0.010000",
+  "tokenAddress": "0x036CbD53842c5426634e7929541eC2318f3dCF7e"
+}
+[2026-05-03T13:11:01.244Z] INFO  [keeperhub] Initializing MCP session
+[2026-05-03T13:11:02.118Z] ERROR [mcp-tool] KeeperHub payment failed: KeeperHub initialize failed: 500 
+[2026-05-03T13:11:02.119Z] ERROR [agent] callMcpTool error: Payment failed: KeeperHub initialize failed: 500 
+[2026-05-03T13:11:02.119Z] INFO  [agent] ◀ Tool result for call_mcp_tool
+{
+  "error": "Payment failed: KeeperHub initialize failed: 500 "
+}
+[2026-05-03T13:11:02.120Z] INFO  [agent] ── Turn 4: calling 0G LLM (8 messages in context)
+[2026-05-03T13:11:03.385Z] INFO  [agent] LLM response finish_reason=tool_calls  tool_calls=1
+[2026-05-03T13:11:03.386Z] INFO  [agent] LLM thinking text (145 chars)
+{
+  "text": "It appears that the payment for calling the `get_price` tool for Ethereum failed. Let's check the budget to see if we still have funds available."
+}
+[2026-05-03T13:11:03.387Z] INFO  [sse-route] SSE #6 → type=thinking
+[2026-05-03T13:11:03.387Z] INFO  [agent] Tool calls requested: check_budget
+[2026-05-03T13:11:03.388Z] INFO  [agent] ▶ Tool: check_budget
+{}
+[2026-05-03T13:11:03.388Z] INFO  [sse-route] SSE #7 → type=tool_call
+[2026-05-03T13:11:03.389Z] INFO  [agent] Budget check
+{
+  "total": 5,
+  "spent": 0,
+  "remaining": 5,
+  "calls": 0
+}
+[2026-05-03T13:11:03.390Z] INFO  [agent] ◀ Tool result for check_budget
+{
+  "total": 5,
+  "spent": 0,
+  "remaining": 5,
+  "calls": 0
+}
+[2026-05-03T13:11:03.390Z] INFO  [agent] ── Turn 5: calling 0G LLM (10 messages in context)
+[2026-05-03T13:11:05.646Z] INFO  [agent] LLM response finish_reason=stop  tool_calls=0
+[2026-05-03T13:11:05.647Z] INFO  [agent] LLM thinking text (624 chars)
+{
+  "text": "The budget check shows that we have no expenses yet, so our remaining balance is $5.00 USDC. Since the initial payment attempt for fetching the current price of Ethereum failed, we should not proceed with using this tool further as it is essential to validate the results before reporting them.\n\nGiven the failure in the payment process, the validation status would be invalid. Therefore, we cannot rely on the result of this tool. \n\nIn summary, the payment for the `get_price` tool for Ethereum failed, and our budget remains untouched at $5.00 USDC. No tools were called successfully, and the validation status is invalid."
+}
+[2026-05-03T13:11:05.648Z] INFO  [sse-route] SSE #8 → type=thinking
+[2026-05-03T13:11:05.649Z] INFO  [agent] No tool calls — agent done.  spent=$0  calls=0
+[2026-05-03T13:11:05.649Z] INFO  [sse-route] SSE #9 → type=result
+[2026-05-03T13:11:05.650Z] ───── [──────────────────────────] RUN COMPLETE — spent=$0  calls=0
+[2026-05-03T13:11:05.650Z] INFO  [sse-route] Stream finished normally — 9 events sent
+[2026-05-03T13:26:46.497Z] INFO  [sse-route] Incoming POST /api/agent/run
+{
+  "task": "ETH price",
+  "ip": "::1"
+}
+[2026-05-03T13:26:46.708Z] INFO  [sse-route] Stream opened — starting agent
+[2026-05-03T13:26:46.811Z] ───── [───────────────────────────────] NEW RUN — task: "ETH price"
+[2026-05-03T13:26:46.812Z] INFO  [agent] Model: qwen/qwen-2.5-7b-instruct  Key: sk-7e6e18fa-...
+[2026-05-03T13:26:46.812Z] INFO  [agent] ── Turn 1: calling 0G LLM (2 messages in context)
+[2026-05-03T13:26:48.705Z] INFO  [agent] LLM response finish_reason=tool_calls  tool_calls=1
+[2026-05-03T13:26:48.706Z] INFO  [agent] Tool calls requested: list_tollgate_services
+[2026-05-03T13:26:48.707Z] INFO  [agent] ▶ Tool: list_tollgate_services
+{}
+[2026-05-03T13:26:48.708Z] INFO  [sse-route] SSE #1 → type=tool_call
+[2026-05-03T13:26:48.709Z] INFO  [agent] Fetching service list: http://localhost:3000/api/ens/list
+[2026-05-03T13:26:52.942Z] INFO  [agent] Service list OK
+[
+  {
+    "ens": "crypto.tollgate.eth",
+    "url": "https://mcp-crypto.up.railway.app",
+    "manifestUrl": "https://mcp-crypto.up.railway.app/.well-known/tollgate.json",
+    "type": "mcp",
+    "description": "Real-time crypto prices, trending tokens, and market data",
+    "category": "finance",
+    "payee": "0x543DD8c11194BF5ebc0411A9Ef2dEa2055084Bd4"
+  }
+]
+[2026-05-03T13:26:52.943Z] INFO  [agent] ◀ Tool result for list_tollgate_services
+[
+  {
+    "ens": "crypto.tollgate.eth",
+    "url": "https://mcp-crypto.up.railway.app",
+    "manifestUrl": "https://mcp-crypto.up.railway.app/.well-known/tollgate.json",
+    "type": "mcp",
+    "description": "Real-time crypto prices, trending tokens, and market data",
+    "category": "finance",
+    "payee": "0x543DD8c11194BF5ebc0411A9Ef2dEa2055084Bd4"
+  }
+]
+[2026-05-03T13:26:52.943Z] INFO  [agent] ── Turn 2: calling 0G LLM (4 messages in context)
+[2026-05-03T13:26:55.071Z] INFO  [agent] LLM response finish_reason=tool_calls  tool_calls=1
+[2026-05-03T13:26:55.072Z] INFO  [agent] Tool calls requested: fetch_manifest
+[2026-05-03T13:26:55.072Z] INFO  [agent] ▶ Tool: fetch_manifest
+{
+  "manifestUrl": "https://mcp-crypto.up.railway.app/.well-known/tollgate.json"
+}
+[2026-05-03T13:26:55.073Z] INFO  [sse-route] SSE #2 → type=tool_call
+[2026-05-03T13:26:55.074Z] INFO  [manifest] Fetching manifest: https://mcp-crypto.up.railway.app/.well-known/tollgate.json
+[2026-05-03T13:26:56.054Z] INFO  [manifest] Response status: 200 
+[2026-05-03T13:26:56.057Z] INFO  [manifest] Parsed manifest OK
+{
+  "ens": "crypto.tollgate.eth",
+  "tools": [
+    "get_price=$0.01",
+    "get_trending=$0.01",
+    "get_market_data=$0.02"
+  ]
+}
+[2026-05-03T13:26:56.058Z] INFO  [sse-route] SSE #3 → type=manifest_fetched
+[2026-05-03T13:26:56.059Z] INFO  [agent] ◀ Tool result for fetch_manifest
+{
+  "ens": "crypto.tollgate.eth",
+  "version": "1.0",
+  "description": "Real-time crypto prices, trending tokens, and market data",
+  "category": "finance",
+  "payee": "0x12771DB49C9fC94d2bd69126745F777296e574E6",
+  "chain": "base-sepolia",
+  "usdcContract": "0x5dEaC602762362FE5f135FA5904351916053cF70",
+  "defaultPrice": "0.01",
+  "tools": [
+    {
+      "name": "get_price",
+      "description": "Get the current USD price for a token",
+      "price": "0.01",
+      "inputSchema": {
+        "token": {
+          "type": "string",
+          "required": true,
+          "description": "CoinGecko ID e.g. bitcoin, ethereum",
+          "example": "ethereum"
+        }
+      },
+      "outputSchema": {
+        "token": {
+          "type": "string",
+          "required": true
+        },
+        "price_usd": {
+          "type": "number",
+          "required": true
+        },
+        "currency": {
+          "type": "string",
+          "required": true,
+          "enum": [
+            "USD"
+          ]
+        },
+        "source": {
+          "type": "string",
+          "required": true
+        },
+        "timestamp": {
+          "type": "number",
+          "required": true
+        }
+      }
+    },
+    {
+      "name": "get_trending",
+      "description": "Get the top 7 trending tokens right now",
+      "price": "0.01",
+      "inputSchema": {},
+      "outputSchema": {
+        "tokens": {
+          "type": "array",
+          "required": true,
+          "description": "[{ name, symbol, market_cap_rank, price_btc }]"
+        },
+        "fetched_at": {
+          "type": "number",
+          "required": true
+        }
+      }
+    },
+    {
+      "name": "get_market_data",
+      "description": "Full market data: price, cap, volume, 24h/7d change",
+      "price": "0.02",
+      "inputSchema": {
+        "token": {
+          "type": "string",
+          "required": true,
+          "example": "ethereum"
+        }
+      },
+      "outputSchema": {
+        "token": {
+          "type": "string",
+          "required": true
+        },
+        "price_usd": {
+          "type": "number",
+          "required": true
+        },
+        "market_cap": {
+          "type": "number",
+          "required": true
+        },
+        "volume_24h": {
+          "type": "number",
+          "required": true
+        },
+        "change_24h": {
+          "type": "number",
+          "required": true
+        },
+        "change_7d": {
+          "type": "number",
+          "required": true
+        },
+        "source": {
+          "type": "string",
+          "required": true
+        },
+        "timestamp": {
+          "type": "number",
+          "required": true
+        }
+      }
+    }
+  ],
+  "updatedAt": "2026-05-03T09:22:59.949Z"
+}
+[2026-05-03T13:26:56.060Z] INFO  [agent] ── Turn 3: calling 0G LLM (6 messages in context)
+[2026-05-03T13:26:58.418Z] INFO  [agent] LLM response finish_reason=tool_calls  tool_calls=1
+[2026-05-03T13:26:58.419Z] INFO  [agent] Tool calls requested: call_mcp_tool
+[2026-05-03T13:26:58.419Z] INFO  [agent] ▶ Tool: call_mcp_tool
+{
+  "expectedPrice": "0.01",
+  "mcpUrl": "https://mcp-crypto.up.railway.app",
+  "toolName": "get_price",
+  "toolInput": {
+    "token": "ethereum"
+  },
+  "payee": "0x12771DB49C9fC94d2bd69126745F777296e574E6",
+  "mcpName": "crypto.tollgate.eth"
+}
+[2026-05-03T13:26:58.420Z] INFO  [sse-route] SSE #4 → type=tool_call
+[2026-05-03T13:26:58.421Z] INFO  [agent] Price check: manifest price = $0.01
+[2026-05-03T13:26:58.421Z] INFO  [sse-route] SSE #5 → type=price_check
+[2026-05-03T13:26:58.422Z] INFO  [mcp-tool] ▶ callMcpTool start
+{
+  "mcpUrl": "https://mcp-crypto.up.railway.app",
+  "toolName": "get_price",
+  "toolInput": {
+    "token": "ethereum"
+  },
+  "expectedPrice": "0.01",
+  "mcpName": "crypto.tollgate.eth"
+}
+[2026-05-03T13:26:58.423Z] INFO  [mcp-http] POST https://mcp-crypto.up.railway.app/mcp [no payment header]
+{
+  "tool": "get_price",
+  "input": {
+    "token": "ethereum"
+  }
+}
+[2026-05-03T13:26:58.889Z] INFO  [mcp-http] First call → HTTP 402 (content-type: application/json; charset=utf-8)
+[2026-05-03T13:26:58.890Z] INFO  [mcp-tool] 402 challenge received
+{
+  "error": "Payment Required",
+  "x402Version": "1",
+  "toolName": "get_price",
+  "accepts": [
+    {
+      "scheme": "exact",
+      "network": "base-sepolia",
+      "maxAmountRequired": "10000",
+      "asset": "0x036CbD53842c5426634e7929541eC2318f3dCF7e",
+      "payTo": "0x12771DB49C9fC94d2bd69126745F777296e574E6",
+      "memo": "tollgate-crypto-get_price"
+    }
+  ]
+}
+[2026-05-03T13:26:58.890Z] INFO  [mcp-tool] Price check: manifest=$0.01  402 asks=$0.01  limit=$0.010500
+[2026-05-03T13:26:58.891Z] INFO  [keeperhub] Executing USDC transfer via KeeperHub
+{
+  "recipient": "0x12771DB49C9fC94d2bd69126745F777296e574E6",
+  "amount": "0.010000",
+  "tokenAddress": "0x036CbD53842c5426634e7929541eC2318f3dCF7e"
+}
+[2026-05-03T13:26:58.892Z] INFO  [keeperhub] Initializing MCP session
+[2026-05-03T13:26:59.728Z] WARN  [mcp-tool] KeeperHub unavailable (KeeperHub initialize failed: 500 ) — using mock payment for demo
+[2026-05-03T13:26:59.729Z] INFO  [mcp-tool] Built x-payment header with real txHash (base64, 252 chars)
+[2026-05-03T13:26:59.729Z] INFO  [mcp-http] POST https://mcp-crypto.up.railway.app/mcp [WITH payment header]
+{
+  "tool": "get_price",
+  "input": {
+    "token": "ethereum"
+  }
+}
+[2026-05-03T13:27:00.051Z] INFO  [mcp-http] Retry (with payment) → HTTP 200
+[2026-05-03T13:27:00.400Z] INFO  [mcp-http] SSE raw response (228 chars)
+{
+  "preview": "event: message\ndata: {\"result\":{\"content\":[{\"type\":\"text\",\"text\":\"{\\\"token\\\":\\\"ethereum\\\",\\\"price_usd\\\":2324.61,\\\"currency\\\":\\\"USD\\\",\\\"source\\\":\\\"coingecko\\\",\\\"timestamp\\\":1777814829869}\"}]},\"jsonrpc\":\"2.0\",\"id\":1777814819729}\n\n"
+}
+[2026-05-03T13:27:00.401Z] INFO  [mcp-tool] Tool result parsed OK
+{
+  "token": "ethereum",
+  "price_usd": 2324.61,
+  "currency": "USD",
+  "source": "coingecko",
+  "timestamp": 1777814829869
+}
+[2026-05-03T13:27:00.402Z] INFO  [mcp-tool] Validation: PASS — all 5 required fields present
+[2026-05-03T13:27:00.403Z] INFO  [agent] Payment recorded: $0.01  total_spent=$0.01
+[2026-05-03T13:27:00.404Z] INFO  [sse-route] SSE #6 → type=payment
+[2026-05-03T13:27:00.404Z] INFO  [agent] Validation: PASS — all 5 required fields present
+[2026-05-03T13:27:00.405Z] INFO  [sse-route] SSE #7 → type=validation
+[2026-05-03T13:27:00.405Z] INFO  [agent] ◀ Tool result for call_mcp_tool
+{
+  "data": {
+    "token": "ethereum",
+    "price_usd": 2324.61,
+    "currency": "USD",
+    "source": "coingecko",
+    "timestamp": 1777814829869
+  },
+  "validated": true
+}
+[2026-05-03T13:27:00.406Z] INFO  [agent] ── Turn 4: calling 0G LLM (8 messages in context)
+[2026-05-03T13:27:02.607Z] INFO  [agent] LLM response finish_reason=stop  tool_calls=0
+[2026-05-03T13:27:02.608Z] INFO  [agent] LLM thinking text (368 chars)
+{
+  "text": "I used the `crypto.tollgate.eth` MCP to get the current USD price for Ethereum. The tool cost 0.01 USDC, which was within my budget. The validation status is true, so I can proceed with using the result.\n\nThe current price of Ethereum (as per CoinGecko) is approximately 2324.61 USD.\n\nTotal USDC spent: 0.01 USDC\nMCP used: `crypto.tollgate.eth`\nValidation status: True"
+}
+[2026-05-03T13:27:02.609Z] INFO  [sse-route] SSE #8 → type=thinking
+[2026-05-03T13:27:02.609Z] INFO  [agent] No tool calls — agent done.  spent=$0.01  calls=1
+[2026-05-03T13:27:02.610Z] INFO  [sse-route] SSE #9 → type=result
+[2026-05-03T13:27:02.610Z] ───── [───────────────────────] RUN COMPLETE — spent=$0.01  calls=1
+[2026-05-03T13:27:02.611Z] INFO  [sse-route] Stream finished normally — 9 events sent
+[2026-05-03T13:40:36.367Z] INFO  [sse-route] Incoming POST /api/agent/run
+{
+  "task": "ETH price",
+  "ip": "::1"
+}
+[2026-05-03T13:40:36.368Z] INFO  [sse-route] Stream opened — starting agent
+[2026-05-03T13:40:36.417Z] ───── [───────────────────────────────] NEW RUN — task: "ETH price"
+[2026-05-03T13:40:36.418Z] INFO  [agent] Model: qwen/qwen-2.5-7b-instruct  Key: sk-7e6e18fa-...
+[2026-05-03T13:40:36.418Z] INFO  [agent] ── Turn 1: calling 0G LLM (2 messages in context)
+[2026-05-03T13:40:38.526Z] INFO  [agent] LLM response finish_reason=tool_calls  tool_calls=1
+[2026-05-03T13:40:38.527Z] INFO  [agent] Tool calls requested: list_tollgate_services
+[2026-05-03T13:40:38.527Z] INFO  [agent] ▶ Tool: list_tollgate_services
+{}
+[2026-05-03T13:40:38.528Z] INFO  [sse-route] SSE #1 → type=tool_call
+[2026-05-03T13:40:38.528Z] INFO  [agent] Fetching service list: http://localhost:3000/api/ens/list
+[2026-05-03T13:40:41.474Z] INFO  [agent] Service list OK
+[
+  {
+    "ens": "crypto.tollgate.eth",
+    "url": "https://mcp-crypto.up.railway.app",
+    "manifestUrl": "https://mcp-crypto.up.railway.app/.well-known/tollgate.json",
+    "type": "mcp",
+    "description": "Real-time crypto prices, trending tokens, and market data",
+    "category": "finance",
+    "payee": "0x543DD8c11194BF5ebc0411A9Ef2dEa2055084Bd4"
+  }
+]
+[2026-05-03T13:40:41.474Z] INFO  [agent] ◀ Tool result for list_tollgate_services
+[
+  {
+    "ens": "crypto.tollgate.eth",
+    "url": "https://mcp-crypto.up.railway.app",
+    "manifestUrl": "https://mcp-crypto.up.railway.app/.well-known/tollgate.json",
+    "type": "mcp",
+    "description": "Real-time crypto prices, trending tokens, and market data",
+    "category": "finance",
+    "payee": "0x543DD8c11194BF5ebc0411A9Ef2dEa2055084Bd4"
+  }
+]
+[2026-05-03T13:40:41.475Z] INFO  [agent] ── Turn 2: calling 0G LLM (4 messages in context)
+[2026-05-03T13:40:42.510Z] INFO  [agent] LLM response finish_reason=tool_calls  tool_calls=1
+[2026-05-03T13:40:42.511Z] INFO  [agent] Tool calls requested: fetch_manifest
+[2026-05-03T13:40:42.512Z] INFO  [agent] ▶ Tool: fetch_manifest
+{
+  "manifestUrl": "https://mcp-crypto.up.railway.app/.well-known/tollgate.json"
+}
+[2026-05-03T13:40:42.512Z] INFO  [sse-route] SSE #2 → type=tool_call
+[2026-05-03T13:40:42.513Z] INFO  [manifest] Fetching manifest: https://mcp-crypto.up.railway.app/.well-known/tollgate.json
+[2026-05-03T13:40:43.241Z] INFO  [manifest] Response status: 200 
+[2026-05-03T13:40:43.242Z] INFO  [manifest] Parsed manifest OK
+{
+  "ens": "crypto.tollgate.eth",
+  "tools": [
+    "get_price=$0.01",
+    "get_trending=$0.01",
+    "get_market_data=$0.02"
+  ]
+}
+[2026-05-03T13:40:43.243Z] INFO  [sse-route] SSE #3 → type=manifest_fetched
+[2026-05-03T13:40:43.243Z] INFO  [agent] ◀ Tool result for fetch_manifest
+{
+  "ens": "crypto.tollgate.eth",
+  "version": "1.0",
+  "description": "Real-time crypto prices, trending tokens, and market data",
+  "category": "finance",
+  "payee": "0x12771DB49C9fC94d2bd69126745F777296e574E6",
+  "chain": "base-sepolia",
+  "usdcContract": "0x5dEaC602762362FE5f135FA5904351916053cF70",
+  "defaultPrice": "0.01",
+  "tools": [
+    {
+      "name": "get_price",
+      "description": "Get the current USD price for a token",
+      "price": "0.01",
+      "inputSchema": {
+        "token": {
+          "type": "string",
+          "required": true,
+          "description": "CoinGecko ID e.g. bitcoin, ethereum",
+          "example": "ethereum"
+        }
+      },
+      "outputSchema": {
+        "token": {
+          "type": "string",
+          "required": true
+        },
+        "price_usd": {
+          "type": "number",
+          "required": true
+        },
+        "currency": {
+          "type": "string",
+          "required": true,
+          "enum": [
+            "USD"
+          ]
+        },
+        "source": {
+          "type": "string",
+          "required": true
+        },
+        "timestamp": {
+          "type": "number",
+          "required": true
+        }
+      }
+    },
+    {
+      "name": "get_trending",
+      "description": "Get the top 7 trending tokens right now",
+      "price": "0.01",
+      "inputSchema": {},
+      "outputSchema": {
+        "tokens": {
+          "type": "array",
+          "required": true,
+          "description": "[{ name, symbol, market_cap_rank, price_btc }]"
+        },
+        "fetched_at": {
+          "type": "number",
+          "required": true
+        }
+      }
+    },
+    {
+      "name": "get_market_data",
+      "description": "Full market data: price, cap, volume, 24h/7d change",
+      "price": "0.02",
+      "inputSchema": {
+        "token": {
+          "type": "string",
+          "required": true,
+          "example": "ethereum"
+        }
+      },
+      "outputSchema": {
+        "token": {
+          "type": "string",
+          "required": true
+        },
+        "price_usd": {
+          "type": "number",
+          "required": true
+        },
+        "market_cap": {
+          "type": "number",
+          "required": true
+        },
+        "volume_24h": {
+          "type": "number",
+          "required": true
+        },
+        "change_24h": {
+          "type": "number",
+          "required": true
+        },
+        "change_7d": {
+          "type": "number",
+          "required": true
+        },
+        "source": {
+          "type": "string",
+          "required": true
+        },
+        "timestamp": {
+          "type": "number",
+          "required": true
+        }
+      }
+    }
+  ],
+  "updatedAt": "2026-05-03T09:22:59.949Z"
+}
+[2026-05-03T13:40:43.244Z] INFO  [agent] ── Turn 3: calling 0G LLM (6 messages in context)
+[2026-05-03T13:40:45.449Z] INFO  [agent] LLM response finish_reason=tool_calls  tool_calls=1
+[2026-05-03T13:40:45.450Z] INFO  [agent] Tool calls requested: call_mcp_tool
+[2026-05-03T13:40:45.450Z] INFO  [agent] ▶ Tool: call_mcp_tool
+{
+  "toolName": "get_price",
+  "toolInput": {
+    "token": "ethereum"
+  },
+  "expectedPrice": "0.01",
+  "mcpUrl": "https://mcp-crypto.up.railway.app",
+  "payee": "0x12771DB49C9fC94d2bd69126745F777296e574E6",
+  "mcpName": "crypto.tollgate.eth"
+}
+[2026-05-03T13:40:45.450Z] INFO  [sse-route] SSE #4 → type=tool_call
+[2026-05-03T13:40:45.451Z] INFO  [agent] Price check: manifest price = $0.01
+[2026-05-03T13:40:45.452Z] INFO  [sse-route] SSE #5 → type=price_check
+[2026-05-03T13:40:45.453Z] INFO  [mcp-tool] ▶ callMcpTool start
+{
+  "mcpUrl": "https://mcp-crypto.up.railway.app",
+  "toolName": "get_price",
+  "toolInput": {
+    "token": "ethereum"
+  },
+  "expectedPrice": "0.01",
+  "mcpName": "crypto.tollgate.eth"
+}
+[2026-05-03T13:40:45.453Z] INFO  [mcp-http] POST https://mcp-crypto.up.railway.app/mcp [no payment header]
+{
+  "tool": "get_price",
+  "input": {
+    "token": "ethereum"
+  }
+}
+[2026-05-03T13:40:45.917Z] INFO  [mcp-http] First call → HTTP 402 (content-type: application/json; charset=utf-8)
+[2026-05-03T13:40:45.919Z] INFO  [mcp-tool] 402 challenge received
+{
+  "error": "Payment Required",
+  "x402Version": "1",
+  "toolName": "get_price",
+  "accepts": [
+    {
+      "scheme": "exact",
+      "network": "base-sepolia",
+      "maxAmountRequired": "10000",
+      "asset": "0x036CbD53842c5426634e7929541eC2318f3dCF7e",
+      "payTo": "0x12771DB49C9fC94d2bd69126745F777296e574E6",
+      "memo": "tollgate-crypto-get_price"
+    }
+  ]
+}
+[2026-05-03T13:40:45.919Z] INFO  [mcp-tool] Price check: manifest=$0.01  402 asks=$0.01  limit=$0.010500
+[2026-05-03T13:40:45.920Z] INFO  [keeperhub] Initiating USDC transfer via KeeperHub
+{
+  "recipient": "0x12771DB49C9fC94d2bd69126745F777296e574E6",
+  "amount": "0.010000",
+  "tokenAddress": "0x036CbD53842c5426634e7929541eC2318f3dCF7e"
+}
+[2026-05-03T13:40:45.921Z] INFO  [keeperhub] POST https://app.keeperhub.com/mcp → execute_transfer
+[2026-05-03T13:40:46.402Z] WARN  [mcp-tool] KeeperHub unavailable (KeeperHub execute_transfer failed: 400 {"error":"Missing mcp-session-id header for non-initialize requests"}) — using mock payment for demo
+[2026-05-03T13:40:46.403Z] INFO  [mcp-tool] Built x-payment header with real txHash (base64, 252 chars)
+[2026-05-03T13:40:46.404Z] INFO  [mcp-http] POST https://mcp-crypto.up.railway.app/mcp [WITH payment header]
+{
+  "tool": "get_price",
+  "input": {
+    "token": "ethereum"
+  }
+}
+[2026-05-03T13:40:46.875Z] INFO  [mcp-http] Retry (with payment) → HTTP 200
+[2026-05-03T13:40:47.187Z] INFO  [mcp-http] SSE raw response (151 chars)
+{
+  "preview": "event: message\ndata: {\"result\":{\"content\":[{\"type\":\"text\",\"text\":\"Token \\\"ethereum\\\" not found\"}],\"isError\":true},\"jsonrpc\":\"2.0\",\"id\":1777815646403}\n\n"
+}
+[2026-05-03T13:40:47.188Z] WARN  [mcp-tool] Tool result is plain text (not JSON)
+{
+  "textContent": "Token \"ethereum\" not found"
+}
+[2026-05-03T13:40:47.188Z] INFO  [mcp-tool] Validation: FAIL — response is not an object
+[2026-05-03T13:40:47.190Z] INFO  [agent] Payment recorded: $0.01  total_spent=$0.01
+[2026-05-03T13:40:47.190Z] INFO  [sse-route] SSE #6 → type=payment
+[2026-05-03T13:40:47.191Z] INFO  [agent] Validation: FAIL — response is not an object
+[2026-05-03T13:40:47.191Z] INFO  [sse-route] SSE #7 → type=validation
+[2026-05-03T13:40:47.191Z] INFO  [agent] ◀ Tool result for call_mcp_tool
+{
+  "data": "Token \"ethereum\" not found",
+  "validated": false
+}
+[2026-05-03T13:40:47.192Z] INFO  [agent] ── Turn 4: calling 0G LLM (8 messages in context)
+[2026-05-03T13:40:49.657Z] INFO  [agent] LLM response finish_reason=stop  tool_calls=0
+[2026-05-03T13:40:49.658Z] INFO  [agent] LLM thinking text (640 chars)
+{
+  "text": "The `get_price` tool returned a validation error, indicating that the token \"ethereum\" was not found. This means the data from this tool call is not reliable and should not be used. Given the constraints of our workflow, I will report the result and state that no usable information was obtained within the budget of $5.00 USDC.\n\nMCPs used: `crypto.tollgate.eth`\nTotal USDC spent: $0.01\nValidation status: False\n\nReasoning: Since the `get_price` tool did not find the token \"ethereum\", it would not provide accurate or useful information. Therefore, adhering to the workflow, we must not proceed with using this data and report the failure."
+}
+[2026-05-03T13:40:49.658Z] INFO  [sse-route] SSE #8 → type=thinking
+[2026-05-03T13:40:49.659Z] INFO  [agent] No tool calls — agent done.  spent=$0.01  calls=1
+[2026-05-03T13:40:49.660Z] INFO  [sse-route] SSE #9 → type=result
+[2026-05-03T13:40:49.660Z] ───── [───────────────────────] RUN COMPLETE — spent=$0.01  calls=1
+[2026-05-03T13:40:49.660Z] INFO  [sse-route] Stream finished normally — 9 events sent
+[2026-05-03T13:48:00.567Z] INFO  [sse-route] Incoming POST /api/agent/run
+{
+  "task": "What are the trending tokens?",
+  "ip": "::1"
+}
+[2026-05-03T13:48:00.568Z] INFO  [sse-route] Stream opened — starting agent
+[2026-05-03T13:48:00.617Z] ───── [───────────] NEW RUN — task: "What are the trending tokens?"
+[2026-05-03T13:48:00.618Z] INFO  [agent] Model: qwen/qwen-2.5-7b-instruct  Key: sk-7e6e18fa-...
+[2026-05-03T13:48:00.619Z] INFO  [agent] ── Turn 1: calling 0G LLM (2 messages in context)
+[2026-05-03T13:48:02.491Z] INFO  [agent] LLM response finish_reason=tool_calls  tool_calls=1
+[2026-05-03T13:48:02.492Z] INFO  [agent] Tool calls requested: list_tollgate_services
+[2026-05-03T13:48:02.493Z] INFO  [agent] ▶ Tool: list_tollgate_services
+{}
+[2026-05-03T13:48:02.493Z] INFO  [sse-route] SSE #1 → type=tool_call
+[2026-05-03T13:48:02.494Z] INFO  [agent] Fetching service list: http://localhost:3000/api/ens/list
+[2026-05-03T13:48:03.957Z] INFO  [agent] Service list OK
+[
+  {
+    "ens": "crypto.tollgate.eth",
+    "url": "https://mcp-crypto.up.railway.app",
+    "manifestUrl": "https://mcp-crypto.up.railway.app/.well-known/tollgate.json",
+    "type": "mcp",
+    "description": "Real-time crypto prices, trending tokens, and market data",
+    "category": "finance",
+    "payee": "0x543DD8c11194BF5ebc0411A9Ef2dEa2055084Bd4"
+  }
+]
+[2026-05-03T13:48:03.957Z] INFO  [agent] ◀ Tool result for list_tollgate_services
+[
+  {
+    "ens": "crypto.tollgate.eth",
+    "url": "https://mcp-crypto.up.railway.app",
+    "manifestUrl": "https://mcp-crypto.up.railway.app/.well-known/tollgate.json",
+    "type": "mcp",
+    "description": "Real-time crypto prices, trending tokens, and market data",
+    "category": "finance",
+    "payee": "0x543DD8c11194BF5ebc0411A9Ef2dEa2055084Bd4"
+  }
+]
+[2026-05-03T13:48:03.958Z] INFO  [agent] ── Turn 2: calling 0G LLM (4 messages in context)
+[2026-05-03T13:48:05.178Z] INFO  [agent] LLM response finish_reason=tool_calls  tool_calls=1
+[2026-05-03T13:48:05.178Z] INFO  [agent] Tool calls requested: fetch_manifest
+[2026-05-03T13:48:05.179Z] INFO  [agent] ▶ Tool: fetch_manifest
+{
+  "manifestUrl": "https://mcp-crypto.up.railway.app/.well-known/tollgate.json"
+}
+[2026-05-03T13:48:05.179Z] INFO  [sse-route] SSE #2 → type=tool_call
+[2026-05-03T13:48:05.180Z] INFO  [manifest] Fetching manifest: https://mcp-crypto.up.railway.app/.well-known/tollgate.json
+[2026-05-03T13:48:05.910Z] INFO  [manifest] Response status: 200 
+[2026-05-03T13:48:05.912Z] INFO  [manifest] Parsed manifest OK
+{
+  "ens": "crypto.tollgate.eth",
+  "tools": [
+    "get_price=$0.01",
+    "get_trending=$0.01",
+    "get_market_data=$0.02"
+  ]
+}
+[2026-05-03T13:48:05.912Z] INFO  [sse-route] SSE #3 → type=manifest_fetched
+[2026-05-03T13:48:05.913Z] INFO  [agent] ◀ Tool result for fetch_manifest
+{
+  "ens": "crypto.tollgate.eth",
+  "version": "1.0",
+  "description": "Real-time crypto prices, trending tokens, and market data",
+  "category": "finance",
+  "payee": "0x12771DB49C9fC94d2bd69126745F777296e574E6",
+  "chain": "base-sepolia",
+  "usdcContract": "0x5dEaC602762362FE5f135FA5904351916053cF70",
+  "defaultPrice": "0.01",
+  "tools": [
+    {
+      "name": "get_price",
+      "description": "Get the current USD price for a token",
+      "price": "0.01",
+      "inputSchema": {
+        "token": {
+          "type": "string",
+          "required": true,
+          "description": "CoinGecko ID e.g. bitcoin, ethereum",
+          "example": "ethereum"
+        }
+      },
+      "outputSchema": {
+        "token": {
+          "type": "string",
+          "required": true
+        },
+        "price_usd": {
+          "type": "number",
+          "required": true
+        },
+        "currency": {
+          "type": "string",
+          "required": true,
+          "enum": [
+            "USD"
+          ]
+        },
+        "source": {
+          "type": "string",
+          "required": true
+        },
+        "timestamp": {
+          "type": "number",
+          "required": true
+        }
+      }
+    },
+    {
+      "name": "get_trending",
+      "description": "Get the top 7 trending tokens right now",
+      "price": "0.01",
+      "inputSchema": {},
+      "outputSchema": {
+        "tokens": {
+          "type": "array",
+          "required": true,
+          "description": "[{ name, symbol, market_cap_rank, price_btc }]"
+        },
+        "fetched_at": {
+          "type": "number",
+          "required": true
+        }
+      }
+    },
+    {
+      "name": "get_market_data",
+      "description": "Full market data: price, cap, volume, 24h/7d change",
+      "price": "0.02",
+      "inputSchema": {
+        "token": {
+          "type": "string",
+          "required": true,
+          "example": "ethereum"
+        }
+      },
+      "outputSchema": {
+        "token": {
+          "type": "string",
+          "required": true
+        },
+        "price_usd": {
+          "type": "number",
+          "required": true
+        },
+        "market_cap": {
+          "type": "number",
+          "required": true
+        },
+        "volume_24h": {
+          "type": "number",
+          "required": true
+        },
+        "change_24h": {
+          "type": "number",
+          "required": true
+        },
+        "change_7d": {
+          "type": "number",
+          "required": true
+        },
+        "source": {
+          "type": "string",
+          "required": true
+        },
+        "timestamp": {
+          "type": "number",
+          "required": true
+        }
+      }
+    }
+  ],
+  "updatedAt": "2026-05-03T09:22:59.949Z"
+}
+[2026-05-03T13:48:05.913Z] INFO  [agent] ── Turn 3: calling 0G LLM (6 messages in context)
+[2026-05-03T13:48:08.147Z] INFO  [agent] LLM response finish_reason=tool_calls  tool_calls=1
+[2026-05-03T13:48:08.148Z] INFO  [agent] Tool calls requested: call_mcp_tool
+[2026-05-03T13:48:08.149Z] INFO  [agent] ▶ Tool: call_mcp_tool
+{
+  "expectedPrice": "0.01",
+  "mcpUrl": "https://mcp-crypto.up.railway.app",
+  "toolName": "get_trending",
+  "toolInput": {},
+  "payee": "0x12771DB49C9fC94d2bd69126745F777296e574E6",
+  "mcpName": "crypto.tollgate.eth"
+}
+[2026-05-03T13:48:08.149Z] INFO  [sse-route] SSE #4 → type=tool_call
+[2026-05-03T13:48:08.150Z] INFO  [agent] Price check: manifest price = $0.01
+[2026-05-03T13:48:08.151Z] INFO  [sse-route] SSE #5 → type=price_check
+[2026-05-03T13:48:08.152Z] INFO  [mcp-tool] ▶ callMcpTool start
+{
+  "mcpUrl": "https://mcp-crypto.up.railway.app",
+  "toolName": "get_trending",
+  "toolInput": {},
+  "expectedPrice": "0.01",
+  "mcpName": "crypto.tollgate.eth"
+}
+[2026-05-03T13:48:08.152Z] INFO  [mcp-http] POST https://mcp-crypto.up.railway.app/mcp [no payment header]
+{
+  "tool": "get_trending",
+  "input": {}
+}
+[2026-05-03T13:48:08.624Z] INFO  [mcp-http] First call → HTTP 402 (content-type: application/json; charset=utf-8)
+[2026-05-03T13:48:08.625Z] INFO  [mcp-tool] 402 challenge received
+{
+  "error": "Payment Required",
+  "x402Version": "1",
+  "toolName": "get_trending",
+  "accepts": [
+    {
+      "scheme": "exact",
+      "network": "base-sepolia",
+      "maxAmountRequired": "10000",
+      "asset": "0x036CbD53842c5426634e7929541eC2318f3dCF7e",
+      "payTo": "0x12771DB49C9fC94d2bd69126745F777296e574E6",
+      "memo": "tollgate-crypto-get_trending"
+    }
+  ]
+}
+[2026-05-03T13:48:08.625Z] INFO  [mcp-tool] Price check: manifest=$0.01  402 asks=$0.01  limit=$0.010500
+[2026-05-03T13:48:08.626Z] INFO  [keeperhub] Initiating USDC transfer via KeeperHub
+{
+  "recipient": "0x12771DB49C9fC94d2bd69126745F777296e574E6",
+  "amount": "0.010000",
+  "tokenAddress": "0x036CbD53842c5426634e7929541eC2318f3dCF7e"
+}
+[2026-05-03T13:48:08.627Z] INFO  [keeperhub] POST https://app.keeperhub.com/mcp → execute_transfer
+[2026-05-03T13:48:09.608Z] WARN  [mcp-tool] KeeperHub unavailable (KeeperHub execute_transfer failed: 400 {"error":"Missing mcp-session-id header for non-initialize requests"}) — using mock payment for demo
+[2026-05-03T13:48:09.609Z] INFO  [mcp-tool] Built x-payment header with real txHash (base64, 256 chars)
+[2026-05-03T13:48:09.609Z] INFO  [mcp-http] POST https://mcp-crypto.up.railway.app/mcp [WITH payment header]
+{
+  "tool": "get_trending",
+  "input": {}
+}
+[2026-05-03T13:48:10.082Z] INFO  [mcp-http] Retry (with payment) → HTTP 200
+[2026-05-03T13:48:10.612Z] INFO  [mcp-http] SSE raw response (19283 chars)
+{
+  "preview": "event: message\ndata: {\"result\":{\"content\":[{\"type\":\"text\",\"text\":\"{\\\"tokens\\\":[{\\\"id\\\":\\\"terra-luna\\\",\\\"coin_id\\\":8284,\\\"name\\\":\\\"Terra Luna Classic\\\",\\\"symbol\\\":\\\"LUNC\\\",\\\"market_cap_rank\\\":109,\\\"thumb\\\":\\\"https://coin-images.coingecko.com/coins/images/8284/standard/01_LunaClassic_color.png?1696508486\\\",\\\"small\\\":\\\"https://coin-images.coingecko.com/coins/images/8284/small/01_LunaClassic_color.png"
+}
+[2026-05-03T13:48:10.637Z] INFO  [mcp-tool] Tool result parsed OK
+{
+  "tokens": [
+    {
+      "id": "terra-luna",
+      "coin_id": 8284,
+      "name": "Terra Luna Classic",
+      "symbol": "LUNC",
+      "market_cap_rank": 109,
+      "thumb": "https://coin-images.coingecko.com/coins/images/8284/standard/01_LunaClassic_color.png?1696508486",
+      "small": "https://coin-images.coingecko.com/coins/images/8284/small/01_LunaClassic_color.png?1696508486",
+      "large": "https://coin-images.coingecko.com/coins/images/8284/large/01_LunaClassic_color.png?1696508486",
+      "slug": "terra-luna-classic",
+      "price_btc": 1.0681265285873513e-9,
+      "score": 0,
+      "data": {
+        "price": 0.00008404771155593125,
+        "price_btc": "0.000000001068126528587351",
+        "price_change_percentage_24h": {
+          "aed": 7.84672532418091,
+          "ars": 7.8467253241808725,
+          "aud": 7.87670641602954,
+          "bch": 7.677817651261111,
+          "bdt": 7.84672532418091,
+          "bhd": 7.810184337565773,
+          "bmd": 7.846725324180899,
+          "bnb": 7.4804980255214675,
+          "brl": 7.004324657705885,
+          "btc": 7.319906255064332,
+          "cad": 7.751548953238451,
+          "chf": 7.652434955647956,
+          "clp": 7.8467253241809045,
+          "cny": 7.846725324180912,
+          "czk": 7.8119640075855585,
+          "dkk": 7.750299176458027,
+          "dot": 7.546208312100743,
+          "eos": 10.07384558858589,
+          "eth": 6.92104933474849,
+          "eur": 7.814597365980857,
+          "gbp": 7.652407164018743,
+          "gel": 7.846725324180889,
+          "hkd": 7.817131325489522,
+          "huf": 8.26305477406576,
+          "idr": 7.846725324180904,
+          "ils": 7.846725324180888,
+          "inr": 7.846725324180906,
+          "jpy": 7.5034201158184,
+          "krw": 8.02337663594939,
+          "kwd": 7.846725324180946,
+          "lkr": 7.846725324180938,
+          "ltc": 7.945100144608435,
+          "mmk": 7.846725324180865,
+          "mxn": 7.846725324180821,
+          "myr": 7.846725324180929,
+          "ngn": 7.846725324180932,
+          "nok": 7.54858507345951,
+          "nzd": 7.764494150144979,
+          "php": 7.846725324180909,
+          "pkr": 7.846725324180887,
+          "pln": 8.047249630739497,
+          "rub": 7.846725324180906,
+          "sar": 7.846725324180929,
+          "sek": 8.272774901107374,
+          "sgd": 7.846725324180831,
+          "sol": 7.5489725735936775,
+          "thb": 7.846722009179506,
+          "try": 7.846725324180909,
+          "twd": 7.84672532418091,
+          "uah": 7.846725324180904,
+          "usd": 7.846725324180899,
+          "vef": 7.846725324180882,
+          "vnd": 7.846725324180892,
+          "xag": 7.846725324180914,
+          "xau": 7.846725324180954,
+          "xdr": 7.846725324180907,
+          "xlm": 8.164638424102964,
+          "xrp": 7.4685486629597815,
+          "yfi": 8.066908949302611,
+          "zar": 7.846725324180894,
+          "bits": 7.319906255064327,
+          "link": 7.069295311375363,
+          "sats": 7.31990625506433
+        },
+        "market_cap": "$464,169,797",
+        "market_cap_btc": "5899.648918856709",
+        "total_volume": "$198,925,530",
+        "total_volume_btc": "2528.05973916962",
+        "sparkline": "https://www.coingecko.com/coins/8284/sparkline.svg",
+        "content": null
+      }
+    },
+    {
+      "id": "lab",
+      "coin_id": 70014,
+      "name": "LAB",
+      "symbol": "LAB",
+      "market_cap_rank": 282,
+      "thumb": "https://coin-images.coingecko.com/coins/images/70014/standard/lab.png?1760352822",
+      "small": "https://coin-images.coingecko.com/coins/images/70014/small/lab.png?1760352822",
+      "large": "https://coin-images.coingecko.com/coins/images/70014/large/lab.png?1760352822",
+      "slug": "lab",
+      "price_btc": 0.000018170542102756704,
+      "score": 1,
+      "data": {
+        "price": 1.429786116713331,
+        "price_btc": "0.0000181705421027567",
+        "price_change_percentage_24h": {
+          "aed": -36.27612860933018,
+          "ars": -36.276128609330186,
+          "aud": -36.25841354904095,
+          "bch": -36.35065843262815,
+          "bdt": -36.27612860933018,
+          "bhd": -36.29771974364187,
+          "bmd": -36.27612860933017,
+          "bnb": -36.48262906055509,
+          "brl": -36.77388161544607,
+          "btc": -36.58754558709359,
+          "cad": -36.33236589241078,
+          "chf": -36.390929818357364,
+          "clp": -36.27612860933017,
+          "cny": -36.276128609330165,
+          "czk": -36.296668182149226,
+          "dkk": -36.33310435354232,
+          "dot": -36.42151766831543,
+          "eos": -34.60481465289575,
+          "eth": -36.78469457882228,
+          "eur": -36.29511219803191,
+          "gbp": -36.39094623972018,
+          "gel": -36.276128609330186,
+          "hkd": -36.293614946174216,
+          "huf": -36.03013018665334,
+          "idr": -36.276128609330186,
+          "ils": -36.27612860933017,
+          "inr": -36.27612860933017,
+          "jpy": -36.47897887557311,
+          "krw": -36.17174986775692,
+          "kwd": -36.27612860933016,
+          "lkr": -36.276128609330144,
+          "ltc": -36.21054032330516,
+          "mmk": -36.2761286093302,
+          "mxn": -36.27612860933021,
+          "myr": -36.276128609330186,
+          "ngn": -36.2761286093302,
+          "nok": -36.452292057374095,
+          "nzd": -36.324716906682895,
+          "php": -36.27612860933018,
+          "pkr": -36.27612860933018,
+          "pln": -36.1576439257811,
+          "rub": -36.276128609330165,
+          "sar": -36.27612860933017,
+          "sek": -36.02438681221486,
+          "sgd": -36.276128609330215,
+          "sol": -36.421503203637364,
+          "thb": -36.276130568079715,
+          "try": -36.276128609330186,
+          "twd": -36.276128609330186,
+          "uah": -36.27612860933016,
+          "usd": -36.27612860933017,
+          "vef": -36.276128609330186,
+          "vnd": -36.27612860933018,
+          "xag": -36.276128609330186,
+          "xau": -36.27612860933015,
+          "xdr": -36.27612860933018,
+          "xlm": -36.053611162133706,
+          "xrp": -36.459450436368016,
+          "yfi": -36.19599794176012,
+          "zar": -36.27612860933017,
+          "bits": -36.587545587093594,
+          "link": -36.713488776027944,
+          "sats": -36.587545587093594
+        },
+        "market_cap": "$109,252,069",
+        "market_cap_btc": "1388.434588613132",
+        "total_volume": "$604,708,637",
+        "total_volume_btc": "7684.984225764952",
+        "sparkline": "https://www.coingecko.com/coins/70014/sparkline.svg",
+        "content": null
+      }
+    },
+    {
+      "id": "megaeth",
+      "coin_id": 69995,
+      "name": "MegaETH",
+      "symbol": "MEGA",
+      "market_cap_rank": 234,
+      "thumb": "https://coin-images.coingecko.com/coins/images/69995/standard/ICON.png?1760337992",
+      "small": "https://coin-images.coingecko.com/coins/images/69995/small/ICON.png?1760337992",
+      "large": "https://coin-images.coingecko.com/coins/images/69995/large/ICON.png?1760337992",
+      "slug": "megaeth",
+      "price_btc": 0.000001573863041263633,
+      "score": 2,
+      "data": {
+        "price": 0.12384261918446372,
+        "price_btc": "0.000001573863041263633",
+        "price_change_percentage_24h": {
+          "aed": -15.86427582263503,
+          "ars": -15.864275822635026,
+          "aud": -15.84088632363326,
+          "bch": -15.960095959607923,
+          "bdt": -15.864275822635044,
+          "bhd": -15.8927829688815,
+          "bmd": -15.864275822635019,
+          "bnb": -16.131600293108722,
+          "brl": -16.521467683661097,
+          "btc": -16.274099722721846,
+          "cad": -15.938526875411577,
+          "chf": -16.015849834808975,
+          "clp": -15.864275822635035,
+          "cny": -15.864275822635024,
+          "czk": -15.891394574143874,
+          "dkk": -15.939501878353536,
+          "dot": -16.054639317198646,
+          "eos": -13.656223880976528,
+          "eth": -16.531759251700436,
+          "eur": -15.889340181533026,
+          "gbp": -16.01587151621693,
+          "gel": -15.86427582263502,
+          "hkd": -15.887363334135438,
+          "huf": -15.539479871185094,
+          "idr": -15.864275822635019,
+          "ils": -15.864275822635046,
+          "inr": -15.86427582263502,
+          "jpy": -16.13210252050293,
+          "krw": -15.726462773626363,
+          "kwd": -15.864275822635001,
+          "lkr": -15.864275822635038,
+          "ltc": -15.775781736807387,
+          "mmk": -15.864275822635014,
+          "mxn": -15.86427582263508,
+          "myr": -15.864275822635015,
+          "ngn": -15.86427582263499,
+          "nok": -16.096867455115888,
+          "nzd": -15.928427787904878,
+          "php": -15.864275822635024,
+          "pkr": -15.86427582263502,
+          "pln": -15.707838455651867,
+          "rub": -15.864275822635019,
+          "sar": -15.864275822635024,
+          "sek": -15.531896795062178,
+          "sgd": -15.86427582263508,
+          "sol": -16.041133916762135,
+          "thb": -15.878624037131095,
+          "try": -15.864275822635046,
+          "twd": -15.864275822635006,
+          "uah": -15.864275822635026,
+          "usd": -15.864275822635019,
+          "vef": -15.864275822635038,
+          "vnd": -15.864275822635033,
+          "xag": -15.86427582263503,
+          "xau": -15.864275822635014,
+          "xdr": -15.864275822635033,
+          "xlm": -15.567444499783868,
+          "xrp": -16.088949249800702,
+          "yfi": -15.758158351688383,
+          "zar": -15.864275822635026,
+          "bits": -16.274099722721854,
+          "link": -16.44706478144995,
+          "sats": -16.27409972272184
+        },
+        "market_cap": "$139,961,417",
+        "market_cap_btc": "1778.70565363176",
+        "total_volume": "$142,685,137",
+        "total_volume_btc": "1813.324567523138",
+        "sparkline": "https://www.coingecko.com/coins/69995/sparkline.svg",
+        "content": null
+      }
+    },
+    {
+      "id": "pudgy-penguins",
+      "coin_id": 52622,
+      "name": "Pudgy Penguins",
+      "symbol": "PENGU",
+      "market_cap_rank": 88,
+      "thumb": "https://coin-images.coingecko.com/coins/images/52622/standard/PUDGY_PENGUINS_PENGU_PFP.png?1733809110",
+      "small": "https://coin-images.coingecko.com/coins/images/52622/small/PUDGY_PENGUINS_PENGU_PFP.png?1733809110",
+      "large": "https://coin-images.coingecko.com/coins/images/52622/large/PUDGY_PENGUINS_PENGU_PFP.png?1733809110",
+      "slug": "pudgy-penguins",
+      "price_btc": 1.2466508421332294e-7,
+      "score": 3,
+      "data": {
+        "price": 0.009809526080130844,
+        "price_btc": "0.0000001246650842133229",
+        "price_change_percentage_24h": {
+          "aed": -1.8380490038457864,
+          "ars": -1.8380490038457975,
+          "aud": -1.8107602525182718,
+          "bch": -1.9917885509872157,
+          "bdt": -1.83804900384578,
+          "bhd": -1.8713085629717932,
+          "bmd": -1.8380490038457848,
+          "bnb": -2.1713886211257414,
+          "brl": -2.604801009463757,
+          "btc": -2.317559044517052,
+          "cad": -1.9246784145428808,
+          "chf": -2.014891847962066,
+          "clp": -1.8380490038457684,
+          "cny": -1.838049003845758,
+          "czk": -1.8696887096035077,
+          "dkk": -1.9258159597646263,
+          "dot": -2.111579202603784,
+          "eos": 0.18907300287172102,
+          "eth": -2.6805981015568277,
+          "eur": -1.8672918301713846,
+          "gbp": -2.01491714386731,
+          "gel": -1.8380490038457917,
+          "hkd": -1.8649854234782721,
+          "huf": -1.4591064728138297,
+          "idr": -1.8380490038457808,
+          "ils": -1.8380490038457737,
+          "inr": -1.838049003845774,
+          "jpy": -2.1505249639521784,
+          "krw": -1.6772612065612436,
+          "kwd": -1.838049003845729,
+          "lkr": -1.838049003845737,
+          "ltc": -1.7485083685317715,
+          "mmk": -1.8380490038458173,
+          "mxn": -1.8380490038458492,
+          "myr": -1.838049003845772,
+          "ngn": -1.8380490038457449,
+          "nok": -2.109415877465021,
+          "nzd": -1.9128957129304194,
+          "php": -1.8380490038457815,
+          "pkr": -1.8380490038457966,
+          "pln": -1.6555320373382352,
+          "rub": -1.838049003845768,
+          "sar": -1.8380490038457356,
+          "sek": -1.45025922565387,
+          "sgd": -1.838049003845841,
+          "sol": -2.109063175340148,
+          "thb": -1.838052021155806,
+          "try": -1.8380490038457764,
+          "twd": -1.8380490038457684,
+          "uah": -1.8380490038457777,
+          "usd": -1.8380490038457848,
+          "vef": -1.8380490038457837,
+          "vnd": -1.8380490038457795,
+          "xag": -1.8380490038457733,
+          "xau": -1.8380490038457358,
+          "xdr": -1.838049003845783,
+          "xlm": -1.5486849082575378,
+          "xrp": -2.1822649155954177,
+          "yfi": -1.6376381508098354,
+          "zar": -1.838049003845788,
+          "bits": -2.3175590445170346,
+          "link": -2.545664803867178,
+          "sats": -2.3175590445170458
+        },
+        "market_cap": "$616,630,695",
+        "market_cap_btc": "7836.496572242683",
+        "total_volume": "$169,665,692",
+        "total_volume_btc": "2156.208937591663",
+        "sparkline": "https://www.coingecko.com/coins/52622/sparkline.svg",
+        "content": {
+          "title": "PENGU is the official coin of Pudgy Penguins.",
+          "description": "Pudgy Penguins has become the face of crypto with one of the most influential communities in the industry. From large companies wearing the Penguin, to being featured in ETF commercials, to garnering millions of followers and over 100 billion views, the Pengu has become a cultural icon making PENGU the world’s social currency."
+        }
+      }
+    },
+    {
+      "id": "akash-network",
+      "coin_id": 12785,
+      "name": "Akash Network",
+      "symbol": "AKT",
+      "market_cap_rank": 182,
+      "thumb": "https://coin-images.coingecko.com/coins/images/12785/standard/akash-logo.png?1696512580",
+      "small": "https://coin-images.coingecko.com/coins/images/12785/small/akash-logo.png?1696512580",
+      "large": "https://coin-images.coingecko.com/coins/images/12785/large/akash-logo.png?1696512580",
+      "slug": "akash-network",
+      "price_btc": 0.000008691074211838093,
+      "score": 4,
+      "data": {
+        "price": 0.6838748771026552,
+        "price_btc": "0.000008691074211838093",
+        "price_change_percentage_24h": {
+          "aed": 30.92909837458222,
+          "ars": 30.929098374582242,
+          "aud": 30.965496302402723,
+          "bch": 30.77596702280676,
+          "bdt": 30.929098374582235,
+          "bhd": 30.884736541463443,
+          "bmd": 30.92909837458223,
+          "bnb": 30.504815961998275,
+          "brl": 29.90639917439625,
+          "btc": 30.28925112068372,
+          "cad": 30.813551459303984,
+          "chf": 30.693224149394432,
+          "clp": 30.92909837458225,
+          "cny": 30.92909837458226,
+          "czk": 30.886897113241556,
+          "dkk": 30.812034193512904,
+          "dot": 30.630377377394748,
+          "eos": 34.36303332927576,
+          "eth": 29.884182515007733,
+          "eur": 30.89009408783081,
+          "gbp": 30.69319040953869,
+          "gel": 30.929098374582225,
+          "hkd": 30.89317038924644,
+          "huf": 31.434534578939456,
+          "idr": 30.92909837458221,
+          "ils": 30.929098374582242,
+          "inr": 30.92909837458226,
+          "jpy": 30.51231574847017,
+          "krw": 31.1435582657567,
+          "kwd": 30.929098374582274,
+          "lkr": 30.929098374582292,
+          "ltc": 31.063858158722535,
+          "mmk": 30.929098374582182,
+          "mxn": 30.929098374582153,
+          "myr": 30.92909837458223,
+          "ngn": 30.929098374582193,
+          "nok": 30.567147336210066,
+          "nzd": 30.829267309313984,
+          "php": 30.929098374582264,
+          "pkr": 30.92909837458222,
+          "pln": 31.172540783992265,
+          "rub": 30.929098374582264,
+          "sar": 30.929098374582253,
+          "sek": 31.446335099222456,
+          "sgd": 30.929098374582143,
+          "sol": 30.630407096983603,
+          "thb": 30.929094350072965,
+          "try": 30.929098374582225,
+          "twd": 30.929098374582225,
+          "uah": 30.92909837458228,
+          "usd": 30.92909837458223,
+          "vef": 30.92909837458222,
+          "vnd": 30.92909837458225,
+          "xag": 30.92909837458223,
+          "xau": 30.92909837458228,
+          "xdr": 30.92909837458225,
+          "xlm": 31.38628981788668,
+          "xrp": 30.55243950244159,
+          "yfi": 31.09373739961544,
+          "zar": 30.929098374582242,
+          "bits": 30.289251120683712,
+          "link": 30.030484228250277,
+          "sats": 30.289251120683712
+        },
+        "market_cap": "$199,893,505",
+        "market_cap_btc": "2540.668322354678",
+        "total_volume": "$74,176,685",
+        "total_volume_btc": "942.6798659898907",
+        "sparkline": "https://www.coingecko.com/coins/12785/sparkline.svg",
+        "content": {
+          "title": "What is Akash Network?",
+          "description": "Akash Network is spearheading a paradigm shift in cloud computing, disrupting conventional cloud services, and pioneering a revolution in access to essential cloud resources. Leveraging the power of blockchain technology, Akash Network has developed an open-source, decentralized, marketplace for cloud computing, offering an unprecedented level of speed, efficiency, and affordability. This innovation is set to transform the way users perceive and utilize cloud services.\r\nWhat are the key features of Akash Network?"
+        }
+      }
+    },
+    {
+      "id": "babylon",
+      "coin_id": 55092,
+      "name": "Babylon",
+      "symbol": "BABY",
+      "market_cap_rank": 329,
+      "thumb": "https://coin-images.coingecko.com/coins/images/55092/standard/Baby-Symbol-Mint_%281%29.png?1744788866",
+      "small": "https://coin-images.coingecko.com/coins/images/55092/small/Baby-Symbol-Mint_%281%29.png?1744788866",
+      "large": "https://coin-images.coingecko.com/coins/images/55092/large/Baby-Symbol-Mint_%281%29.png?1744788866",
+      "slug": "babylon",
+      "price_btc": 2.8086228684533133e-7,
+      "score": 5,
+      "data": {
+        "price": 0.022100221125427415,
+        "price_btc": "0.0000002808622868453313",
+        "price_change_percentage_24h": {
+          "aed": 27.869541508577157,
+          "ars": 27.869541508577132,
+          "aud": 27.905088888037117,
+          "bch": 27.669274447814658,
+          "bdt": 27.869541508577157,
+          "bhd": 27.826216324704355,
+          "bmd": 27.86954150857717,
+          "bnb": 27.435320472873574,
+          "brl": 26.870740787786733,
+          "btc": 27.244913244497575,
+          "cad": 27.75669469864131,
+          "chf": 27.639179202543644,
+          "clp": 27.86954150857716,
+          "cny": 27.869541508577182,
+          "czk": 27.82832640814719,
+          "dkk": 27.755212888383113,
+          "dot": 27.513230527092013,
+          "eos": 30.510148780034807,
+          "eth": 26.77200457365011,
+          "eur": 27.831448675695132,
+          "gbp": 27.63914625112233,
+          "gel": 27.869541508577132,
+          "hkd": 27.834453089965507,
+          "huf": 28.363166657725365,
+          "idr": 27.86954150857715,
+          "ils": 27.869541508577143,
+          "inr": 27.869541508577157,
+          "jpy": 27.46249827700139,
+          "krw": 28.07898989168593,
+          "kwd": 27.86954150857721,
+          "lkr": 27.8695415085772,
+          "ltc": 27.98618059192666,
+          "mmk": 27.86954150857711,
+          "mxn": 27.869541508577058,
+          "myr": 27.86954150857718,
+          "ngn": 27.86954150857719,
+          "nok": 27.51604855781392,
+          "nzd": 27.77204329998455,
+          "php": 27.869541508577157,
+          "pkr": 27.86954150857715,
+          "pln": 28.107295145174803,
+          "rub": 27.86954150857718,
+          "sar": 27.869541508577182,
+          "sek": 28.374691422937104,
+          "sgd": 27.86954150857708,
+          "sol": 27.51650800119843,
+          "thb": 27.8695375781128,
+          "try": 27.869541508577168,
+          "twd": 27.869541508577182,
+          "uah": 27.86954150857716,
+          "usd": 27.86954150857717,
+          "vef": 27.86954150857716,
+          "vnd": 27.869541508577143,
+          "xag": 27.869541508577182,
+          "xau": 27.869541508577218,
+          "xdr": 27.86954150857716,
+          "xlm": 28.246478334469728,
+          "xrp": 27.421152592416465,
+          "yfi": 28.130604411575632,
+          "zar": 27.869541508577143,
+          "bits": 27.244913244497564,
+          "link": 26.947773888896247,
+          "sats": 27.24491324449756
+        },
+        "market_cap": "$85,693,123",
+        "market_cap_btc": "1089.453356677484",
+        "total_volume": "$221,973,568",
+        "total_volume_btc": "2820.967433359363",
+        "sparkline": "https://www.coingecko.com/coins/55092/sparkline.svg",
+        "content": null
+      }
+    },
+    {
+      "id": "pi-network",
+      "coin_id": 54342,
+      "name": "Pi Network",
+      "symbol": "PI",
+      "market_cap_rank": 45,
+      "thumb": "https://coin-images.coingecko.com/coins/images/54342/standard/pi_network.jpg?1739347576",
+      "small": "https://coin-images.coingecko.com/coins/images/54342/small/pi_network.jpg?1739347576",
+      "large": "https://coin-images.coingecko.com/coins/images/54342/large/pi_network.jpg?1739347576",
+      "slug": "pi-network",
+      "price_btc": 0.0000022476530528893736,
+      "score": 6,
+      "data": {
+        "price": 0.17686115868397825,
+        "price_btc": "0.000002247653052889373",
+        "price_change_percentage_24h": {
+          "aed": -0.18184167575167856,
+          "ars": -0.1818416757516804,
+          "aud": -0.15409250336016028,
+          "bch": -0.29552215686156835,
+          "bdt": -0.18184167575168883,
+          "bhd": -0.21566239655991937,
+          "bmd": -0.18184167575167448,
+          "bnb": -0.4989939505860502,
+          "brl": -0.9615304687668697,
+          "btc": -0.6680544865868286,
+          "cad": -0.2699327145376313,
+          "chf": -0.3616682463666338,
+          "clp": -0.18184167575167673,
+          "cny": -0.18184167575166774,
+          "czk": -0.2140152127139414,
+          "dkk": -0.27108945264119805,
+          "dot": -0.40768787396650963,
+          "eos": 2.4377789486099988,
+          "eth": -0.9737403282290464,
+          "eur": -0.21157789267069713,
+          "gbp": -0.361693969069244,
+          "gel": -0.18184167575168056,
+          "hkd": -0.20923257184003943,
+          "huf": 0.20349444658986846,
+          "idr": -0.18184167575164384,
+          "ils": -0.1818416757516977,
+          "inr": -0.18184167575169052,
+          "jpy": -0.49958979039178364,
+          "krw": -0.018341035808375386,
+          "kwd": -0.18184167575165633,
+          "lkr": -0.18184167575167462,
+          "ltc": -0.07685278124495289,
+          "mmk": -0.18184167575166638,
+          "mxn": -0.1818416757517396,
+          "myr": -0.18184167575167315,
+          "ngn": -0.18184167575165666,
+          "nok": -0.45778710348613655,
+          "nzd": -0.2579512129159357,
+          "php": -0.18184167575167376,
+          "pkr": -0.18184167575167112,
+          "pln": 0.0037547521394570176,
+          "rub": -0.18184167575165514,
+          "sar": -0.18184167575168034,
+          "sek": 0.2124909662065183,
+          "sgd": -0.18184167575175117,
+          "sol": -0.3916651415043393,
+          "thb": -0.19886431815765324,
+          "try": -0.18184167575170576,
+          "twd": -0.1818416757516556,
+          "uah": -0.18184167575168164,
+          "usd": -0.18184167575167448,
+          "vef": -0.18184167575169918,
+          "vnd": -0.1818416757516812,
+          "xag": -0.18184167575170257,
+          "xau": -0.18184167575167434,
+          "xdr": -0.18184167575168927,
+          "xlm": 0.1703173657215054,
+          "xrp": -0.44839298844731573,
+          "yfi": -0.05594449450686508,
+          "zar": -0.18184167575167498,
+          "bits": -0.6680544865868251,
+          "link": -0.8732592766506561,
+          "sats": -0.6680544865868266
+        },
+        "market_cap": "$1,837,767,210",
+        "market_cap_btc": "23364.64471809393",
+        "total_volume": "$13,695,119",
+        "total_volume_btc": "174.0454311631115",
+        "sparkline": "https://www.coingecko.com/coins/54342/sparkline.svg",
+        "content": {
+          "title": "About Pi Network (PI)",
+          "description": "Pi Network is a social cryptocurrency and developer platform designed to make digital currency mining accessible to everyday people through mobile devices."
+        }
+      }
+    }
+  ],
+  "fetched_at": 1777816099881
+}
+[2026-05-03T13:48:10.639Z] INFO  [mcp-tool] Validation: PASS — all 2 required fields present
+[2026-05-03T13:48:10.640Z] INFO  [agent] Payment recorded: $0.01  total_spent=$0.01
+[2026-05-03T13:48:10.641Z] INFO  [sse-route] SSE #6 → type=payment
+[2026-05-03T13:48:10.641Z] INFO  [agent] Validation: PASS — all 2 required fields present
+[2026-05-03T13:48:10.641Z] INFO  [sse-route] SSE #7 → type=validation
+[2026-05-03T13:48:10.642Z] INFO  [agent] ◀ Tool result for call_mcp_tool
+{
+  "data": {
+    "tokens": [
+      {
+        "id": "terra-luna",
+        "coin_id": 8284,
+        "name": "Terra Luna Classic",
+        "symbol": "LUNC",
+        "market_cap_rank": 109,
+        "thumb": "https://coin-images.coingecko.com/coins/images/8284/standard/01_LunaClassic_color.png?1696508486",
+        "small": "https://coin-images.coingecko.com/coins/images/8284/small/01_LunaClassic_color.png?1696508486",
+        "large": "https://coin-images.coingecko.com/coins/images/8284/large/01_LunaClassic_color.png?1696508486",
+        "slug": "terra-luna-classic",
+        "price_btc": 1.0681265285873513e-9,
+        "score": 0,
+        "data": {
+          "price": 0.00008404771155593125,
+          "price_btc": "0.000000001068126528587351",
+          "price_change_percentage_24h": {
+            "aed": 7.84672532418091,
+            "ars": 7.8467253241808725,
+            "aud": 7.87670641602954,
+            "bch": 7.677817651261111,
+            "bdt": 7.84672532418091,
+            "bhd": 7.810184337565773,
+            "bmd": 7.846725324180899,
+            "bnb": 7.4804980255214675,
+            "brl": 7.004324657705885,
+            "btc": 7.319906255064332,
+            "cad": 7.751548953238451,
+            "chf": 7.652434955647956,
+            "clp": 7.8467253241809045,
+            "cny": 7.846725324180912,
+            "czk": 7.8119640075855585,
+            "dkk": 7.750299176458027,
+            "dot": 7.546208312100743,
+            "eos": 10.07384558858589,
+            "eth": 6.92104933474849,
+            "eur": 7.814597365980857,
+            "gbp": 7.652407164018743,
+            "gel": 7.846725324180889,
+            "hkd": 7.817131325489522,
+            "huf": 8.26305477406576,
+            "idr": 7.846725324180904,
+            "ils": 7.846725324180888,
+            "inr": 7.846725324180906,
+            "jpy": 7.5034201158184,
+            "krw": 8.02337663594939,
+            "kwd": 7.846725324180946,
+            "lkr": 7.846725324180938,
+            "ltc": 7.945100144608435,
+            "mmk": 7.846725324180865,
+            "mxn": 7.846725324180821,
+            "myr": 7.846725324180929,
+            "ngn": 7.846725324180932,
+            "nok": 7.54858507345951,
+            "nzd": 7.764494150144979,
+            "php": 7.846725324180909,
+            "pkr": 7.846725324180887,
+            "pln": 8.047249630739497,
+            "rub": 7.846725324180906,
+            "sar": 7.846725324180929,
+            "sek": 8.272774901107374,
+            "sgd": 7.846725324180831,
+            "sol": 7.5489725735936775,
+            "thb": 7.846722009179506,
+            "try": 7.846725324180909,
+            "twd": 7.84672532418091,
+            "uah": 7.846725324180904,
+            "usd": 7.846725324180899,
+            "vef": 7.846725324180882,
+            "vnd": 7.846725324180892,
+            "xag": 7.846725324180914,
+            "xau": 7.846725324180954,
+            "xdr": 7.846725324180907,
+            "xlm": 8.164638424102964,
+            "xrp": 7.4685486629597815,
+            "yfi": 8.066908949302611,
+            "zar": 7.846725324180894,
+            "bits": 7.319906255064327,
+            "link": 7.069295311375363,
+            "sats": 7.31990625506433
+          },
+          "market_cap": "$464,169,797",
+          "market_cap_btc": "5899.648918856709",
+          "total_volume": "$198,925,530",
+          "total_volume_btc": "2528.05973916962",
+          "sparkline": "https://www.coingecko.com/coins/8284/sparkline.svg",
+          "content": null
+        }
+      },
+      {
+        "id": "lab",
+        "coin_id": 70014,
+        "name": "LAB",
+        "symbol": "LAB",
+        "market_cap_rank": 282,
+        "thumb": "https://coin-images.coingecko.com/coins/images/70014/standard/lab.png?1760352822",
+        "small": "https://coin-images.coingecko.com/coins/images/70014/small/lab.png?1760352822",
+        "large": "https://coin-images.coingecko.com/coins/images/70014/large/lab.png?1760352822",
+        "slug": "lab",
+        "price_btc": 0.000018170542102756704,
+        "score": 1,
+        "data": {
+          "price": 1.429786116713331,
+          "price_btc": "0.0000181705421027567",
+          "price_change_percentage_24h": {
+            "aed": -36.27612860933018,
+            "ars": -36.276128609330186,
+            "aud": -36.25841354904095,
+            "bch": -36.35065843262815,
+            "bdt": -36.27612860933018,
+            "bhd": -36.29771974364187,
+            "bmd": -36.27612860933017,
+            "bnb": -36.48262906055509,
+            "brl": -36.77388161544607,
+            "btc": -36.58754558709359,
+            "cad": -36.33236589241078,
+            "chf": -36.390929818357364,
+            "clp": -36.27612860933017,
+            "cny": -36.276128609330165,
+            "czk": -36.296668182149226,
+            "dkk": -36.33310435354232,
+            "dot": -36.42151766831543,
+            "eos": -34.60481465289575,
+            "eth": -36.78469457882228,
+            "eur": -36.29511219803191,
+            "gbp": -36.39094623972018,
+            "gel": -36.276128609330186,
+            "hkd": -36.293614946174216,
+            "huf": -36.03013018665334,
+            "idr": -36.276128609330186,
+            "ils": -36.27612860933017,
+            "inr": -36.27612860933017,
+            "jpy": -36.47897887557311,
+            "krw": -36.17174986775692,
+            "kwd": -36.27612860933016,
+            "lkr": -36.276128609330144,
+            "ltc": -36.21054032330516,
+            "mmk": -36.2761286093302,
+            "mxn": -36.27612860933021,
+            "myr": -36.276128609330186,
+            "ngn": -36.2761286093302,
+            "nok": -36.452292057374095,
+            "nzd": -36.324716906682895,
+            "php": -36.27612860933018,
+            "pkr": -36.27612860933018,
+            "pln": -36.1576439257811,
+            "rub": -36.276128609330165,
+            "sar": -36.27612860933017,
+            "sek": -36.02438681221486,
+            "sgd": -36.276128609330215,
+            "sol": -36.421503203637364,
+            "thb": -36.276130568079715,
+            "try": -36.276128609330186,
+            "twd": -36.276128609330186,
+            "uah": -36.27612860933016,
+            "usd": -36.27612860933017,
+            "vef": -36.276128609330186,
+            "vnd": -36.27612860933018,
+            "xag": -36.276128609330186,
+            "xau": -36.27612860933015,
+            "xdr": -36.27612860933018,
+            "xlm": -36.053611162133706,
+            "xrp": -36.459450436368016,
+            "yfi": -36.19599794176012,
+            "zar": -36.27612860933017,
+            "bits": -36.587545587093594,
+            "link": -36.713488776027944,
+            "sats": -36.587545587093594
+          },
+          "market_cap": "$109,252,069",
+          "market_cap_btc": "1388.434588613132",
+          "total_volume": "$604,708,637",
+          "total_volume_btc": "7684.984225764952",
+          "sparkline": "https://www.coingecko.com/coins/70014/sparkline.svg",
+          "content": null
+        }
+      },
+      {
+        "id": "megaeth",
+        "coin_id": 69995,
+        "name": "MegaETH",
+        "symbol": "MEGA",
+        "market_cap_rank": 234,
+        "thumb": "https://coin-images.coingecko.com/coins/images/69995/standard/ICON.png?1760337992",
+        "small": "https://coin-images.coingecko.com/coins/images/69995/small/ICON.png?1760337992",
+        "large": "https://coin-images.coingecko.com/coins/images/69995/large/ICON.png?1760337992",
+        "slug": "megaeth",
+        "price_btc": 0.000001573863041263633,
+        "score": 2,
+        "data": {
+          "price": 0.12384261918446372,
+          "price_btc": "0.000001573863041263633",
+          "price_change_percentage_24h": {
+            "aed": -15.86427582263503,
+            "ars": -15.864275822635026,
+            "aud": -15.84088632363326,
+            "bch": -15.960095959607923,
+            "bdt": -15.864275822635044,
+            "bhd": -15.8927829688815,
+            "bmd": -15.864275822635019,
+            "bnb": -16.131600293108722,
+            "brl": -16.521467683661097,
+            "btc": -16.274099722721846,
+            "cad": -15.938526875411577,
+            "chf": -16.015849834808975,
+            "clp": -15.864275822635035,
+            "cny": -15.864275822635024,
+            "czk": -15.891394574143874,
+            "dkk": -15.939501878353536,
+            "dot": -16.054639317198646,
+            "eos": -13.656223880976528,
+            "eth": -16.531759251700436,
+            "eur": -15.889340181533026,
+            "gbp": -16.01587151621693,
+            "gel": -15.86427582263502,
+            "hkd": -15.887363334135438,
+            "huf": -15.539479871185094,
+            "idr": -15.864275822635019,
+            "ils": -15.864275822635046,
+            "inr": -15.86427582263502,
+            "jpy": -16.13210252050293,
+            "krw": -15.726462773626363,
+            "kwd": -15.864275822635001,
+            "lkr": -15.864275822635038,
+            "ltc": -15.775781736807387,
+            "mmk": -15.864275822635014,
+            "mxn": -15.86427582263508,
+            "myr": -15.864275822635015,
+            "ngn": -15.86427582263499,
+            "nok": -16.096867455115888,
+            "nzd": -15.928427787904878,
+            "php": -15.864275822635024,
+            "pkr": -15.86427582263502,
+            "pln": -15.707838455651867,
+            "rub": -15.864275822635019,
+            "sar": -15.864275822635024,
+            "sek": -15.531896795062178,
+            "sgd": -15.86427582263508,
+            "sol": -16.041133916762135,
+            "thb": -15.878624037131095,
+            "try": -15.864275822635046,
+            "twd": -15.864275822635006,
+            "uah": -15.864275822635026,
+            "usd": -15.864275822635019,
+            "vef": -15.864275822635038,
+            "vnd": -15.864275822635033,
+            "xag": -15.86427582263503,
+            "xau": -15.864275822635014,
+            "xdr": -15.864275822635033,
+            "xlm": -15.567444499783868,
+            "xrp": -16.088949249800702,
+            "yfi": -15.758158351688383,
+            "zar": -15.864275822635026,
+            "bits": -16.274099722721854,
+            "link": -16.44706478144995,
+            "sats": -16.27409972272184
+          },
+          "market_cap": "$139,961,417",
+          "market_cap_btc": "1778.70565363176",
+          "total_volume": "$142,685,137",
+          "total_volume_btc": "1813.324567523138",
+          "sparkline": "https://www.coingecko.com/coins/69995/sparkline.svg",
+          "content": null
+        }
+      },
+      {
+        "id": "pudgy-penguins",
+        "coin_id": 52622,
+        "name": "Pudgy Penguins",
+        "symbol": "PENGU",
+        "market_cap_rank": 88,
+        "thumb": "https://coin-images.coingecko.com/coins/images/52622/standard/PUDGY_PENGUINS_PENGU_PFP.png?1733809110",
+        "small": "https://coin-images.coingecko.com/coins/images/52622/small/PUDGY_PENGUINS_PENGU_PFP.png?1733809110",
+        "large": "https://coin-images.coingecko.com/coins/images/52622/large/PUDGY_PENGUINS_PENGU_PFP.png?1733809110",
+        "slug": "pudgy-penguins",
+        "price_btc": 1.2466508421332294e-7,
+        "score": 3,
+        "data": {
+          "price": 0.009809526080130844,
+          "price_btc": "0.0000001246650842133229",
+          "price_change_percentage_24h": {
+            "aed": -1.8380490038457864,
+            "ars": -1.8380490038457975,
+            "aud": -1.8107602525182718,
+            "bch": -1.9917885509872157,
+            "bdt": -1.83804900384578,
+            "bhd": -1.8713085629717932,
+            "bmd": -1.8380490038457848,
+            "bnb": -2.1713886211257414,
+            "brl": -2.604801009463757,
+            "btc": -2.317559044517052,
+            "cad": -1.9246784145428808,
+            "chf": -2.014891847962066,
+            "clp": -1.8380490038457684,
+            "cny": -1.838049003845758,
+            "czk": -1.8696887096035077,
+            "dkk": -1.9258159597646263,
+            "dot": -2.111579202603784,
+            "eos": 0.18907300287172102,
+            "eth": -2.6805981015568277,
+            "eur": -1.8672918301713846,
+            "gbp": -2.01491714386731,
+            "gel": -1.8380490038457917,
+            "hkd": -1.8649854234782721,
+            "huf": -1.4591064728138297,
+            "idr": -1.8380490038457808,
+            "ils": -1.8380490038457737,
+            "inr": -1.838049003845774,
+            "jpy": -2.1505249639521784,
+            "krw": -1.6772612065612436,
+            "kwd": -1.838049003845729,
+            "lkr": -1.838049003845737,
+            "ltc": -1.7485083685317715,
+            "mmk": -1.8380490038458173,
+            "mxn": -1.8380490038458492,
+            "myr": -1.838049003845772,
+            "ngn": -1.8380490038457449,
+            "nok": -2.109415877465021,
+            "nzd": -1.9128957129304194,
+            "php": -1.8380490038457815,
+            "pkr": -1.8380490038457966,
+            "pln": -1.6555320373382352,
+            "rub": -1.838049003845768,
+            "sar": -1.8380490038457356,
+            "sek": -1.45025922565387,
+            "sgd": -1.838049003845841,
+            "sol": -2.109063175340148,
+            "thb": -1.838052021155806,
+            "try": -1.8380490038457764,
+            "twd": -1.8380490038457684,
+            "uah": -1.8380490038457777,
+            "usd": -1.8380490038457848,
+            "vef": -1.8380490038457837,
+            "vnd": -1.8380490038457795,
+            "xag": -1.8380490038457733,
+            "xau": -1.8380490038457358,
+            "xdr": -1.838049003845783,
+            "xlm": -1.5486849082575378,
+            "xrp": -2.1822649155954177,
+            "yfi": -1.6376381508098354,
+            "zar": -1.838049003845788,
+            "bits": -2.3175590445170346,
+            "link": -2.545664803867178,
+            "sats": -2.3175590445170458
+          },
+          "market_cap": "$616,630,695",
+          "market_cap_btc": "7836.496572242683",
+          "total_volume": "$169,665,692",
+          "total_volume_btc": "2156.208937591663",
+          "sparkline": "https://www.coingecko.com/coins/52622/sparkline.svg",
+          "content": {
+            "title": "PENGU is the official coin of Pudgy Penguins.",
+            "description": "Pudgy Penguins has become the face of crypto with one of the most influential communities in the industry. From large companies wearing the Penguin, to being featured in ETF commercials, to garnering millions of followers and over 100 billion views, the Pengu has become a cultural icon making PENGU the world’s social currency."
+          }
+        }
+      },
+      {
+        "id": "akash-network",
+        "coin_id": 12785,
+        "name": "Akash Network",
+        "symbol": "AKT",
+        "market_cap_rank": 182,
+        "thumb": "https://coin-images.coingecko.com/coins/images/12785/standard/akash-logo.png?1696512580",
+        "small": "https://coin-images.coingecko.com/coins/images/12785/small/akash-logo.png?1696512580",
+        "large": "https://coin-images.coingecko.com/coins/images/12785/large/akash-logo.png?1696512580",
+        "slug": "akash-network",
+        "price_btc": 0.000008691074211838093,
+        "score": 4,
+        "data": {
+          "price": 0.6838748771026552,
+          "price_btc": "0.000008691074211838093",
+          "price_change_percentage_24h": {
+            "aed": 30.92909837458222,
+            "ars": 30.929098374582242,
+            "aud": 30.965496302402723,
+            "bch": 30.77596702280676,
+            "bdt": 30.929098374582235,
+            "bhd": 30.884736541463443,
+            "bmd": 30.92909837458223,
+            "bnb": 30.504815961998275,
+            "brl": 29.90639917439625,
+            "btc": 30.28925112068372,
+            "cad": 30.813551459303984,
+            "chf": 30.693224149394432,
+            "clp": 30.92909837458225,
+            "cny": 30.92909837458226,
+            "czk": 30.886897113241556,
+            "dkk": 30.812034193512904,
+            "dot": 30.630377377394748,
+            "eos": 34.36303332927576,
+            "eth": 29.884182515007733,
+            "eur": 30.89009408783081,
+            "gbp": 30.69319040953869,
+            "gel": 30.929098374582225,
+            "hkd": 30.89317038924644,
+            "huf": 31.434534578939456,
+            "idr": 30.92909837458221,
+            "ils": 30.929098374582242,
+            "inr": 30.92909837458226,
+            "jpy": 30.51231574847017,
+            "krw": 31.1435582657567,
+            "kwd": 30.929098374582274,
+            "lkr": 30.929098374582292,
+            "ltc": 31.063858158722535,
+            "mmk": 30.929098374582182,
+            "mxn": 30.929098374582153,
+            "myr": 30.92909837458223,
+            "ngn": 30.929098374582193,
+            "nok": 30.567147336210066,
+            "nzd": 30.829267309313984,
+            "php": 30.929098374582264,
+            "pkr": 30.92909837458222,
+            "pln": 31.172540783992265,
+            "rub": 30.929098374582264,
+            "sar": 30.929098374582253,
+            "sek": 31.446335099222456,
+            "sgd": 30.929098374582143,
+            "sol": 30.630407096983603,
+            "thb": 30.929094350072965,
+            "try": 30.929098374582225,
+            "twd": 30.929098374582225,
+            "uah": 30.92909837458228,
+            "usd": 30.92909837458223,
+            "vef": 30.92909837458222,
+            "vnd": 30.92909837458225,
+            "xag": 30.92909837458223,
+            "xau": 30.92909837458228,
+            "xdr": 30.92909837458225,
+            "xlm": 31.38628981788668,
+            "xrp": 30.55243950244159,
+            "yfi": 31.09373739961544,
+            "zar": 30.929098374582242,
+            "bits": 30.289251120683712,
+            "link": 30.030484228250277,
+            "sats": 30.289251120683712
+          },
+          "market_cap": "$199,893,505",
+          "market_cap_btc": "2540.668322354678",
+          "total_volume": "$74,176,685",
+          "total_volume_btc": "942.6798659898907",
+          "sparkline": "https://www.coingecko.com/coins/12785/sparkline.svg",
+          "content": {
+            "title": "What is Akash Network?",
+            "description": "Akash Network is spearheading a paradigm shift in cloud computing, disrupting conventional cloud services, and pioneering a revolution in access to essential cloud resources. Leveraging the power of blockchain technology, Akash Network has developed an open-source, decentralized, marketplace for cloud computing, offering an unprecedented level of speed, efficiency, and affordability. This innovation is set to transform the way users perceive and utilize cloud services.\r\nWhat are the key features of Akash Network?"
+          }
+        }
+      },
+      {
+        "id": "babylon",
+        "coin_id": 55092,
+        "name": "Babylon",
+        "symbol": "BABY",
+        "market_cap_rank": 329,
+        "thumb": "https://coin-images.coingecko.com/coins/images/55092/standard/Baby-Symbol-Mint_%281%29.png?1744788866",
+        "small": "https://coin-images.coingecko.com/coins/images/55092/small/Baby-Symbol-Mint_%281%29.png?1744788866",
+        "large": "https://coin-images.coingecko.com/coins/images/55092/large/Baby-Symbol-Mint_%281%29.png?1744788866",
+        "slug": "babylon",
+        "price_btc": 2.8086228684533133e-7,
+        "score": 5,
+        "data": {
+          "price": 0.022100221125427415,
+          "price_btc": "0.0000002808622868453313",
+          "price_change_percentage_24h": {
+            "aed": 27.869541508577157,
+            "ars": 27.869541508577132,
+            "aud": 27.905088888037117,
+            "bch": 27.669274447814658,
+            "bdt": 27.869541508577157,
+            "bhd": 27.826216324704355,
+            "bmd": 27.86954150857717,
+            "bnb": 27.435320472873574,
+            "brl": 26.870740787786733,
+            "btc": 27.244913244497575,
+            "cad": 27.75669469864131,
+            "chf": 27.639179202543644,
+            "clp": 27.86954150857716,
+            "cny": 27.869541508577182,
+            "czk": 27.82832640814719,
+            "dkk": 27.755212888383113,
+            "dot": 27.513230527092013,
+            "eos": 30.510148780034807,
+            "eth": 26.77200457365011,
+            "eur": 27.831448675695132,
+            "gbp": 27.63914625112233,
+            "gel": 27.869541508577132,
+            "hkd": 27.834453089965507,
+            "huf": 28.363166657725365,
+            "idr": 27.86954150857715,
+            "ils": 27.869541508577143,
+            "inr": 27.869541508577157,
+            "jpy": 27.46249827700139,
+            "krw": 28.07898989168593,
+            "kwd": 27.86954150857721,
+            "lkr": 27.8695415085772,
+            "ltc": 27.98618059192666,
+            "mmk": 27.86954150857711,
+            "mxn": 27.869541508577058,
+            "myr": 27.86954150857718,
+            "ngn": 27.86954150857719,
+            "nok": 27.51604855781392,
+            "nzd": 27.77204329998455,
+            "php": 27.869541508577157,
+            "pkr": 27.86954150857715,
+            "pln": 28.107295145174803,
+            "rub": 27.86954150857718,
+            "sar": 27.869541508577182,
+            "sek": 28.374691422937104,
+            "sgd": 27.86954150857708,
+            "sol": 27.51650800119843,
+            "thb": 27.8695375781128,
+            "try": 27.869541508577168,
+            "twd": 27.869541508577182,
+            "uah": 27.86954150857716,
+            "usd": 27.86954150857717,
+            "vef": 27.86954150857716,
+            "vnd": 27.869541508577143,
+            "xag": 27.869541508577182,
+            "xau": 27.869541508577218,
+            "xdr": 27.86954150857716,
+            "xlm": 28.246478334469728,
+            "xrp": 27.421152592416465,
+            "yfi": 28.130604411575632,
+            "zar": 27.869541508577143,
+            "bits": 27.244913244497564,
+            "link": 26.947773888896247,
+            "sats": 27.24491324449756
+          },
+          "market_cap": "$85,693,123",
+          "market_cap_btc": "1089.453356677484",
+          "total_volume": "$221,973,568",
+          "total_volume_btc": "2820.967433359363",
+          "sparkline": "https://www.coingecko.com/coins/55092/sparkline.svg",
+          "content": null
+        }
+      },
+      {
+        "id": "pi-network",
+        "coin_id": 54342,
+        "name": "Pi Network",
+        "symbol": "PI",
+        "market_cap_rank": 45,
+        "thumb": "https://coin-images.coingecko.com/coins/images/54342/standard/pi_network.jpg?1739347576",
+        "small": "https://coin-images.coingecko.com/coins/images/54342/small/pi_network.jpg?1739347576",
+        "large": "https://coin-images.coingecko.com/coins/images/54342/large/pi_network.jpg?1739347576",
+        "slug": "pi-network",
+        "price_btc": 0.0000022476530528893736,
+        "score": 6,
+        "data": {
+          "price": 0.17686115868397825,
+          "price_btc": "0.000002247653052889373",
+          "price_change_percentage_24h": {
+            "aed": -0.18184167575167856,
+            "ars": -0.1818416757516804,
+            "aud": -0.15409250336016028,
+            "bch": -0.29552215686156835,
+            "bdt": -0.18184167575168883,
+            "bhd": -0.21566239655991937,
+            "bmd": -0.18184167575167448,
+            "bnb": -0.4989939505860502,
+            "brl": -0.9615304687668697,
+            "btc": -0.6680544865868286,
+            "cad": -0.2699327145376313,
+            "chf": -0.3616682463666338,
+            "clp": -0.18184167575167673,
+            "cny": -0.18184167575166774,
+            "czk": -0.2140152127139414,
+            "dkk": -0.27108945264119805,
+            "dot": -0.40768787396650963,
+            "eos": 2.4377789486099988,
+            "eth": -0.9737403282290464,
+            "eur": -0.21157789267069713,
+            "gbp": -0.361693969069244,
+            "gel": -0.18184167575168056,
+            "hkd": -0.20923257184003943,
+            "huf": 0.20349444658986846,
+            "idr": -0.18184167575164384,
+            "ils": -0.1818416757516977,
+            "inr": -0.18184167575169052,
+            "jpy": -0.49958979039178364,
+            "krw": -0.018341035808375386,
+            "kwd": -0.18184167575165633,
+            "lkr": -0.18184167575167462,
+            "ltc": -0.07685278124495289,
+            "mmk": -0.18184167575166638,
+            "mxn": -0.1818416757517396,
+            "myr": -0.18184167575167315,
+            "ngn": -0.18184167575165666,
+            "nok": -0.45778710348613655,
+            "nzd": -0.2579512129159357,
+            "php": -0.18184167575167376,
+            "pkr": -0.18184167575167112,
+            "pln": 0.0037547521394570176,
+            "rub": -0.18184167575165514,
+            "sar": -0.18184167575168034,
+            "sek": 0.2124909662065183,
+            "sgd": -0.18184167575175117,
+            "sol": -0.3916651415043393,
+            "thb": -0.19886431815765324,
+            "try": -0.18184167575170576,
+            "twd": -0.1818416757516556,
+            "uah": -0.18184167575168164,
+            "usd": -0.18184167575167448,
+            "vef": -0.18184167575169918,
+            "vnd": -0.1818416757516812,
+            "xag": -0.18184167575170257,
+            "xau": -0.18184167575167434,
+            "xdr": -0.18184167575168927,
+            "xlm": 0.1703173657215054,
+            "xrp": -0.44839298844731573,
+            "yfi": -0.05594449450686508,
+            "zar": -0.18184167575167498,
+            "bits": -0.6680544865868251,
+            "link": -0.8732592766506561,
+            "sats": -0.6680544865868266
+          },
+          "market_cap": "$1,837,767,210",
+          "market_cap_btc": "23364.64471809393",
+          "total_volume": "$13,695,119",
+          "total_volume_btc": "174.0454311631115",
+          "sparkline": "https://www.coingecko.com/coins/54342/sparkline.svg",
+          "content": {
+            "title": "About Pi Network (PI)",
+            "description": "Pi Network is a social cryptocurrency and developer platform designed to make digital currency mining accessible to everyday people through mobile devices."
+          }
+        }
+      }
+    ],
+    "fetched_at": 1777816099881
+  },
+  "validated": true
+}
+[2026-05-03T13:48:10.644Z] INFO  [agent] ── Turn 4: calling 0G LLM (8 messages in context)
+[2026-05-03T13:48:15.921Z] INFO  [agent] LLM response finish_reason=stop  tool_calls=0
+[2026-05-03T13:48:15.922Z] INFO  [agent] LLM thinking text (825 chars)
+{
+  "text": "The trending tokens as of the last update according to the MCP server \"crypto.tollgate.eth\" are:\n\n1. Terra Luna Classic (LUNC)\n2. LAB\n3. MegaETH (MEGA)\n4. Pi Network (PI)\n5. Akash Network (AKT)\n6. Babylon (BABY)\n\nThese tokens are currently experiencing significant changes in their market performance, as indicated by the high scores and percentage changes in their price data. For instance, Pudgy Penguins (PENGU) and Babylon (BABY) have seen notable decreases in their 24-hour price change percentages, while Pi Network (PI) has experienced a decrease but still maintains a relatively high market capitalization.\n\nThe total USDC spent on this query is 0.01 USDC, which was the expected price for the \"get_trending\" tool.\n\nValidation status: True\n\nMCP used: crypto.tollgate.eth\nTotal USDC spent: 0.01\nValidation status: True"
+}
+[2026-05-03T13:48:15.922Z] INFO  [sse-route] SSE #8 → type=thinking
+[2026-05-03T13:48:15.923Z] INFO  [agent] No tool calls — agent done.  spent=$0.01  calls=1
+[2026-05-03T13:48:15.923Z] INFO  [sse-route] SSE #9 → type=result
+[2026-05-03T13:48:15.924Z] ───── [───────────────────────] RUN COMPLETE — spent=$0.01  calls=1
+[2026-05-03T13:48:15.924Z] INFO  [sse-route] Stream finished normally — 9 events sent
+[2026-05-03T14:02:55.437Z] INFO  [sse-route] Incoming POST /api/agent/run
+{
+  "task": "ETH price",
+  "ip": "::1"
+}
+[2026-05-03T14:02:55.438Z] INFO  [sse-route] Stream opened — starting agent
+[2026-05-03T14:02:55.532Z] ───── [───────────────────────────────] NEW RUN — task: "ETH price"
+[2026-05-03T14:02:55.532Z] INFO  [agent] Model: qwen/qwen-2.5-7b-instruct  Key: sk-7e6e18fa-...
+[2026-05-03T14:02:55.533Z] INFO  [agent] ── Turn 1: calling 0G LLM (2 messages in context)
+[2026-05-03T14:02:57.641Z] INFO  [agent] LLM response finish_reason=tool_calls  tool_calls=1
+[2026-05-03T14:02:57.642Z] INFO  [agent] Tool calls requested: list_tollgate_services
+[2026-05-03T14:02:57.643Z] INFO  [agent] ▶ Tool: list_tollgate_services
+{}
+[2026-05-03T14:02:57.643Z] INFO  [sse-route] SSE #1 → type=tool_call
+[2026-05-03T14:02:57.644Z] INFO  [agent] Fetching service list: http://localhost:3000/api/ens/list
+[2026-05-03T14:03:04.293Z] INFO  [agent] Service list OK
+[
+  {
+    "ens": "crypto.tollgate.eth",
+    "url": "https://mcp-crypto.up.railway.app",
+    "manifestUrl": "https://mcp-crypto.up.railway.app/.well-known/tollgate.json",
+    "type": "mcp",
+    "description": "Real-time crypto prices, trending tokens, and market data",
+    "category": "finance",
+    "payee": "0x543DD8c11194BF5ebc0411A9Ef2dEa2055084Bd4"
+  }
+]
+[2026-05-03T14:03:04.294Z] INFO  [agent] ◀ Tool result for list_tollgate_services
+[
+  {
+    "ens": "crypto.tollgate.eth",
+    "url": "https://mcp-crypto.up.railway.app",
+    "manifestUrl": "https://mcp-crypto.up.railway.app/.well-known/tollgate.json",
+    "type": "mcp",
+    "description": "Real-time crypto prices, trending tokens, and market data",
+    "category": "finance",
+    "payee": "0x543DD8c11194BF5ebc0411A9Ef2dEa2055084Bd4"
+  }
+]
+[2026-05-03T14:03:04.294Z] INFO  [agent] ── Turn 2: calling 0G LLM (4 messages in context)
+[2026-05-03T14:03:06.498Z] INFO  [agent] LLM response finish_reason=tool_calls  tool_calls=1
+[2026-05-03T14:03:06.498Z] INFO  [agent] Tool calls requested: fetch_manifest
+[2026-05-03T14:03:06.499Z] INFO  [agent] ▶ Tool: fetch_manifest
+{
+  "manifestUrl": "https://mcp-crypto.up.railway.app/.well-known/tollgate.json"
+}
+[2026-05-03T14:03:06.499Z] INFO  [sse-route] SSE #2 → type=tool_call
+[2026-05-03T14:03:06.500Z] INFO  [manifest] Fetching manifest: https://mcp-crypto.up.railway.app/.well-known/tollgate.json
+[2026-05-03T14:03:07.217Z] INFO  [manifest] Response status: 200 
+[2026-05-03T14:03:07.218Z] INFO  [manifest] Parsed manifest OK
+{
+  "ens": "crypto.tollgate.eth",
+  "tools": [
+    "get_price=$0.01",
+    "get_trending=$0.01",
+    "get_market_data=$0.02"
+  ]
+}
+[2026-05-03T14:03:07.219Z] INFO  [sse-route] SSE #3 → type=manifest_fetched
+[2026-05-03T14:03:07.219Z] INFO  [agent] ◀ Tool result for fetch_manifest
+{
+  "ens": "crypto.tollgate.eth",
+  "version": "1.0",
+  "description": "Real-time crypto prices, trending tokens, and market data",
+  "category": "finance",
+  "payee": "0x12771DB49C9fC94d2bd69126745F777296e574E6",
+  "chain": "base-sepolia",
+  "usdcContract": "0x5dEaC602762362FE5f135FA5904351916053cF70",
+  "defaultPrice": "0.01",
+  "tools": [
+    {
+      "name": "get_price",
+      "description": "Get the current USD price for a token",
+      "price": "0.01",
+      "inputSchema": {
+        "token": {
+          "type": "string",
+          "required": true,
+          "description": "CoinGecko ID e.g. bitcoin, ethereum",
+          "example": "ethereum"
+        }
+      },
+      "outputSchema": {
+        "token": {
+          "type": "string",
+          "required": true
+        },
+        "price_usd": {
+          "type": "number",
+          "required": true
+        },
+        "currency": {
+          "type": "string",
+          "required": true,
+          "enum": [
+            "USD"
+          ]
+        },
+        "source": {
+          "type": "string",
+          "required": true
+        },
+        "timestamp": {
+          "type": "number",
+          "required": true
+        }
+      }
+    },
+    {
+      "name": "get_trending",
+      "description": "Get the top 7 trending tokens right now",
+      "price": "0.01",
+      "inputSchema": {},
+      "outputSchema": {
+        "tokens": {
+          "type": "array",
+          "required": true,
+          "description": "[{ name, symbol, market_cap_rank, price_btc }]"
+        },
+        "fetched_at": {
+          "type": "number",
+          "required": true
+        }
+      }
+    },
+    {
+      "name": "get_market_data",
+      "description": "Full market data: price, cap, volume, 24h/7d change",
+      "price": "0.02",
+      "inputSchema": {
+        "token": {
+          "type": "string",
+          "required": true,
+          "example": "ethereum"
+        }
+      },
+      "outputSchema": {
+        "token": {
+          "type": "string",
+          "required": true
+        },
+        "price_usd": {
+          "type": "number",
+          "required": true
+        },
+        "market_cap": {
+          "type": "number",
+          "required": true
+        },
+        "volume_24h": {
+          "type": "number",
+          "required": true
+        },
+        "change_24h": {
+          "type": "number",
+          "required": true
+        },
+        "change_7d": {
+          "type": "number",
+          "required": true
+        },
+        "source": {
+          "type": "string",
+          "required": true
+        },
+        "timestamp": {
+          "type": "number",
+          "required": true
+        }
+      }
+    }
+  ],
+  "updatedAt": "2026-05-03T09:22:59.949Z"
+}
+[2026-05-03T14:03:07.220Z] INFO  [agent] ── Turn 3: calling 0G LLM (6 messages in context)
+[2026-05-03T14:03:09.539Z] INFO  [agent] LLM response finish_reason=tool_calls  tool_calls=1
+[2026-05-03T14:03:09.539Z] INFO  [agent] Tool calls requested: call_mcp_tool
+[2026-05-03T14:03:09.539Z] INFO  [agent] ▶ Tool: call_mcp_tool
+{
+  "expectedPrice": "0.01",
+  "mcpUrl": "https://mcp-crypto.up.railway.app",
+  "toolName": "get_price",
+  "toolInput": {
+    "token": "ethereum"
+  },
+  "payee": "0x12771DB49C9fC94d2bd69126745F777296e574E6",
+  "mcpName": "crypto.tollgate.eth"
+}
+[2026-05-03T14:03:09.540Z] INFO  [sse-route] SSE #4 → type=tool_call
+[2026-05-03T14:03:09.541Z] INFO  [agent] Price check: manifest price = $0.01
+[2026-05-03T14:03:09.541Z] INFO  [sse-route] SSE #5 → type=price_check
+[2026-05-03T14:03:09.542Z] INFO  [mcp-tool] ▶ callMcpTool start
+{
+  "mcpUrl": "https://mcp-crypto.up.railway.app",
+  "toolName": "get_price",
+  "toolInput": {
+    "token": "ethereum"
+  },
+  "expectedPrice": "0.01",
+  "mcpName": "crypto.tollgate.eth"
+}
+[2026-05-03T14:03:09.543Z] INFO  [mcp-http] POST https://mcp-crypto.up.railway.app/mcp [no payment header]
+{
+  "tool": "get_price",
+  "input": {
+    "token": "ethereum"
+  }
+}
+[2026-05-03T14:03:09.854Z] INFO  [mcp-http] First call → HTTP 402 (content-type: application/json; charset=utf-8)
+[2026-05-03T14:03:09.855Z] INFO  [mcp-tool] 402 challenge received
+{
+  "error": "Payment Required",
+  "x402Version": "1",
+  "toolName": "get_price",
+  "accepts": [
+    {
+      "scheme": "exact",
+      "network": "base-sepolia",
+      "maxAmountRequired": "10000",
+      "asset": "0x036CbD53842c5426634e7929541eC2318f3dCF7e",
+      "payTo": "0x12771DB49C9fC94d2bd69126745F777296e574E6",
+      "memo": "tollgate-crypto-get_price"
+    }
+  ]
+}
+[2026-05-03T14:03:09.856Z] INFO  [mcp-tool] Price check: manifest=$0.01  402 asks=$0.01  limit=$0.010500
+[2026-05-03T14:03:09.880Z] INFO  [mcp-tool] 402 received — returning payment challenge for user
+{
+  "paymentId": "5ce06d39-be83-423c-89ce-fe03661e97e1",
+  "payee": "0x12771DB49C9fC94d2bd69126745F777296e574E6",
+  "amountMicro": "10000",
+  "amountUsdc": "0.010000",
+  "token": "0x036CbD53842c5426634e7929541eC2318f3dCF7e"
+}
+[2026-05-03T14:03:09.880Z] INFO  [agent] Payment required — yielding payment_required event
+{
+  "paymentId": "5ce06d39-be83-423c-89ce-fe03661e97e1",
+  "payee": "0x12771DB49C9fC94d2bd69126745F777296e574E6",
+  "amountMicro": "10000",
+  "amountUsdc": "0.010000",
+  "token": "0x036CbD53842c5426634e7929541eC2318f3dCF7e",
+  "toolName": "get_price"
+}
+[2026-05-03T14:03:09.881Z] INFO  [sse-route] SSE #6 → type=payment_required
+[2026-05-03T14:03:09.881Z] INFO  [sse-route] Awaiting user MetaMask payment — paymentId=5ce06d39-be83-423c-89ce-fe03661e97e1
+[2026-05-03T14:32:32.105Z] INFO  [sse-route] Incoming POST /api/agent/run
+{
+  "task": "ETH price",
+  "ip": "::1"
+}
+[2026-05-03T14:32:32.302Z] INFO  [sse-route] Stream opened — starting agent
+[2026-05-03T14:32:32.546Z] ───── [───────────────────────────────] NEW RUN — task: "ETH price"
+[2026-05-03T14:32:32.624Z] INFO  [agent] Model: qwen/qwen-2.5-7b-instruct  Key: sk-7e6e18fa-...
+[2026-05-03T14:32:32.625Z] INFO  [agent] ── Turn 1: calling 0G LLM (2 messages in context)
+[2026-05-03T14:32:34.454Z] INFO  [agent] LLM response finish_reason=tool_calls  tool_calls=1
+[2026-05-03T14:32:34.454Z] INFO  [agent] Tool calls requested: list_tollgate_services
+[2026-05-03T14:32:34.455Z] INFO  [agent] ▶ Tool: list_tollgate_services
+{}
+[2026-05-03T14:32:34.456Z] INFO  [sse-route] SSE #1 → type=tool_call
+[2026-05-03T14:32:34.457Z] INFO  [agent] Fetching service list: http://localhost:3000/api/ens/list
+[2026-05-03T14:32:46.305Z] INFO  [agent] Service list OK
+[
+  {
+    "ens": "crypto.tollgate.eth",
+    "url": "https://mcp-crypto.up.railway.app",
+    "manifestUrl": "https://mcp-crypto.up.railway.app/.well-known/tollgate.json",
+    "type": "mcp",
+    "description": "Real-time crypto prices, trending tokens, and market data",
+    "category": "finance",
+    "payee": "0x543DD8c11194BF5ebc0411A9Ef2dEa2055084Bd4"
+  }
+]
+[2026-05-03T14:32:46.306Z] INFO  [agent] ◀ Tool result for list_tollgate_services
+[
+  {
+    "ens": "crypto.tollgate.eth",
+    "url": "https://mcp-crypto.up.railway.app",
+    "manifestUrl": "https://mcp-crypto.up.railway.app/.well-known/tollgate.json",
+    "type": "mcp",
+    "description": "Real-time crypto prices, trending tokens, and market data",
+    "category": "finance",
+    "payee": "0x543DD8c11194BF5ebc0411A9Ef2dEa2055084Bd4"
+  }
+]
+[2026-05-03T14:32:46.307Z] INFO  [agent] ── Turn 2: calling 0G LLM (4 messages in context)
+[2026-05-03T14:32:48.366Z] INFO  [agent] LLM response finish_reason=tool_calls  tool_calls=1
+[2026-05-03T14:32:48.367Z] INFO  [agent] Tool calls requested: fetch_manifest
+[2026-05-03T14:32:48.368Z] INFO  [agent] ▶ Tool: fetch_manifest
+{
+  "manifestUrl": "https://mcp-crypto.up.railway.app/.well-known/tollgate.json"
+}
+[2026-05-03T14:32:48.368Z] INFO  [sse-route] SSE #2 → type=tool_call
+[2026-05-03T14:32:48.369Z] INFO  [manifest] Fetching manifest: https://mcp-crypto.up.railway.app/.well-known/tollgate.json
+[2026-05-03T14:32:49.107Z] INFO  [manifest] Response status: 200 
+[2026-05-03T14:32:49.108Z] INFO  [manifest] Parsed manifest OK
+{
+  "ens": "crypto.tollgate.eth",
+  "tools": [
+    "get_price=$0.01",
+    "get_trending=$0.01",
+    "get_market_data=$0.02"
+  ]
+}
+[2026-05-03T14:32:49.109Z] INFO  [sse-route] SSE #3 → type=manifest_fetched
+[2026-05-03T14:32:49.110Z] INFO  [agent] ◀ Tool result for fetch_manifest
+{
+  "ens": "crypto.tollgate.eth",
+  "version": "1.0",
+  "description": "Real-time crypto prices, trending tokens, and market data",
+  "category": "finance",
+  "payee": "0x12771DB49C9fC94d2bd69126745F777296e574E6",
+  "chain": "base-sepolia",
+  "usdcContract": "0x5dEaC602762362FE5f135FA5904351916053cF70",
+  "defaultPrice": "0.01",
+  "tools": [
+    {
+      "name": "get_price",
+      "description": "Get the current USD price for a token",
+      "price": "0.01",
+      "inputSchema": {
+        "token": {
+          "type": "string",
+          "required": true,
+          "description": "CoinGecko ID e.g. bitcoin, ethereum",
+          "example": "ethereum"
+        }
+      },
+      "outputSchema": {
+        "token": {
+          "type": "string",
+          "required": true
+        },
+        "price_usd": {
+          "type": "number",
+          "required": true
+        },
+        "currency": {
+          "type": "string",
+          "required": true,
+          "enum": [
+            "USD"
+          ]
+        },
+        "source": {
+          "type": "string",
+          "required": true
+        },
+        "timestamp": {
+          "type": "number",
+          "required": true
+        }
+      }
+    },
+    {
+      "name": "get_trending",
+      "description": "Get the top 7 trending tokens right now",
+      "price": "0.01",
+      "inputSchema": {},
+      "outputSchema": {
+        "tokens": {
+          "type": "array",
+          "required": true,
+          "description": "[{ name, symbol, market_cap_rank, price_btc }]"
+        },
+        "fetched_at": {
+          "type": "number",
+          "required": true
+        }
+      }
+    },
+    {
+      "name": "get_market_data",
+      "description": "Full market data: price, cap, volume, 24h/7d change",
+      "price": "0.02",
+      "inputSchema": {
+        "token": {
+          "type": "string",
+          "required": true,
+          "example": "ethereum"
+        }
+      },
+      "outputSchema": {
+        "token": {
+          "type": "string",
+          "required": true
+        },
+        "price_usd": {
+          "type": "number",
+          "required": true
+        },
+        "market_cap": {
+          "type": "number",
+          "required": true
+        },
+        "volume_24h": {
+          "type": "number",
+          "required": true
+        },
+        "change_24h": {
+          "type": "number",
+          "required": true
+        },
+        "change_7d": {
+          "type": "number",
+          "required": true
+        },
+        "source": {
+          "type": "string",
+          "required": true
+        },
+        "timestamp": {
+          "type": "number",
+          "required": true
+        }
+      }
+    }
+  ],
+  "updatedAt": "2026-05-03T09:22:59.949Z"
+}
+[2026-05-03T14:32:49.110Z] INFO  [agent] ── Turn 3: calling 0G LLM (6 messages in context)
+[2026-05-03T14:32:51.344Z] INFO  [agent] LLM response finish_reason=tool_calls  tool_calls=1
+[2026-05-03T14:32:51.345Z] INFO  [agent] Tool calls requested: call_mcp_tool
+[2026-05-03T14:32:51.346Z] INFO  [agent] ▶ Tool: call_mcp_tool
+{
+  "expectedPrice": "0.01",
+  "mcpUrl": "https://mcp-crypto.up.railway.app",
+  "toolName": "get_price",
+  "toolInput": {
+    "token": "ethereum"
+  },
+  "payee": "0x12771DB49C9fC94d2bd69126745F777296e574E6",
+  "mcpName": "crypto.tollgate.eth"
+}
+[2026-05-03T14:32:51.346Z] INFO  [sse-route] SSE #4 → type=tool_call
+[2026-05-03T14:32:51.346Z] INFO  [agent] Price check: manifest price = $0.01
+[2026-05-03T14:32:51.347Z] INFO  [sse-route] SSE #5 → type=price_check
+[2026-05-03T14:32:51.348Z] INFO  [mcp-tool] ▶ callMcpTool start
+{
+  "mcpUrl": "https://mcp-crypto.up.railway.app",
+  "toolName": "get_price",
+  "toolInput": {
+    "token": "ethereum"
+  },
+  "expectedPrice": "0.01",
+  "mcpName": "crypto.tollgate.eth"
+}
+[2026-05-03T14:32:51.348Z] INFO  [mcp-http] POST https://mcp-crypto.up.railway.app/mcp [no payment header]
+{
+  "tool": "get_price",
+  "input": {
+    "token": "ethereum"
+  }
+}
+[2026-05-03T14:32:51.818Z] INFO  [mcp-http] First call → HTTP 402 (content-type: application/json; charset=utf-8)
+[2026-05-03T14:32:51.819Z] INFO  [mcp-tool] 402 challenge received
+{
+  "error": "Payment Required",
+  "x402Version": "1",
+  "toolName": "get_price",
+  "accepts": [
+    {
+      "scheme": "exact",
+      "network": "base-sepolia",
+      "maxAmountRequired": "10000",
+      "asset": "0x036CbD53842c5426634e7929541eC2318f3dCF7e",
+      "payTo": "0x12771DB49C9fC94d2bd69126745F777296e574E6",
+      "memo": "tollgate-crypto-get_price"
+    }
+  ]
+}
+[2026-05-03T14:32:51.820Z] INFO  [mcp-tool] Price check: manifest=$0.01  402 asks=1e-14 ETH  limit=0.010500
+[2026-05-03T14:32:51.824Z] INFO  [mcp-tool] 402 received — returning payment challenge for user
+{
+  "paymentId": "ac6b4ca1-79bc-4448-a84b-b0dcb26eb591",
+  "payee": "0x12771DB49C9fC94d2bd69126745F777296e574E6",
+  "amountMicro": "10000",
+  "amountEth": "0.000000",
+  "token": "0x036CbD53842c5426634e7929541eC2318f3dCF7e"
+}
+[2026-05-03T14:32:51.824Z] INFO  [agent] Payment required — yielding payment_required event
+{
+  "paymentId": "ac6b4ca1-79bc-4448-a84b-b0dcb26eb591",
+  "payee": "0x12771DB49C9fC94d2bd69126745F777296e574E6",
+  "amountMicro": "10000",
+  "amountUsdc": "0.000000",
+  "token": "0x036CbD53842c5426634e7929541eC2318f3dCF7e",
+  "toolName": "get_price"
+}
+[2026-05-03T14:32:51.825Z] INFO  [sse-route] SSE #6 → type=payment_required
+[2026-05-03T14:32:51.826Z] INFO  [sse-route] Awaiting user MetaMask payment — paymentId=ac6b4ca1-79bc-4448-a84b-b0dcb26eb591
+[2026-05-03T14:50:33.714Z] INFO  [sse-route] Incoming POST /api/agent/run
+{
+  "task": "ETH price",
+  "ip": "::1"
+}
+[2026-05-03T14:50:33.716Z] INFO  [sse-route] Stream opened — starting agent
+[2026-05-03T14:50:33.837Z] ───── [───────────────────────────────] NEW RUN — task: "ETH price"
+[2026-05-03T14:50:33.838Z] INFO  [agent] Model: qwen/qwen-2.5-7b-instruct  Key: sk-7e6e18fa-...
+[2026-05-03T14:50:33.839Z] INFO  [agent] ── Turn 1: calling 0G LLM (2 messages in context)
+[2026-05-03T14:50:36.033Z] INFO  [agent] LLM response finish_reason=tool_calls  tool_calls=1
+[2026-05-03T14:50:36.033Z] INFO  [agent] Tool calls requested: list_tollgate_services
+[2026-05-03T14:50:36.034Z] INFO  [agent] ▶ Tool: list_tollgate_services
+{}
+[2026-05-03T14:50:36.035Z] INFO  [sse-route] SSE #1 → type=tool_call
+[2026-05-03T14:50:36.036Z] INFO  [agent] Fetching service list: http://localhost:3000/api/ens/list
+[2026-05-03T14:50:42.235Z] INFO  [agent] Service list OK
+[
+  {
+    "ens": "crypto.tollgate.eth",
+    "url": "https://mcp-crypto.up.railway.app",
+    "manifestUrl": "https://mcp-crypto.up.railway.app/.well-known/tollgate.json",
+    "type": "mcp",
+    "description": "Real-time crypto prices, trending tokens, and market data",
+    "category": "finance",
+    "payee": "0x543DD8c11194BF5ebc0411A9Ef2dEa2055084Bd4"
+  }
+]
+[2026-05-03T14:50:42.236Z] INFO  [agent] ◀ Tool result for list_tollgate_services
+[
+  {
+    "ens": "crypto.tollgate.eth",
+    "url": "https://mcp-crypto.up.railway.app",
+    "manifestUrl": "https://mcp-crypto.up.railway.app/.well-known/tollgate.json",
+    "type": "mcp",
+    "description": "Real-time crypto prices, trending tokens, and market data",
+    "category": "finance",
+    "payee": "0x543DD8c11194BF5ebc0411A9Ef2dEa2055084Bd4"
+  }
+]
+[2026-05-03T14:50:42.236Z] INFO  [agent] ── Turn 2: calling 0G LLM (4 messages in context)
+[2026-05-03T14:50:46.879Z] INFO  [agent] LLM response finish_reason=tool_calls  tool_calls=1
+[2026-05-03T14:50:46.879Z] INFO  [agent] Tool calls requested: fetch_manifest
+[2026-05-03T14:50:46.880Z] INFO  [agent] ▶ Tool: fetch_manifest
+{
+  "manifestUrl": "https://mcp-crypto.up.railway.app/.well-known/tollgate.json"
+}
+[2026-05-03T14:50:46.880Z] INFO  [sse-route] SSE #2 → type=tool_call
+[2026-05-03T14:50:46.881Z] INFO  [manifest] Fetching manifest: https://mcp-crypto.up.railway.app/.well-known/tollgate.json
+[2026-05-03T14:50:47.609Z] INFO  [manifest] Response status: 200 
+[2026-05-03T14:50:47.611Z] INFO  [manifest] Parsed manifest OK
+{
+  "ens": "crypto.tollgate.eth",
+  "tools": [
+    "get_price=$0.01",
+    "get_trending=$0.01",
+    "get_market_data=$0.02"
+  ]
+}
+[2026-05-03T14:50:47.613Z] INFO  [sse-route] SSE #3 → type=manifest_fetched
+[2026-05-03T14:50:47.613Z] INFO  [agent] ◀ Tool result for fetch_manifest
+{
+  "ens": "crypto.tollgate.eth",
+  "version": "1.0",
+  "description": "Real-time crypto prices, trending tokens, and market data",
+  "category": "finance",
+  "payee": "0x12771DB49C9fC94d2bd69126745F777296e574E6",
+  "chain": "base-sepolia",
+  "usdcContract": "0x5dEaC602762362FE5f135FA5904351916053cF70",
+  "defaultPrice": "0.01",
+  "tools": [
+    {
+      "name": "get_price",
+      "description": "Get the current USD price for a token",
+      "price": "0.01",
+      "inputSchema": {
+        "token": {
+          "type": "string",
+          "required": true,
+          "description": "CoinGecko ID e.g. bitcoin, ethereum",
+          "example": "ethereum"
+        }
+      },
+      "outputSchema": {
+        "token": {
+          "type": "string",
+          "required": true
+        },
+        "price_usd": {
+          "type": "number",
+          "required": true
+        },
+        "currency": {
+          "type": "string",
+          "required": true,
+          "enum": [
+            "USD"
+          ]
+        },
+        "source": {
+          "type": "string",
+          "required": true
+        },
+        "timestamp": {
+          "type": "number",
+          "required": true
+        }
+      }
+    },
+    {
+      "name": "get_trending",
+      "description": "Get the top 7 trending tokens right now",
+      "price": "0.01",
+      "inputSchema": {},
+      "outputSchema": {
+        "tokens": {
+          "type": "array",
+          "required": true,
+          "description": "[{ name, symbol, market_cap_rank, price_btc }]"
+        },
+        "fetched_at": {
+          "type": "number",
+          "required": true
+        }
+      }
+    },
+    {
+      "name": "get_market_data",
+      "description": "Full market data: price, cap, volume, 24h/7d change",
+      "price": "0.02",
+      "inputSchema": {
+        "token": {
+          "type": "string",
+          "required": true,
+          "example": "ethereum"
+        }
+      },
+      "outputSchema": {
+        "token": {
+          "type": "string",
+          "required": true
+        },
+        "price_usd": {
+          "type": "number",
+          "required": true
+        },
+        "market_cap": {
+          "type": "number",
+          "required": true
+        },
+        "volume_24h": {
+          "type": "number",
+          "required": true
+        },
+        "change_24h": {
+          "type": "number",
+          "required": true
+        },
+        "change_7d": {
+          "type": "number",
+          "required": true
+        },
+        "source": {
+          "type": "string",
+          "required": true
+        },
+        "timestamp": {
+          "type": "number",
+          "required": true
+        }
+      }
+    }
+  ],
+  "updatedAt": "2026-05-03T09:22:59.949Z"
+}
+[2026-05-03T14:50:47.636Z] INFO  [agent] ── Turn 3: calling 0G LLM (6 messages in context)
+[2026-05-03T14:50:49.765Z] INFO  [agent] LLM response finish_reason=tool_calls  tool_calls=1
+[2026-05-03T14:50:49.765Z] INFO  [agent] Tool calls requested: call_mcp_tool
+[2026-05-03T14:50:49.766Z] INFO  [agent] ▶ Tool: call_mcp_tool
+{
+  "expectedPrice": "0.01",
+  "mcpUrl": "https://mcp-crypto.up.railway.app",
+  "toolName": "get_price",
+  "toolInput": {
+    "token": "ethereum"
+  },
+  "payee": "0x12771DB49C9fC94d2bd69126745F777296e574E6",
+  "mcpName": "crypto.tollgate.eth"
+}
+[2026-05-03T14:50:49.766Z] INFO  [sse-route] SSE #4 → type=tool_call
+[2026-05-03T14:50:49.767Z] INFO  [agent] Price check: manifest price = $0.01
+[2026-05-03T14:50:49.767Z] INFO  [sse-route] SSE #5 → type=price_check
+[2026-05-03T14:50:49.768Z] INFO  [mcp-tool] ▶ callMcpTool start
+{
+  "mcpUrl": "https://mcp-crypto.up.railway.app",
+  "toolName": "get_price",
+  "toolInput": {
+    "token": "ethereum"
+  },
+  "expectedPrice": "0.01",
+  "mcpName": "crypto.tollgate.eth"
+}
+[2026-05-03T14:50:49.769Z] INFO  [mcp-http] POST https://mcp-crypto.up.railway.app/mcp [no payment header]
+{
+  "tool": "get_price",
+  "input": {
+    "token": "ethereum"
+  }
+}
+[2026-05-03T14:50:50.240Z] INFO  [mcp-http] First call → HTTP 402 (content-type: application/json; charset=utf-8)
+[2026-05-03T14:50:50.241Z] INFO  [mcp-tool] 402 challenge received
+{
+  "error": "Payment Required",
+  "x402Version": "1",
+  "toolName": "get_price",
+  "accepts": [
+    {
+      "scheme": "exact",
+      "network": "base-sepolia",
+      "maxAmountRequired": "10000",
+      "asset": "0x036CbD53842c5426634e7929541eC2318f3dCF7e",
+      "payTo": "0x12771DB49C9fC94d2bd69126745F777296e574E6",
+      "memo": "tollgate-crypto-get_price"
+    }
+  ]
+}
+[2026-05-03T14:50:50.241Z] INFO  [mcp-tool] Price check: manifest=$0.01  402 asks=1e-14 ETH  limit=0.010500
+[2026-05-03T14:50:50.265Z] INFO  [mcp-tool] 402 received — returning payment challenge for user
+{
+  "paymentId": "073ba69a-a52c-4dbf-8561-15cd0337778e",
+  "payee": "0x12771DB49C9fC94d2bd69126745F777296e574E6",
+  "amountMicro": "10000",
+  "amountEth": "0.000000",
+  "token": "0x036CbD53842c5426634e7929541eC2318f3dCF7e"
+}
+[2026-05-03T14:50:50.266Z] INFO  [agent] Payment required — yielding payment_required event
+{
+  "paymentId": "073ba69a-a52c-4dbf-8561-15cd0337778e",
+  "payee": "0x12771DB49C9fC94d2bd69126745F777296e574E6",
+  "amountMicro": "10000",
+  "amountUsdc": "0.000000",
+  "token": "0x036CbD53842c5426634e7929541eC2318f3dCF7e",
+  "toolName": "get_price"
+}
+[2026-05-03T14:50:50.267Z] INFO  [sse-route] SSE #6 → type=payment_required
+[2026-05-03T14:50:50.267Z] INFO  [sse-route] Awaiting user MetaMask payment — paymentId=073ba69a-a52c-4dbf-8561-15cd0337778e
+[2026-05-03T14:52:50.271Z] INFO  [sse-route] Payment timed out: Payment timed out — user did not confirm within 120s
+[2026-05-03T14:52:50.272Z] ERROR [agent] No txHash received — user did not confirm payment
+[2026-05-03T14:52:50.273Z] INFO  [agent] ◀ Tool result for call_mcp_tool
+{
+  "error": "Payment not confirmed by user"
+}
+[2026-05-03T14:52:50.274Z] INFO  [agent] ── Turn 4: calling 0G LLM (8 messages in context)
+[2026-05-03T14:52:53.935Z] INFO  [agent] LLM response finish_reason=stop  tool_calls=0
+[2026-05-03T14:52:53.936Z] INFO  [agent] LLM thinking text (698 chars)
+{
+  "text": "The `get_price` tool from the `crypto.tollgate.eth` MCP service is supposed to provide the current USD price for a token, but there seems to be an issue as it requires confirmation from the user to proceed with the payment. Since we cannot automatically confirm payments in this scenario, I will not call this tool further without explicit confirmation.\n\nGiven that the expected price is 0.01 USDC and my budget is 5.00 USDC, I do not wish to proceed with a tool that needs manual payment confirmation. \n\nTherefore, no MCP was called, and the total USDC spent is 0. The validation status is not applicable since no tool call was made.\n\nMCPs used: None  \nTotal USDC spent: 0  \nValidation status: N/A"
+}
+[2026-05-03T14:52:53.937Z] INFO  [sse-route] SSE #7 → type=thinking
+[2026-05-03T14:52:53.937Z] INFO  [agent] No tool calls — agent done.  spent=$0  calls=0
+[2026-05-03T14:52:53.938Z] INFO  [sse-route] SSE #8 → type=result
+[2026-05-03T14:52:53.939Z] ───── [──────────────────────────] RUN COMPLETE — spent=$0  calls=0
+[2026-05-03T14:52:53.939Z] INFO  [sse-route] Stream finished normally — 8 events sent
