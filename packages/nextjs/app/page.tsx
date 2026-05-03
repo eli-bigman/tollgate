@@ -89,7 +89,7 @@ export default function HomePage() {
   return (
     <div className="max-w-container mx-auto px-6">
       {/* ── Hero ── */}
-      <section className="relative text-center pt-[72px] pb-[140px] flex flex-col items-center">
+      <section className="relative text-center pt-[72px] pb-[240px] flex flex-col items-center">
         <HeroBackground />
         
         {/* Eyebrow pill */}
@@ -124,28 +124,12 @@ export default function HomePage() {
           </a>
         </div>
 
-        {/* Stats row */}
-        <div className="flex items-center gap-8 mt-11 pt-6 border-t border-border-light">
-          <div className="flex flex-col items-center gap-0.5">
-            <span className="text-2xl font-bold text-text-primary">3</span>
-            <span className="text-sm text-text-secondary">MCPs live</span>
-          </div>
-          <span className="text-border-strong">·</span>
-          <div className="flex flex-col items-center gap-0.5">
-            <span className="text-2xl font-bold font-mono text-[#F59E0B]">0.01 USDC</span>
-            <span className="text-sm text-text-secondary">per call</span>
-          </div>
-          <span className="text-border-strong">·</span>
-          <div className="flex flex-col items-center gap-0.5">
-            <span className="text-2xl font-bold text-on-secondary-container">Base Sepolia</span>
-            <span className="text-sm text-text-secondary">testnet</span>
-          </div>
-        </div>
+
 
       </section>
 
       {/* ── How it Works ── */}
-      <section id="how-it-works" className="py-14">
+      <section id="how-it-works" className="py-5 mt-4">
         <h2 className="text-2xl font-bold text-center text-text-primary mb-8">How it works</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {HOW_IT_WORKS.map(({ step, bg, color, title, body }) => (

@@ -45,6 +45,12 @@ export default function HeroBackground() {
           <animate attributeName="r" values="0;0;40;40" keyTimes="0;0.49;0.54;1" dur="16s" repeatCount="indefinite" begin="0s" />
           <animate attributeName="opacity" values="0;0;0.5;0;0" keyTimes="0;0.49;0.50;0.54;1" dur="16s" repeatCount="indefinite" begin="0s" />
         </circle>
+        {/* Outer Lane Payment Text 1 */}
+        <text x="620" y="540" fill="#10B981" fontSize="13" fontWeight="bold" fontFamily="monospace" opacity="0">
+          + 0.01 USDC
+          <animate attributeName="y" values="540;540;490;490" keyTimes="0;0.49;0.54;1" dur="16s" repeatCount="indefinite" begin="0s" />
+          <animate attributeName="opacity" values="0;0;1;0;0" keyTimes="0;0.49;0.50;0.54;1" dur="16s" repeatCount="indefinite" begin="0s" />
+        </text>
 
         <rect x="-24" y="-12" width="48" height="24" rx="12">
           <animate attributeName="fill" values="#6366F1;#6366F1;#F59E0B;#F59E0B;#6366F1;#6366F1" keyTimes="0;0.48;0.50;0.52;0.54;1" dur="16s" repeatCount="indefinite" begin="-8s" />
@@ -59,6 +65,12 @@ export default function HeroBackground() {
           <animate attributeName="r" values="0;0;40;40" keyTimes="0;0.49;0.54;1" dur="16s" repeatCount="indefinite" begin="-8s" />
           <animate attributeName="opacity" values="0;0;0.5;0;0" keyTimes="0;0.49;0.50;0.54;1" dur="16s" repeatCount="indefinite" begin="-8s" />
         </circle>
+        {/* Outer Lane Payment Text 2 */}
+        <text x="620" y="540" fill="#F59E0B" fontSize="13" fontWeight="bold" fontFamily="monospace" opacity="0">
+          + 0.02 USDC
+          <animate attributeName="y" values="540;540;490;490" keyTimes="0;0.49;0.54;1" dur="16s" repeatCount="indefinite" begin="-8s" />
+          <animate attributeName="opacity" values="0;0;1;0;0" keyTimes="0;0.49;0.50;0.54;1" dur="16s" repeatCount="indefinite" begin="-8s" />
+        </text>
 
         {/* ── Inner Lane Nodes (14s duration, hits center at 50% = 7s) ── */}
         <rect x="-16" y="-8" width="32" height="16" rx="8">
@@ -74,6 +86,12 @@ export default function HeroBackground() {
           <animate attributeName="r" values="0;0;30;30" keyTimes="0;0.49;0.54;1" dur="14s" repeatCount="indefinite" begin="-2s" />
           <animate attributeName="opacity" values="0;0;0.5;0;0" keyTimes="0;0.49;0.50;0.54;1" dur="14s" repeatCount="indefinite" begin="-2s" />
         </circle>
+        {/* Inner Lane Payment Text 1 */}
+        <text x="620" y="490" fill="#10B981" fontSize="12" fontWeight="bold" fontFamily="monospace" opacity="0">
+          + 0.01 USDC
+          <animate attributeName="y" values="490;490;440;440" keyTimes="0;0.49;0.54;1" dur="14s" repeatCount="indefinite" begin="-2s" />
+          <animate attributeName="opacity" values="0;0;1;0;0" keyTimes="0;0.49;0.50;0.54;1" dur="14s" repeatCount="indefinite" begin="-2s" />
+        </text>
 
         <rect x="-16" y="-8" width="32" height="16" rx="8">
           <animate attributeName="fill" values="#6366F1;#6366F1;#10B981;#10B981;#6366F1;#6366F1" keyTimes="0;0.48;0.50;0.52;0.54;1" dur="14s" repeatCount="indefinite" begin="-9s" />
@@ -88,6 +106,12 @@ export default function HeroBackground() {
           <animate attributeName="r" values="0;0;30;30" keyTimes="0;0.49;0.54;1" dur="14s" repeatCount="indefinite" begin="-9s" />
           <animate attributeName="opacity" values="0;0;0.5;0;0" keyTimes="0;0.49;0.50;0.54;1" dur="14s" repeatCount="indefinite" begin="-9s" />
         </circle>
+        {/* Inner Lane Payment Text 2 */}
+        <text x="620" y="490" fill="#10B981" fontSize="12" fontWeight="bold" fontFamily="monospace" opacity="0">
+          + 0.01 USDC
+          <animate attributeName="y" values="490;490;440;440" keyTimes="0;0.49;0.54;1" dur="14s" repeatCount="indefinite" begin="-9s" />
+          <animate attributeName="opacity" values="0;0;1;0;0" keyTimes="0;0.49;0.50;0.54;1" dur="14s" repeatCount="indefinite" begin="-9s" />
+        </text>
 
       </svg>
     </div>
