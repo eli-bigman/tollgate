@@ -47,7 +47,7 @@ export default function HeroBackground() {
         </circle>
         {/* Outer Lane Payment Text 1 */}
         <text x="620" y="540" fill="#10B981" fontSize="13" fontWeight="bold" fontFamily="monospace" opacity="0">
-          + 0.01 USDC
+          + 0.01 ETH
           <animate attributeName="y" values="540;540;490;490" keyTimes="0;0.49;0.54;1" dur="16s" repeatCount="indefinite" begin="0s" />
           <animate attributeName="opacity" values="0;0;1;0;0" keyTimes="0;0.49;0.50;0.54;1" dur="16s" repeatCount="indefinite" begin="0s" />
         </text>
@@ -67,7 +67,7 @@ export default function HeroBackground() {
         </circle>
         {/* Outer Lane Payment Text 2 */}
         <text x="620" y="540" fill="#F59E0B" fontSize="13" fontWeight="bold" fontFamily="monospace" opacity="0">
-          + 0.02 USDC
+          + 0.02 ETH
           <animate attributeName="y" values="540;540;490;490" keyTimes="0;0.49;0.54;1" dur="16s" repeatCount="indefinite" begin="-8s" />
           <animate attributeName="opacity" values="0;0;1;0;0" keyTimes="0;0.49;0.50;0.54;1" dur="16s" repeatCount="indefinite" begin="-8s" />
         </text>
@@ -88,7 +88,7 @@ export default function HeroBackground() {
         </circle>
         {/* Inner Lane Payment Text 1 */}
         <text x="620" y="490" fill="#10B981" fontSize="12" fontWeight="bold" fontFamily="monospace" opacity="0">
-          + 0.01 USDC
+          + 0.01 ETH
           <animate attributeName="y" values="490;490;440;440" keyTimes="0;0.49;0.54;1" dur="14s" repeatCount="indefinite" begin="-2s" />
           <animate attributeName="opacity" values="0;0;1;0;0" keyTimes="0;0.49;0.50;0.54;1" dur="14s" repeatCount="indefinite" begin="-2s" />
         </text>
@@ -108,7 +108,7 @@ export default function HeroBackground() {
         </circle>
         {/* Inner Lane Payment Text 2 */}
         <text x="620" y="490" fill="#10B981" fontSize="12" fontWeight="bold" fontFamily="monospace" opacity="0">
-          + 0.01 USDC
+          + 0.01 ETH
           <animate attributeName="y" values="490;490;440;440" keyTimes="0;0.49;0.54;1" dur="14s" repeatCount="indefinite" begin="-9s" />
           <animate attributeName="opacity" values="0;0;1;0;0" keyTimes="0;0.49;0.50;0.54;1" dur="14s" repeatCount="indefinite" begin="-9s" />
         </text>

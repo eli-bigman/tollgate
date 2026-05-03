@@ -74,7 +74,7 @@ export default function ManifestPreview({ subdomain, serviceType, endpointUrl, p
             <span className="text-[#9CA3AF]">: </span>
             <span className="text-[#ABB2BF]">{"{"}</span>
           </div>
-          <JsonLine indent={2} keyName="currency" value="USDC" valueType="string" />
+          <JsonLine indent={2} keyName="currency" value="ETH" valueType="string" />
           <JsonLine indent={2} keyName="amount" value={defaultPrice} valueType="number" />
           <JsonLine indent={2} keyName="wallet" value={payee} valueType="string" isLast />
           <JsonLine indent={1} value="}," valueType="bracket" />

@@ -8,7 +8,7 @@ export const manifest: TollgateManifest = {
   category:     'finance',
   payee:        process.env.PAYEE_WALLET ?? '',
   chain:        'base-sepolia',
-  usdcContract: '0x5dEaC602762362FE5f135FA5904351916053cF70',
+  usdcContract: '0x036CbD53842c5426634e7929541eC2318f3dCF7e',
   defaultPrice: '0.01',
   tools: [
     {

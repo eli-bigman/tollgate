@@ -13,10 +13,10 @@ export default function ServiceCard({ service }: Props) {
   const extraCount = tools.length - MAX_VISIBLE_TOOLS;
   const fromPrice = tools.reduce(
     (min, t) => {
-      const price = parseFloat(t.price.replace(" USDC", ""));
+      const price = parseFloat(t.price.replace(" ETH", ""));
       return price < min ? price : min;
     },
-    parseFloat(tools[0]?.price?.replace(" USDC", "") ?? "0")
+    parseFloat(tools[0]?.price?.replace(" ETH", "") ?? "0")
   );
 
   return (
@@ -74,7 +74,7 @@ export default function ServiceCard({ service }: Props) {
       {/* Bottom: price + connect */}
       <div className="mt-auto pt-3 border-t border-surface-hover flex items-center justify-between">
         <span className="font-mono text-sm font-semibold text-[#F59E0B]">
-          from {fromPrice.toFixed(3).replace(/\.?0+$/, "")} USDC / call
+          from {fromPrice.toFixed(3).replace(/\.?0+$/, "")} ETH / call
         </span>
         <a href={manifestUrl} target="_blank" rel="noopener noreferrer" className="text-sm text-primary hover:underline">
           Connect →

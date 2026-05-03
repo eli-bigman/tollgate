@@ -1,0 +1,2 @@
+# .vercel/output is build output, should not be committed
+.vercel/output

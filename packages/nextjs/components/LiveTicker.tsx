@@ -3,11 +3,11 @@
 import { Zap, Check } from "lucide-react";
 
 const TICKER_ITEMS = [
-  { service: "crypto.tollgate.eth", tool: "get_price", amount: "0.01 USDC", ago: "2s ago" },
-  { service: "weather.tollgate.eth", tool: "get_weather", amount: "0.01 USDC", ago: "7s ago" },
-  { service: "chain.tollgate.eth", tool: "get_block", amount: "0.005 USDC", ago: "14s ago" },
-  { service: "crypto.tollgate.eth", tool: "get_trending", amount: "0.01 USDC", ago: "21s ago" },
-  { service: "weather.tollgate.eth", tool: "get_alerts", amount: "0.02 USDC", ago: "33s ago" },
+  { service: "crypto.tollgate.eth", tool: "get_price", amount: "0.01 ETH", ago: "2s ago" },
+  { service: "weather.tollgate.eth", tool: "get_weather", amount: "0.01 ETH", ago: "7s ago" },
+  { service: "chain.tollgate.eth", tool: "get_block", amount: "0.005 ETH", ago: "14s ago" },
+  { service: "crypto.tollgate.eth", tool: "get_trending", amount: "0.01 ETH", ago: "21s ago" },
+  { service: "weather.tollgate.eth", tool: "get_alerts", amount: "0.02 ETH", ago: "33s ago" },
 ];
 
 function TickerContent() {

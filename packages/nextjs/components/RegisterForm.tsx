@@ -24,6 +24,8 @@ export default function RegisterForm() {
   const [validation, setValidation] = useState<ValidationState>({ status: "idle" });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [txHash, setTxHash] = useState("");
+  const [submitError, setSubmitError] = useState("");
 
   // Auto-populate manifest URL from endpoint
   useEffect(() => {
@@ -71,13 +73,40 @@ export default function RegisterForm() {
     return () => clearTimeout(timer);
   }, [manifestUrl, validateManifest]);
 
-  function handleSubmit() {
+  async function handleSubmit() {
+    if (!subdomain) { setSubmitError("ENS subdomain is required."); return; }
+    if (!endpointUrl) { setSubmitError("Endpoint URL is required."); return; }
+    if (validation.status === "error") { setSubmitError("Fix the manifest error before registering."); return; }
+
     setIsSubmitting(true);
-    // POST to /api/ens/register (stub — wires to L2Registrar later)
-    setTimeout(() => {
-      setIsSubmitting(false);
+    setSubmitError("");
+
+    try {
+      const res = await fetch("/api/ens/register", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          label: subdomain,
+          records: {
+            url: endpointUrl,
+            manifest: manifestUrl || `${endpointUrl.replace(/\/$/, "")}/.well-known/tollgate.json`,
+            type: serviceType === "MCP" ? "mcp" : "api",
+            payee: payeeWallet,
+            description,
+            category: validation.status === "success" ? (validation.manifest as { category?: string }).category ?? "other" : "other",
+            version: "1.0",
+          },
+        }),
+      });
+      const json = await res.json() as { success?: boolean; txHash?: string; error?: string };
+      if (!res.ok || !json.success) throw new Error(json.error ?? `HTTP ${res.status}`);
+      setTxHash(json.txHash ?? "");
       setIsSuccess(true);
-    }, 1500);
+    } catch (err) {
+      setSubmitError(err instanceof Error ? err.message : "Registration failed. Check the console.");
+    } finally {
+      setIsSubmitting(false);
+    }
   }
 
   const activeManifest = validation.status === "success" ? validation.manifest : null;
@@ -91,15 +120,33 @@ export default function RegisterForm() {
           </div>
           <h2 className="text-xl font-bold text-text-primary mt-2">Registered!</h2>
           <p className="font-mono text-sm bg-accent-indigo-light text-primary px-3 py-1 rounded mt-3 inline-block">
-            {subdomain || "yourservice"}.tollgate.eth
+            {subdomain}.tollgate.eth
           </p>
           <p className="text-sm text-text-secondary mt-3 leading-relaxed">
             Agents can now discover your MCP, read your manifest, and pay per tool call.
           </p>
+          {txHash && (
+            <a
+              href={`https://sepolia.basescan.org/tx/${txHash}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-3 inline-block font-mono text-xs text-primary hover:underline break-all"
+            >
+              tx: {txHash.slice(0, 20)}…{txHash.slice(-6)} ↗
+            </a>
+          )}
           <div className="flex justify-center gap-4 mt-6 text-sm text-primary">
-            <a href="#" className="hover:underline">View on ENS ↗</a>
+            <a
+              href={`https://app.ens.domains/${subdomain}.tollgate.eth`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:underline"
+            >
+              View on ENS ↗
+            </a>
             <button
-              onClick={() => { setIsSuccess(false); setSubdomain(""); setEndpointUrl(""); }}
+              type="button"
+              onClick={() => { setIsSuccess(false); setTxHash(""); setSubmitError(""); setSubdomain(""); setEndpointUrl(""); setDescription(""); setPayeeWallet(""); }}
               className="hover:underline"
             >
               Register Another
@@ -135,6 +182,7 @@ export default function RegisterForm() {
             <div className="flex gap-3">
               {(["MCP", "API"] as ServiceType[]).map((type) => (
                 <button
+                  type="button"
                   key={type}
                   onClick={() => setServiceType(type)}
                   className={`flex-1 border-2 rounded-xl p-4 text-center transition-colors cursor-pointer ${
@@ -241,11 +289,25 @@ export default function RegisterForm() {
             </p>
           </div>
 
+          {/* Description */}
+          <div className="space-y-2">
+            <label className="block text-xs font-semibold text-text-secondary uppercase tracking-wider">
+              Description <span className="normal-case font-normal text-text-muted">(optional)</span>
+            </label>
+            <input
+              type="text"
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
+              placeholder="e.g. Real-time crypto prices and market data"
+              className="w-full border border-border-strong rounded-lg px-4 py-2.5 text-sm text-text-primary focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
+            />
+          </div>
+
           {/* Price + Payee */}
           <div className="grid grid-cols-2 gap-4">
             <div className="space-y-2">
               <label className="block text-xs font-semibold text-text-secondary uppercase tracking-wider">
-                Default Price (USDC)
+                Default Price (ETH)
               </label>
               <div className="relative">
                 <span className="absolute left-3 top-2.5 text-text-secondary font-mono text-sm">$</span>
@@ -258,7 +320,7 @@ export default function RegisterForm() {
                   placeholder="0.01"
                   className="w-full border border-border-strong rounded-lg pl-7 pr-14 py-2.5 font-mono text-sm text-text-primary focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
                 />
-                <span className="absolute right-3 top-2.5 text-text-muted font-mono text-xs">USDC</span>
+                <span className="absolute right-3 top-2.5 text-text-muted font-mono text-xs">ETH</span>
               </div>
               <p className="text-xs text-text-muted">Tools can override in manifest.</p>
             </div>
@@ -266,7 +328,13 @@ export default function RegisterForm() {
               <label className="flex items-center justify-between text-xs font-semibold text-text-secondary uppercase tracking-wider">
                 Payment Wallet
                 <button
-                  onClick={() => setPayeeWallet("0x0000000000000000000000000000000000000000")}
+                  type="button"
+                  onClick={async () => {
+                    if (typeof window !== "undefined" && (window as any).ethereum) {
+                      const accounts = await (window as any).ethereum.request({ method: "eth_requestAccounts" });
+                      if (accounts[0]) setPayeeWallet(accounts[0]);
+                    }
+                  }}
                   className="normal-case text-xs font-medium text-primary hover:underline"
                 >
                   Fill from wallet
@@ -284,6 +352,11 @@ export default function RegisterForm() {
 
           {/* Submit */}
           <div className="pt-4 border-t border-border-light">
+            {submitError && (
+              <div className="mb-4 bg-[#FEF2F2] border border-[#FECACA] rounded-lg px-4 py-3">
+                <p className="text-sm font-medium text-[#991B1B]">✗ {submitError}</p>
+              </div>
+            )}
             <button
               onClick={handleSubmit}
               disabled={isSubmitting}

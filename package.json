@@ -5,7 +5,9 @@
   "workspaces": {
     "packages": [
       "packages/nextjs",
-      "packages/hardhat"
+      "packages/hardhat",
+      "packages/agent",
+      "shared/manifest-types"
     ]
   },
   "scripts": {
